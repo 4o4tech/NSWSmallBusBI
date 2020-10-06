@@ -5,11 +5,12 @@ spring:
    #suffix : .html
  thymeleaf:
     prefix: classpath:/templates/
+    cache: false
  datasource:
     url: jdbc:mysql://localhost:3306/dcsys_project?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: 1q2w3e4r
+    password: Jmz5278
 
 server:
   port: 8080

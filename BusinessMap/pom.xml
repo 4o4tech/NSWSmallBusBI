@@ -21,6 +21,35 @@
 		<fastjson.version>1.2.7</fastjson.version>
 	</properties>
 	<dependencies>
+
+		<!--JSP动态刷新-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!--bootstrap-->
+		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap-datepicker</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<!--end bootstrap-->
+		<!--jquery-->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.5.1</version>
+		</dependency>
+		<!--end jquery-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -201,6 +230,7 @@
 					<overwrite>false</overwrite>
 					<!--配置文件的路径 -->
 					<configurationFile>src/main/resources/mybatis-generator.xml</configurationFile>
+					<fork>true</fork>
 				</configuration>
 				<dependencies>
 					<dependency>
