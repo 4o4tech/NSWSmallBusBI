@@ -308,3 +308,6 @@
 [15:22:10.152 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 [15:22:10.153 INFO ] [o.s.web.servlet.FrameworkServlet 524 initServletBean] - Initializing Servlet 'dispatcherServlet'
 [15:22:10.158 INFO ] [o.s.web.servlet.FrameworkServlet 546 initServletBean] - Completed initialization in 4 ms
+[15:37:37.308 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=1m57s646ms).
+[19:52:45.831 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=4h15m8s524ms).
+[23:42:17.018 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=15m30s92ms).

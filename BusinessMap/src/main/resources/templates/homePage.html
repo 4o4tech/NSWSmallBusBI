@@ -2,92 +2,130 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="author" content="Jimze">
+    <title>NSW Business Map</title>
 
     <link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="../static/css/mian.css">-->
     <link rel="stylesheet" th:href="@{/css/main.css}">
 
 
+
 </head>
 
+    <body class="main_container">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-color">
+            <a class="navbar-brand" href="#">NSW Business Map</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <!--<div class="container">-->
-        <!--<h1 id="header">NSW Business Map</h1>-->
-    <!--</div>-->
+            <div class="collapse navbar-collapse" id="navbars">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Business</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
 
-    <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">NSW Business Map</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+        <main role="main" >
+            <div class="banner_page">
+                <div class="container">
+                    <h1 class="display-3">Small Business Map</h1>
+                    <p class="col-md-6"> <b>What we do.</b><br>
+                        If you’re a small business in NSW, we’re your biggest ally.
+                        Through advocacy and mediation we help resolve
+                        issues impacting your business.
+                    </p>
+                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+                </div>
+            </div>
 
-    <main role="main">
-
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="mian-content">
             <div class="container">
-                <h1 class="display-3">Small Business Map</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-            </div>
-        </div>
+                <!-- Example row of columns -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>Industry</h2>
+                        <hr>
+                        <h5>Popular Business</h5>
+                        <p> Recommend where to start: Using data to recommend where it is better to start a new small business.
+                        </p>
+                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h2> Location/LGA</h2>
+                        <hr>
+                        <h5> New Business Address</h5>
 
-        <div class="container">
-            <!-- Example row of columns -->
+                        <p>Provide information about the area <br> <br><br>
+                        </p>
+                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Licence</h2>
+                        <hr>
+                        <h5>Know Permission</h5>
+                        <p> Information about how to start this specific industry. E.g, licence & permits. <br><br>
+                        </p>
+                        <!--<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>-->
+                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                </div>
+
+                <!--<hr>-->
+
+            </div> <!-- /container -->
+
+            <div class="news col-md-6">
+
+
+            </div>
+            <div class="other col-md-6">
+
+            </div>
+
+        </main>
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top ">
             <div class="row">
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                <div class="col-12 col-md">
+                    <small class="d-block mb-3 text-muted">&copy; USYD,CS,2020</small>
                 </div>
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                <div class="col-6 col-md">
+                    <h5>Small Business Tool</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Industry</a></li>
+                        <li><a class="text-muted" href="#">Location/LGA</a></li>
+                        <li><a class="text-muted" href="#">Licence</a></li>
+
+                    </ul>
                 </div>
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                <div class="col-6 col-md">
+                    <h5>About</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Team</a></li>
+                        <li><a class="text-muted" href="#">USYD</a></li>
+                        <li><a class="text-muted" href="#">&nbsp</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <hr>
-
-        </div> <!-- /container -->
-
-    </main>
+        </footer>
 
     </body>
+
+
 
         <!--<div id="container">-->
 

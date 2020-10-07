@@ -1,0 +1,594 @@
+[01:41:56.237 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=1h59m38s903ms).
+[04:26:55.269 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=2h44m59s294ms).
+[08:30:05.683 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=4h2m37s892ms).
+[09:34:28.201 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=1h3m52s318ms).
+[10:28:06.660 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=27m8s334ms).
+[10:34:17.448 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=6m10s787ms).
+[10:46:09.569 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=52s62ms).
+[13:48:58.014 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=1m47s537ms).
+[14:43:42.826 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=54m44s813ms).
+[16:14:23.562 WARN ] [c.z.h.pool.HikariPool$HouseKeeper 766 run] - HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=3m39s681ms).
+[16:30:23.752 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-8 - Shutdown initiated...
+[16:30:23.756 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-8 - Shutdown completed.
+[16:30:23.757 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[16:30:26.458 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[16:30:26.462 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[16:30:26.546 INFO ] [o.s.boot.logging.DeferredLog 227 logTo] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[16:30:26.546 INFO ] [o.s.boot.logging.DeferredLog 227 logTo] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[16:30:27.586 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[16:30:28.545 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[16:30:28.568 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[16:30:28.584 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[16:30:28.584 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[16:30:28.736 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[16:30:28.737 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 2191 ms
+[16:30:29.049 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[16:30:29.259 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[16:30:29.448 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-1 - Starting...
+[16:30:29.897 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-1 - Start completed.
+[16:30:30.168 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[16:30:30.207 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[16:30:30.242 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[16:30:30.245 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 4.314 seconds (JVM running for 5.685)
+[16:30:40.978 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[16:30:40.978 INFO ] [o.s.web.servlet.FrameworkServlet 524 initServletBean] - Initializing Servlet 'dispatcherServlet'
+[16:30:40.987 INFO ] [o.s.web.servlet.FrameworkServlet 546 initServletBean] - Completed initialization in 9 ms
+[18:04:10.760 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-1 - Shutdown initiated...
+[18:04:10.788 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-1 - Shutdown completed.
+[18:04:10.790 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:04:11.217 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:04:11.217 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:04:11.418 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:04:11.578 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:04:11.580 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:04:11.580 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:04:11.581 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:04:11.594 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:04:11.594 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 373 ms
+[18:04:11.713 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:04:11.793 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:04:11.835 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-2 - Starting...
+[18:04:11.864 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-2 - Start completed.
+[18:04:12.016 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:04:12.088 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:04:12.096 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:04:12.097 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.956 seconds (JVM running for 5627.525)
+[18:04:12.102 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:04:17.455 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-2 - Shutdown initiated...
+[18:04:17.462 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-2 - Shutdown completed.
+[18:04:17.462 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:04:17.788 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:04:17.789 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:04:18.099 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:04:18.445 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:04:18.451 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:04:18.452 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:04:18.453 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:04:18.472 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:04:18.472 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 676 ms
+[18:04:18.601 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:04:18.618 WARN ] [o.s.c.s.AbstractApplicationContext 557 refresh] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homePageController' method 
+public java.lang.String com.business.system.controller.homePageController.industry()
+to { /index}: There is already 'homePageController' bean method
+public java.lang.String com.business.system.controller.homePageController.homePage() mapped.
+[18:04:18.619 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:04:18.620 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Stopping service [Tomcat]
+[18:04:18.635 INFO ] [o.s.b.a.l.ConditionEvaluationReportLoggingListener 142 logMessage] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[18:04:39.246 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:04:39.246 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:04:39.413 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:04:39.522 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:04:39.523 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:04:39.523 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:04:39.524 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:04:39.535 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:04:39.535 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 286 ms
+[18:04:39.600 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:04:39.661 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:04:39.687 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-3 - Starting...
+[18:04:39.703 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-3 - Start completed.
+[18:04:39.753 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:04:39.773 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:04:39.776 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:04:39.776 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.558 seconds (JVM running for 5655.204)
+[18:04:39.778 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:04:44.200 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-3 - Shutdown initiated...
+[18:04:44.217 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-3 - Shutdown completed.
+[18:04:44.220 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:04:44.464 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:04:44.465 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:04:44.627 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:04:44.768 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:04:44.771 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:04:44.774 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:04:44.775 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:04:44.793 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:04:44.793 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 325 ms
+[18:04:44.896 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:04:44.998 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:04:45.060 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-4 - Starting...
+[18:04:45.105 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-4 - Start completed.
+[18:04:45.146 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:04:45.168 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:04:45.170 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:04:45.171 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.736 seconds (JVM running for 5660.598)
+[18:04:45.173 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:04:48.985 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-4 - Shutdown initiated...
+[18:04:49.004 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-4 - Shutdown completed.
+[18:04:49.005 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:04:49.267 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:04:49.268 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:04:49.670 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:04:49.895 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:04:49.898 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:04:49.899 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:04:49.899 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:04:49.919 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:04:49.920 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 646 ms
+[18:04:50.062 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:04:50.367 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:04:50.445 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-5 - Starting...
+[18:04:50.477 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-5 - Start completed.
+[18:04:50.583 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:04:50.615 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:04:50.618 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:04:50.619 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 1.407 seconds (JVM running for 5666.046)
+[18:04:50.621 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:04:55.029 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-5 - Shutdown initiated...
+[18:04:55.101 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-5 - Shutdown completed.
+[18:04:55.102 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:04:55.294 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:04:55.294 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:04:55.453 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:04:55.595 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:04:55.597 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:04:55.598 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:04:55.599 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:04:55.614 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:04:55.616 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 319 ms
+[18:04:55.697 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:04:55.749 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:04:55.775 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-6 - Starting...
+[18:04:55.788 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-6 - Start completed.
+[18:04:55.824 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:04:55.841 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:04:55.843 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:04:55.843 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.575 seconds (JVM running for 5671.271)
+[18:04:55.845 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:05:00.262 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-6 - Shutdown initiated...
+[18:05:00.273 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-6 - Shutdown completed.
+[18:05:00.273 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:05:00.479 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:05:00.479 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:05:00.640 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:05:00.733 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:05:00.734 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:05:00.735 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:05:00.735 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:05:00.744 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:05:00.744 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 262 ms
+[18:05:00.819 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:05:00.895 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:05:00.926 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-7 - Starting...
+[18:05:00.946 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-7 - Start completed.
+[18:05:00.992 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:05:01.014 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:05:01.016 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:05:01.017 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.572 seconds (JVM running for 5676.444)
+[18:05:01.020 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:05:12.484 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-7 - Shutdown initiated...
+[18:05:12.487 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-7 - Shutdown completed.
+[18:05:12.488 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:05:12.672 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:05:12.673 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:05:12.871 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:05:13.162 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:05:13.163 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:05:13.164 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:05:13.164 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:05:13.196 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:05:13.197 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 519 ms
+[18:05:13.394 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:05:13.501 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:05:13.539 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-8 - Starting...
+[18:05:13.560 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-8 - Start completed.
+[18:05:13.640 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:05:13.662 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:05:13.666 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:05:13.668 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 1.053 seconds (JVM running for 5689.095)
+[18:05:13.671 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:05:20.088 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-8 - Shutdown initiated...
+[18:05:20.090 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-8 - Shutdown completed.
+[18:05:20.091 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:05:20.242 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:05:20.242 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:05:20.399 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:05:20.500 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:05:20.501 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:05:20.502 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:05:20.502 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:05:20.512 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:05:20.512 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 268 ms
+[18:05:20.579 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:05:20.588 WARN ] [o.s.c.s.AbstractApplicationContext 557 refresh] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homePageController' method 
+public java.lang.String com.business.system.controller.homePageController.location()
+to { /industry_dashboard}: There is already 'homePageController' bean method
+public java.lang.String com.business.system.controller.homePageController.industry() mapped.
+[18:05:20.589 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:05:20.589 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Stopping service [Tomcat]
+[18:05:20.595 INFO ] [o.s.b.a.l.ConditionEvaluationReportLoggingListener 142 logMessage] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[18:05:22.047 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:05:22.047 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:05:22.238 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:05:22.367 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:05:22.368 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:05:22.369 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:05:22.369 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:05:22.378 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:05:22.379 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 329 ms
+[18:05:22.473 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:05:22.563 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:05:22.590 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-9 - Starting...
+[18:05:22.607 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-9 - Start completed.
+[18:05:22.663 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:05:22.683 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:05:22.685 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:05:22.685 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.661 seconds (JVM running for 5698.113)
+[18:05:22.688 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:05:29.114 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-9 - Shutdown initiated...
+[18:05:29.116 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-9 - Shutdown completed.
+[18:05:29.117 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:05:29.373 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:05:29.374 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:05:29.592 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:05:29.783 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:05:29.790 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:05:29.793 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:05:29.794 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:05:29.830 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:05:29.830 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 452 ms
+[18:05:29.990 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:05:30.090 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:05:30.122 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-10 - Starting...
+[18:05:30.146 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-10 - Start completed.
+[18:05:30.206 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:05:30.229 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:05:30.231 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:05:30.232 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.941 seconds (JVM running for 5705.66)
+[18:05:30.235 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:05:32.640 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-10 - Shutdown initiated...
+[18:05:32.643 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-10 - Shutdown completed.
+[18:05:32.643 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:05:32.814 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:05:32.814 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:05:33.059 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:05:33.232 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:05:33.233 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:05:33.234 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:05:33.234 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:05:33.250 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:05:33.251 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 434 ms
+[18:05:33.376 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:05:33.504 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:05:33.551 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-11 - Starting...
+[18:05:33.625 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-11 - Start completed.
+[18:05:33.715 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:05:33.746 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:05:33.748 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:05:33.749 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.963 seconds (JVM running for 5709.176)
+[18:05:33.752 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:05:45.200 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-11 - Shutdown initiated...
+[18:05:45.205 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-11 - Shutdown completed.
+[18:05:45.205 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:05:45.373 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:05:45.373 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:05:45.564 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:05:45.693 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:05:45.694 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:05:45.695 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:05:45.695 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:05:45.704 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:05:45.704 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 328 ms
+[18:05:45.777 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:05:45.786 WARN ] [o.s.c.s.AbstractApplicationContext 557 refresh] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homePageController' method 
+public java.lang.String com.business.system.controller.homePageController.location()
+to { /location_dashboard}: There is already 'homePageController' bean method
+public java.lang.String com.business.system.controller.homePageController.license() mapped.
+[18:05:45.786 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:05:45.786 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Stopping service [Tomcat]
+[18:05:45.792 INFO ] [o.s.b.a.l.ConditionEvaluationReportLoggingListener 142 logMessage] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[18:05:47.239 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:05:47.239 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:05:47.425 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:05:47.563 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:05:47.563 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:05:47.564 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:05:47.564 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:05:47.574 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:05:47.574 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 333 ms
+[18:05:47.651 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:05:47.718 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:05:47.825 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-12 - Starting...
+[18:05:47.906 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-12 - Start completed.
+[18:05:48.013 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:05:48.047 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:05:48.054 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:05:48.054 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.842 seconds (JVM running for 5723.482)
+[18:05:48.058 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:05:56.500 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-12 - Shutdown initiated...
+[18:05:56.502 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-12 - Shutdown completed.
+[18:05:56.502 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:05:56.692 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:05:56.692 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:05:56.854 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:05:56.953 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:05:56.953 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:05:56.954 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:05:56.954 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:05:56.964 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:05:56.964 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 269 ms
+[18:05:57.035 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:05:57.045 WARN ] [o.s.c.s.AbstractApplicationContext 557 refresh] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'homePageController' method 
+public java.lang.String com.business.system.controller.homePageController.licensePage()
+to { /location_dashboard}: There is already 'homePageController' bean method
+public java.lang.String com.business.system.controller.homePageController.locationPage() mapped.
+[18:05:57.045 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:05:57.046 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Stopping service [Tomcat]
+[18:05:57.052 INFO ] [o.s.b.a.l.ConditionEvaluationReportLoggingListener 142 logMessage] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[18:06:04.558 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:06:04.558 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:06:04.736 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:06:04.863 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:06:04.864 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:06:04.865 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:06:04.865 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:06:04.877 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:06:04.877 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 316 ms
+[18:06:04.958 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:06:05.020 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:06:05.046 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-13 - Starting...
+[18:06:05.061 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-13 - Start completed.
+[18:06:05.105 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:06:05.121 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:06:05.123 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:06:05.124 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.597 seconds (JVM running for 5740.551)
+[18:06:05.126 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:12:29.803 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-13 - Shutdown initiated...
+[18:12:29.805 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-13 - Shutdown completed.
+[18:12:29.806 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:12:30.054 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:12:30.055 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:12:30.251 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:12:30.413 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:12:30.414 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:12:30.414 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:12:30.414 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:12:30.423 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:12:30.423 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 366 ms
+[18:12:30.506 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:12:30.557 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:12:30.580 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-14 - Starting...
+[18:12:30.597 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-14 - Start completed.
+[18:12:30.637 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:12:30.654 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:12:30.656 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:12:30.657 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.66 seconds (JVM running for 6126.083)
+[18:12:30.659 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:13:08.307 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-14 - Shutdown initiated...
+[18:13:08.309 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-14 - Shutdown completed.
+[18:13:08.310 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:13:08.498 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:13:08.499 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:13:08.747 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:13:08.875 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:13:08.876 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:13:08.876 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:13:08.876 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:13:08.886 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:13:08.886 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 382 ms
+[18:13:08.962 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:13:09.012 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:13:09.034 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-15 - Starting...
+[18:13:09.051 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-15 - Start completed.
+[18:13:09.097 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:13:09.114 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:13:09.116 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:13:09.117 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.67 seconds (JVM running for 6164.543)
+[18:13:09.119 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:13:10.511 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-15 - Shutdown initiated...
+[18:13:10.514 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-15 - Shutdown completed.
+[18:13:10.514 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:13:10.680 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:13:10.681 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:13:10.936 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:13:11.052 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:13:11.052 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:13:11.053 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:13:11.053 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:13:11.063 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:13:11.063 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 378 ms
+[18:13:11.126 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:13:11.178 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:13:11.201 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-16 - Starting...
+[18:13:11.214 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-16 - Start completed.
+[18:13:11.257 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:13:11.274 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:13:11.276 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:13:11.277 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.635 seconds (JVM running for 6166.703)
+[18:13:11.279 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:13:21.727 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-16 - Shutdown initiated...
+[18:13:21.729 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-16 - Shutdown completed.
+[18:13:21.730 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:13:21.869 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:13:21.869 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:13:22.035 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:13:22.160 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:13:22.161 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:13:22.161 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:13:22.161 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:13:22.171 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:13:22.171 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 299 ms
+[18:13:22.241 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:13:22.311 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:13:22.347 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-17 - Starting...
+[18:13:22.371 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-17 - Start completed.
+[18:13:22.518 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:13:22.556 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:13:22.559 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:13:22.560 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.72 seconds (JVM running for 6177.986)
+[18:13:22.563 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:13:26.952 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-17 - Shutdown initiated...
+[18:13:26.957 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-17 - Shutdown completed.
+[18:13:26.958 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:13:27.161 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:13:27.162 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:13:27.370 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:13:27.545 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:13:27.547 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:13:27.547 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:13:27.547 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:13:27.560 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:13:27.561 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 396 ms
+[18:13:27.698 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:13:27.848 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:13:27.909 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-18 - Starting...
+[18:13:27.929 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-18 - Start completed.
+[18:13:28.088 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:13:28.128 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:13:28.130 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:13:28.131 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 1.001 seconds (JVM running for 6183.557)
+[18:13:28.133 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:13:31.518 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-18 - Shutdown initiated...
+[18:13:31.520 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-18 - Shutdown completed.
+[18:13:31.520 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:13:31.640 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:13:31.640 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:13:31.801 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:13:31.904 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:13:31.905 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:13:31.905 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:13:31.906 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:13:31.919 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:13:31.919 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 276 ms
+[18:13:31.998 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:13:32.050 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:13:32.074 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-19 - Starting...
+[18:13:32.088 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-19 - Start completed.
+[18:13:32.128 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:13:32.145 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:13:32.146 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:13:32.147 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.528 seconds (JVM running for 6187.573)
+[18:13:32.150 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:13:43.613 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-19 - Shutdown initiated...
+[18:13:43.616 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-19 - Shutdown completed.
+[18:13:43.616 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:13:43.750 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:13:43.750 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:13:43.927 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:13:44.038 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:13:44.039 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:13:44.039 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:13:44.039 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:13:44.049 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:13:44.049 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 296 ms
+[18:13:44.119 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:13:44.173 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:13:44.196 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-20 - Starting...
+[18:13:44.213 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-20 - Start completed.
+[18:13:44.256 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:13:44.273 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:13:44.275 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:13:44.276 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.555 seconds (JVM running for 6199.702)
+[18:13:44.278 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:13:58.765 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-20 - Shutdown initiated...
+[18:13:58.766 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-20 - Shutdown completed.
+[18:13:58.767 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:13:59.063 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:13:59.065 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:13:59.332 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:13:59.525 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:13:59.527 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:13:59.532 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:13:59.532 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:13:59.554 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:13:59.554 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 485 ms
+[18:13:59.667 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:13:59.740 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:13:59.768 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-21 - Starting...
+[18:13:59.783 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-21 - Start completed.
+[18:13:59.840 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:13:59.860 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:13:59.866 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:13:59.867 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.912 seconds (JVM running for 6215.293)
+[18:13:59.870 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:18:52.428 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-21 - Shutdown initiated...
+[18:18:52.434 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-21 - Shutdown completed.
+[18:18:52.435 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:18:52.644 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:18:52.645 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:18:52.839 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:18:52.977 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:18:52.978 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:18:52.979 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:18:52.979 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:18:53.003 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:18:53.003 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 355 ms
+[18:18:53.100 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:18:53.158 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:18:53.180 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-22 - Starting...
+[18:18:53.198 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-22 - Start completed.
+[18:18:53.245 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:18:53.271 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:18:53.275 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:18:53.276 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.698 seconds (JVM running for 6508.702)
+[18:18:53.280 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:19:29.936 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-22 - Shutdown initiated...
+[18:19:29.939 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-22 - Shutdown completed.
+[18:19:29.940 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:19:30.225 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:19:30.226 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:19:30.544 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:19:30.684 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:19:30.684 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:19:30.685 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:19:30.685 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:19:30.694 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:19:30.695 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 467 ms
+[18:19:30.763 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:19:30.819 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:19:30.840 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-23 - Starting...
+[18:19:30.861 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-23 - Start completed.
+[18:19:30.903 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:19:30.932 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:19:30.934 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:19:30.934 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 0.74 seconds (JVM running for 6546.36)
+[18:19:30.939 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged
+[18:19:33.336 INFO ] [com.zaxxer.hikari.HikariDataSource 350 close] - HikariPool-23 - Shutdown initiated...
+[18:19:33.342 INFO ] [com.zaxxer.hikari.HikariDataSource 352 close] - HikariPool-23 - Shutdown completed.
+[18:19:33.343 INFO ] [o.s.s.c.ExecutorConfigurationSupport 208 shutdown] - Shutting down ExecutorService 'applicationTaskExecutor'
+[18:19:33.555 INFO ] [o.s.boot.StartupInfoLogger 50 logStarting] - Starting BusinessApplication on mbp with PID 50698 (started by jimze in /Users/jimzezhang/Dropbox (Sydney Uni Student)/2020S2_MIT/COMP 5703/web/CS39-4-My-NSW-Business-Map/BusinessMap)
+[18:19:33.555 INFO ] [o.s.boot.SpringApplication 675 logStartupProfileInfo] - No active profile set, falling back to default profiles: default
+[18:19:33.889 WARN ] [o.m.s.mapper.ClassPathMapperScanner 166 doScan] - No MyBatis mapper was found in '[com.business]' package. Please check your configuration.
+[18:19:34.037 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 90 initialize] - Tomcat initialized with port(s): 8080 (http)
+[18:19:34.040 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing ProtocolHandler ["http-nio-8080"]
+[18:19:34.041 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting service [Tomcat]
+[18:19:34.041 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[18:19:34.058 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Initializing Spring embedded WebApplicationContext
+[18:19:34.058 INFO ] [o.s.b.w.s.c.ServletWebServerApplicationContext 296 prepareWebApplicationContext] - Root WebApplicationContext: initialization completed in 499 ms
+[18:19:34.163 INFO ] [o.s.s.c.ExecutorConfigurationSupport 171 initialize] - Initializing ExecutorService 'applicationTaskExecutor'
+[18:19:34.290 INFO ] [o.s.b.a.w.s.WelcomePageHandlerMapping 61 <init>] - Adding welcome page template: index
+[18:19:34.439 INFO ] [com.zaxxer.hikari.HikariDataSource 110 getConnection] - HikariPool-24 - Starting...
+[18:19:34.481 INFO ] [com.zaxxer.hikari.HikariDataSource 123 getConnection] - HikariPool-24 - Start completed.
+[18:19:34.585 INFO ] [o.s.b.d.a.OptionalLiveReloadServer 57 startServer] - LiveReload server is running on port 35729
+[18:19:34.630 INFO ] [org.apache.juli.logging.DirectJDKLog 173 log] - Starting ProtocolHandler ["http-nio-8080"]
+[18:19:34.632 INFO ] [o.s.b.w.e.tomcat.TomcatWebServer 204 start] - Tomcat started on port(s): 8080 (http) with context path ''
+[18:19:34.633 INFO ] [o.s.boot.StartupInfoLogger 59 logStarted] - Started BusinessApplication in 1.11 seconds (JVM running for 6550.059)
+[18:19:34.636 INFO ] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener 70 onApplicationEvent] - Condition evaluation unchanged

@@ -12,6 +12,18 @@ public class homePageController {
         return "homePage";
     }
 
+
+
+    @RequestMapping("/location_dashboard")
+    public String locationPage(){
+        return "location";
+    }
+
+    @RequestMapping("/license_dashboard")
+    public String licensePage(){
+        return "license";
+    }
+
 }
 //
 //@Controller
