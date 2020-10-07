@@ -21,9 +21,9 @@ public class industryController {
 //    }
 
     @GetMapping("/industry_dashboard")
-    public String industry(@RequestParam(name = "industry", required=false, defaultValue="Restaurant") String industry, Model model){
+    public String industryDashBoardPage(@RequestParam(name = "industry", required=false, defaultValue="Restaurant") String industry, Model model){
         model.addAttribute("industry", industry);
-        return "industry_result";
+        return "industry_dashboard";
     }
 
 
