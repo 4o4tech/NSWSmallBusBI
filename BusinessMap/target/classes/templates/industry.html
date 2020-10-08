@@ -72,14 +72,20 @@
             </div>
 
             <div class="industry-search-form col-12">
-                <form class="form-inline">
+                <form class="form-inline" th:action="@{/industry_dashboard}" th:object="${searchIndustry}" method="posts">
 
                     <div class="form-group col-md-8">
                         <label for="inputIndustry" class="sr-only">Industry</label>
-                        <input type="search" class="form-control offset-md-4  col-md-8" id="inputIndustry" placeholder="Enter a Industry to continue">
+                        <input type="search" th:field="*{industryName}"  class="form-control offset-md-4  col-md-8" id="inputIndustry" placeholder="Enter a Industry to continue">
                     </div>
                     <button type="submit" class="btn btn-primary">Search</button>
                 </form>
+
+<!--                <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">-->
+<!--                    <p>Id: <input type="text" th:field="*{id}" /></p>-->
+
+<!--                    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>-->
+<!--                </form>-->
 
             </div>
 

@@ -9,23 +9,38 @@
     <!--<link rel="stylesheet" href="../static/css/mian.css">-->
     <link rel="stylesheet" th:href="@{/css/main.css}">
 
-
 </head>
 <body>
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Industry</a></li>
-        <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-    </ol>
-</nav>
 
-<div class="container-fluid">
+
+<div class="container">
+    <div class="nav-breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="/industry_search">Industry</a></li>
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+        </ol>
+    </nav>
+    </div>
+
+    <div class="industry-describe col-md-12">
+        <h2>
+            Result
+        </h2>
+        <p th:text="'Industry: ' + ${industryResult.industryName}" />
+        <hr>
+        <div class="describe-content">
+            <p th:text="${industryResult.content}">
+            </p>
+        </div>
+    </div>
+
+
     <div class="row">
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <main role="main">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Dashboard</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group mr-2">
                         <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>

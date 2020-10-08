@@ -1,28 +1,27 @@
 package com.business.system.controller;
 
+import com.business.system.mapper.Industry;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class industryController {
 
-    @RequestMapping("/industry_search")
-    public String industryPage(){
+//    @RequestMapping("/industry_search")
+//    public String industryPage(){
+//        return "industry";
+//    }
+
+    @GetMapping("/industry_search")
+    public String industryPage(Model model) {
+        model.addAttribute("searchIndustry", new Industry());
         return "industry";
     }
 
-//    @GetMapping("/greeting")
-//    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-//        model.addAttribute("name", name);
-//        return "greeting";
-//    }
-
-    @GetMapping("/industry_dashboard")
-    public String industryDashBoardPage(@RequestParam(name = "industry", required=false, defaultValue="Restaurant") String industry, Model model){
-        model.addAttribute("industry", industry);
+    @PostMapping("/industry_dashboard")
+    public String industrySubmit(@ModelAttribute Industry industryResult, Model model){
+        model.addAttribute("industryResult", industryResult);
         return "industry_dashboard";
     }
 

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Jimze">
+    <link rel="icon" th:href="@{/img/store-icn.png}" type="image/png">
     <title>NSW Business Map</title>
 
     <link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -26,7 +27,7 @@
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
+                            <a class="nav-link" href="/industry_search">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="#">Business</a>
@@ -62,7 +63,7 @@
                         <h5>Popular Business</h5>
                         <p> Recommend where to start: Using data to recommend where it is better to start a new small business.
                         </p>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                        <p><a class="btn btn-secondary" href="/industry_search" role="button">View details &raquo;</a></p>
                     </div>
                     <div class="col-md-4">
                         <h2> Location/LGA</h2>
@@ -124,7 +125,7 @@
                 <div class="col-6 col-md">
                     <h5>Small Business Tool</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Industry</a></li>
+                        <li><a class="text-muted" href="/industry_search">Industry</a></li>
                         <li><a class="text-muted" href="#">Location/LGA</a></li>
                         <li><a class="text-muted" href="#">Licence</a></li>
 
