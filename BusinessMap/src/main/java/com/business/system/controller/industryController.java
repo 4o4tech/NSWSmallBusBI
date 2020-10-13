@@ -1,6 +1,6 @@
 package com.business.system.controller;
 
-import com.business.system.mapper.Industry;
+import com.business.system.entity.Industry;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
