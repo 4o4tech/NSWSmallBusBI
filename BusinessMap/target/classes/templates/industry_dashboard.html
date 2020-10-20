@@ -1,10 +1,10 @@
 <!DYPE html>
+<!--industry_dashboard page-->
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Jimze">
     <title>NSW Business Map Dashboard</title>
-
     <link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="../static/css/mian.css">-->
     <link rel="stylesheet" th:href="@{/css/main.css}">
@@ -15,29 +15,32 @@
 
 <div class="container">
     <div class="nav-breadcrumb">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="/industry_search">Industry</a></li>
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-        </ol>
-    </nav>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                <li class="breadcrumb-item"><a href="/industry_search">Industry</a></li>
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            </ol>
+        </nav>
     </div>
 
     <div class="industry-describe col-md-12">
         <h2>
             Result
         </h2>
-        <p th:text="'Industry: ' + ${industryResult.industryName}" />
+        <h3 th:text="'Industry: ' + ${searchIndustry.industryName}" /></h3>
         <hr>
         <div class="describe-content">
-            <p th:text="${industryResult.content}">
+            <p>
+                Approximately 39% of the cafe of small business operators live outside the Sydney Greater Metropolitan Region
             </p>
+<!--            <p th:text="${industryResult.content}">-->
+<!--            </p>-->
         </div>
+
     </div>
 
-
-    <div class="row">
+    <div class="offset-2 col-md-8">
 
         <main role="main">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -53,7 +56,9 @@
                 </div>
             </div>
 
-            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+            <canvas class="my-4 w-100" id="myChart" width="900" height="380">
+
+            </canvas>
 
             <h2>Section title</h2>
             <div class="table-responsive">
@@ -185,6 +190,9 @@
             </div>
         </main>
     </div>
+
+
+
 </div>
 
 </body>
@@ -192,4 +200,6 @@
 <link rel="stylesheet" href="webjars/bootstrap/4.1.0/js/bootstrap.min.js">
 <link rel="stylesheet" href="webjars/jquery/3.5.1/jquery.min.js">
 <script th:src="@{js/main.js}"></script>
+<script th:src="@{/js/echart.js}"></script>
+<script th:src="@{/visual_js/visualMap.js}"></script>
 </html>

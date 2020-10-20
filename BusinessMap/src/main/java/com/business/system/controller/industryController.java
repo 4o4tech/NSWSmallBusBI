@@ -19,11 +19,23 @@ public class industryController {
         return "industry";
     }
 
-    @PostMapping("/industry_dashboard")
-    public String industrySubmit(@ModelAttribute Industry industryResult, Model model){
-        model.addAttribute("industryResult", industryResult);
+    @PostMapping("/industry_search")
+    public String industrySubmit(@ModelAttribute Industry searchIndustry, Model model){
+//        Industry newIndustry  = new Industry();
+        model.addAttribute("searchIndustry", searchIndustry);
+
         return "industry_dashboard";
     }
+
+    @GetMapping("/search_all")
+    public String getMessage(@ModelAttribute Industry searchIndustry,Model model){
+//        model.addAttribute("searchIndustry", searchIndustry);
+
+        searchIndustry.setIndustryName("Cafe");
+        model.addAttribute("searchIndustry", searchIndustry);
+        return "industry_dashboard";
+    }
+
 
 
 }

@@ -43,6 +43,13 @@
 			<version>1.0.1</version>
 		</dependency>
 		<!--end bootstrap-->
+		<!--mongodb-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<!--mongodb end-->
+
 		<!--jquery-->
 		<dependency>
 			<groupId>org.webjars</groupId>
@@ -232,9 +239,10 @@
 					<!--允许覆盖生成的文件 -->
 					<overwrite>false</overwrite>
 					<!--配置文件的路径 -->
-<!--					<configurationFile>src/main/resources/mybatis-generator.xml</configurationFile>-->
-					<fork>true</fork>
+					<!--					<configurationFile>src/main/resources/mybatis-generator.xml</configurationFile>-->
+<!--					<fork>true</fork>-->
 				</configuration>
+
 				<dependencies>
 					<dependency>
 						<groupId>mysql</groupId>
@@ -243,9 +251,9 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+
 		</plugins>
 	</build>
-	
-	
+
 	
 </project>

@@ -12,8 +12,6 @@ public class homePageController {
         return "homePage";
     }
 
-
-
     @RequestMapping("/location_dashboard")
     public String locationPage(){
         return "location";
@@ -35,18 +33,4 @@ public class homePageController {
 //
 //}
 
-
-
-/*
-@Controller
-public class GreetingController {
-
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
-        return "greeting";
-    }
-
-}
-*/
 
