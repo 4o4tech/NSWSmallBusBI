@@ -2,36 +2,35 @@ package com.business.system.entity;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import lombok.Data;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.MongoTemplate;
+//import org.springframework.data.mongodb.core.mapping.Document;
+//import org.springframework.data.mongodb.core.MongoTemplate;
 
-@Document(collection = "industry")
 public class Industry{
-
-   private String industryName;
-   private String content;
+    private String name;
+   private String result;
    private String industryData;
 
    private String postCode;
 
 
 
-    public String getIndustryName() {
-        return industryName;
+    public String getName() {
+        return name;
     }
 
-    public void setIndustryName(String industryName) {
-        this.industryName = industryName;
+    public void setName(String industryName) {
+        this.name = industryName;
     }
 
 
-    public String getContent() {
-        return content;
+    public String getResult() {
+        return result;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setResult(String content) {
+        this.result = result;
     }
 
 

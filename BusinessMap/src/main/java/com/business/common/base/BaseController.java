@@ -5,8 +5,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authz.UnauthenticatedException;
+
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 public class BaseController {

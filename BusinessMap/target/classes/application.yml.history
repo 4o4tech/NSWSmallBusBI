@@ -1,20 +1,27 @@
 spring:
- #mvc:
-  #view:
-   #prefix : /WEB-INF/
-   #suffix : .html
   data:
     mongodb:
-      host: 8.210.11.103:27017
+      host: 8.210.11.103
       port: 27017
       username: capstone
-      password: casptone2020
+      password: capstone2020
       database: NSWBusinessDB
-
-
   thymeleaf:
     prefix: classpath:/templates/
     cache: false
+
+    #mvc:
+  #view:
+   #prefix : /WEB-INF/
+   #suffix : .html
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/dcsys_project?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: Jmz5278
+
+
+
 
 server:
   port: 8080

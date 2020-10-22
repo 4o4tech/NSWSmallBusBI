@@ -6,9 +6,10 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
+
+
 @SpringBootApplication
-@ServletComponentScan
-@EnableTransactionManagement
+
 public class BusinessApplication {
 
 	public static void main(String[] args) {
@@ -16,3 +17,5 @@ public class BusinessApplication {
 	}
 
 }
+
+
