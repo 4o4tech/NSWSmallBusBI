@@ -6,6 +6,8 @@ import com.business.system.service.IndustryRepository;
 import com.mongodb.AggregationOutput;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,14 +16,19 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import com.mongodb.client.MongoCursor;
 
 
-import javax.swing.text.Document;
+import javax.annotation.Resource;
 import java.util.List;
+
+import static com.mongodb.client.model.Filters.regex;
 
 @Controller
 public class industryController {
 
-    @Autowired
-    private IndustryRepository industryRepository;
+//    @Autowired
+//    private IndustryRepository industryRepository;
+
+    @Resource
+    private MongoTemplate mongoTemplate;
 
 
 //    @RequestMapping("/industry_search")
@@ -52,21 +59,47 @@ public class industryController {
         return "industry_dashboard";
     }
 
-
+//
+//    @RequestMapping("/test1/{id}")
+//    public String aaa(@PathVariable Long id){
+//        return "id us："+id;
+//    }
+//
 
     /**
      * 根据name查询
-     * @param name
+     * @param
      * @return
      */
-    @GetMapping(value="/{name}")
-    public String readIndustryByName(@PathVariable("name") String name){
+//    @ResponseBody
+//    @GetMapping("/industry/{name}")
 
-        Industry testIndustry = industryRepository.findbyName(name);
+    @ResponseBody
+    @RequestMapping("/industry/{name}")
+    public String readIndustryByName(@PathVariable String name, @RequestParam (value="code") String address){
 
-        return testIndustry.getIndustryData();
+//        Industry testIndustry = industryRepository.findbyName(name);
+
+//        MongoCollection<Document> collection = mongoTemplate.getCollection("bank");
+        System.out.println("Collection:  " +name);
+
+        MongoCollection<org.bson.Document> collection = mongoTemplate.getCollection(name);
+
+        Bson regBson = regex("results.formatted_address", address);
+        //add Bson to search
+        FindIterable<org.bson.Document> documents = collection.find(regBson);
+        //to json (string)
+
+
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for(Document document : documents) {
+            sb.append(document.toJson() + ",\n");
+        }
+        sb.append("]");
+        return sb.toString();
     }
-
 
 
     /**

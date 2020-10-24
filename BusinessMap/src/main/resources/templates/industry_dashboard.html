@@ -28,7 +28,7 @@
         <h2>
             Result
         </h2>
-        <h3 th:text="'Industry: ' + ${searchIndustry.industryName}" /></h3>
+        <h3 th:text="'Industry: ' + ${searchIndustry.name}" /></h3>
         <hr>
         <div class="describe-content">
             <p>
@@ -40,156 +40,32 @@
 
     </div>
 
-    <div class="offset-2 col-md-8">
+       p
+                <h2>Rank in Industry</h2>
+                <div id="relatedIndustry" style="width: 500px;height:300px;border:2px solid green; margin-top:2em"></div>
 
-        <main role="main">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <div class="btn-toolbar mb-2 mb-md-0">
-                    <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                        <span data-feather="calendar"></span>
-                        This week
-                    </button>
-                </div>
             </div>
 
-            <canvas class="my-4 w-100" id="myChart" width="900" height="380">
-
-            </canvas>
-
-            <h2>Section title</h2>
-            <div class="table-responsive">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1,001</td>
-                        <td>Lorem</td>
-                        <td>ipsum</td>
-                        <td>dolor</td>
-                        <td>sit</td>
-                    </tr>
-                    <tr>
-                        <td>1,002</td>
-                        <td>amet</td>
-                        <td>consectetur</td>
-                        <td>adipiscing</td>
-                        <td>elit</td>
-                    </tr>
-                    <tr>
-                        <td>1,003</td>
-                        <td>Integer</td>
-                        <td>nec</td>
-                        <td>odio</td>
-                        <td>Praesent</td>
-                    </tr>
-                    <tr>
-                        <td>1,003</td>
-                        <td>libero</td>
-                        <td>Sed</td>
-                        <td>cursus</td>
-                        <td>ante</td>
-                    </tr>
-                    <tr>
-                        <td>1,004</td>
-                        <td>dapibus</td>
-                        <td>diam</td>
-                        <td>Sed</td>
-                        <td>nisi</td>
-                    </tr>
-                    <tr>
-                        <td>1,005</td>
-                        <td>Nulla</td>
-                        <td>quis</td>
-                        <td>sem</td>
-                        <td>at</td>
-                    </tr>
-                    <tr>
-                        <td>1,006</td>
-                        <td>nibh</td>
-                        <td>elementum</td>
-                        <td>imperdiet</td>
-                        <td>Duis</td>
-                    </tr>
-                    <tr>
-                        <td>1,007</td>
-                        <td>sagittis</td>
-                        <td>ipsum</td>
-                        <td>Praesent</td>
-                        <td>mauris</td>
-                    </tr>
-                    <tr>
-                        <td>1,008</td>
-                        <td>Fusce</td>
-                        <td>nec</td>
-                        <td>tellus</td>
-                        <td>sed</td>
-                    </tr>
-                    <tr>
-                        <td>1,009</td>
-                        <td>augue</td>
-                        <td>semper</td>
-                        <td>porta</td>
-                        <td>Mauris</td>
-                    </tr>
-                    <tr>
-                        <td>1,010</td>
-                        <td>massa</td>
-                        <td>Vestibulum</td>
-                        <td>lacinia</td>
-                        <td>arcu</td>
-                    </tr>
-                    <tr>
-                        <td>1,011</td>
-                        <td>eget</td>
-                        <td>nulla</td>
-                        <td>Class</td>
-                        <td>aptent</td>
-                    </tr>
-                    <tr>
-                        <td>1,012</td>
-                        <td>taciti</td>
-                        <td>sociosqu</td>
-                        <td>ad</td>
-                        <td>litora</td>
-                    </tr>
-                    <tr>
-                        <td>1,013</td>
-                        <td>torquent</td>
-                        <td>per</td>
-                        <td>conubia</td>
-                        <td>nostra</td>
-                    </tr>
-                    <tr>
-                        <td>1,014</td>
-                        <td>per</td>
-                        <td>inceptos</td>
-                        <td>himenaeos</td>
-                        <td>Curabitur</td>
-                    </tr>
-                    <tr>
-                        <td>1,015</td>
-                        <td>sodales</td>
-                        <td>ligula</td>
-                        <td>in</td>
-                        <td>libero</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="span6 offset-3" style="margin-top:5em">
+                <h2>Hottest Industry</h2>
+                <div id="hottestIndustry"  style="width:500px;height:300px;border:2px solid green; margin-top:2em;"></div>
             </div>
-        </main>
-    </div>
+
+        </div>
+
+        <div class="industry-describe row-fluid">
+            <div class="span8 offset-2">
+                <h2>Top Suburb about Industry</h2>
+                <div id="rentalFees"  style="width: 750px;height:375px;border:2px solid green; margin-top:2em;"></div>
+            </div>
+        </div>
+
+        <div class="industry-describe row-fluid">
+            <div class="span8 offset2">
+                <h2>Top Suburb about Industry</h2>
+                <canvas class="my-4 w-100" id="myChart" width="900" height="380" style="margin-top:2em;"></canvas>
+            </div>
+        </div>
 
 
 
@@ -202,4 +78,272 @@
 <script th:src="@{js/main.js}"></script>
 <script th:src="@{/js/echart.js}"></script>
 <script th:src="@{/visual_js/visualMap.js}"></script>
+
+<script type="text/javascript">
+
+    // 基于准备好的dom，初始化echarts实例
+    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
+    var industry = ['cafe', 'store', 'book_store', 'pet_store', 'casino', 'hardware_store', 'night_club', 'liquor_store', 'book_store', 'beauty_salon'];
+    var data = [9, 13, 15, 27, 31, 33, 55, 79, 88, 90];
+    var IDC = industry;
+    var myChart = echarts.init(document.getElementById('relatedIndustry'));
+    var DATA = data;
+    // 指定图表的配置项和数据
+    option = {
+
+        title: {
+            text: 'Related 10 industries in NSW',
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                "type": "shadow" // 默认为直线，可选为："line" | "shadow"
+            },
+            formatter: function (params)//数据格式
+            {
+                var relVal = params[0].name + "<br/>";
+                relVal += params[0].name + ' : ' + params[0]['value']
+                return relVal;
+            },
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            top: '10%',
+            containLabel: true
+        },
+        xAxis: {
+            show: false,
+            type: 'value',
+            //刻度线设置
+            axisTick: {
+                //隐藏刻度线
+                show: true,
+            },
+            axisLine: {
+                //轴线样式
+                lineStyle: {
+                    //设置轴线宽度
+                    width: 1,
+                    //轴线颜色
+                    color: 'rgba(1,134,198,0.8)'
+                }
+            },
+        },
+        yAxis: {
+            type: 'category',
+            // axisTick:{
+            //     show:false
+            // },
+            axisLabel: {
+                textStyle: {
+                    color: 'rgb(119 ,136 ,153)'
+                }
+            },
+            data: IDC,
+
+            axisLine: {
+                //轴线样式
+                lineStyle: {
+                    //设置轴线宽度
+                    width: 1,
+                    //轴线颜色
+                    color: 'rgba(1,134,198,0.8)'
+                }
+            },
+        },
+        series: [
+            {
+                name: IDC[0],
+                type: 'bar',
+                barWidth: 15,
+                barCategoryGap: '15%',
+                boundaryGap: true,
+                itemStyle: {
+                    normal: {
+                        color: function (params) {
+                            return colorList[params.dataIndex]
+                        }
+                    },
+                },
+                data: DATA
+            }
+        ]
+
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    var name = ['Airds', 'Afterlee', 'Adjungbilly', 'Adamstown Heights', 'Agnes Banks'];
+    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
+    var data = {
+        year: [
+            [265, 245, 300, 260, 292, 280, 300, 300, 350, 310, 350, 420],
+            [410, 420, 395, 410, 400, 440, 440, 390, 390, 432, 415, 450],
+            [262, 260, 370, 325, 180, 260, 340, 330, 300, 290, 280, 375],
+            [402, 390, 400, 385, 400, 400, 400, 410, 399, 400, 420, 420],
+            [402, 390, 400, 385, 400, 400, 400, 410, 399, 400, 420, 420]
+        ],
+        name: ['Airds', 'Afterlee', 'Adjungbilly', 'Adamstown Heights', 'Agnes Banks']
+    };
+    var myChart = echarts.init(document.getElementById('rentalFees'));
+    var option = {
+        title: {
+            text: 'Top 5 rental suburb in hardware store',
+            x: 'center'
+        },
+        color: colorList,
+        tooltip: {
+            // trigger with axis
+            trigger: "axis"
+        },
+        legend: {
+            left: "5%",
+            right: "5%",
+            top: "20",
+            textStyle: {
+                color: "#040000"
+            }
+        },
+        grid: {
+            top: "25%",
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            show: true,
+            borderColor: "#012f4a",
+            containLabel: true
+        },
+
+        xAxis: {
+            type: "category",
+            boundaryGap: false,
+            data: [
+                "09/19",
+                "10/19",
+                "11/19",
+                "12/19",
+                "01/20",
+                "02/20",
+                "03/20",
+                "04/20",
+                "05/20",
+                "06/20",
+                "07/20",
+                "08/20"
+            ],
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false
+            }
+        },
+        yAxis: {
+            type: "value",
+            axisTick: {
+                show: false
+            },
+            // 修改y轴分割线的颜色
+            splitLine: {
+                lineStyle: {
+                    color: "#012f4a"
+                }
+            }
+        },
+        series: [
+            {
+                name: data.name[0],
+                type: "line",
+                stack: "Amount",
+                smooth: true,
+                data: data.year[0]
+            },
+            {
+                name: data.name[1],
+                type: "line",
+                stack: "Amount",
+                smooth: true,
+                data: data.year[1]
+            },
+            {
+                name: data.name[2],
+                type: "line",
+                stack: "Amount",
+                smooth: true,
+                data: data.year[2]
+            },
+            {
+                name: data.name[3],
+                type: "line",
+                stack: "Amount",
+                smooth: true,
+                data: data.year[3]
+            },
+            {
+                name: data.name[4],
+                type: "line",
+                stack: "Amount",
+                smooth: true,
+                data: data.year[4]
+            }
+        ]
+    };
+    myChart.setOption(option);
+
+</script>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('hottestIndustry'));
+    var industryList=['Gym', 'Beauty Salon', 'Book Store', 'Cafe', 'Casino','Drug Store','Locksmith','Night Club','Store','Storage'];
+    var industryValue=[335,310,234,135,548,335,353,345,345,123];
+    var option = {
+
+        title: {
+            text: 'Hottest industries in NSW',
+            x: 'center'
+        },
+
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            top:'8%',
+            data: industryList
+        },
+        series: [
+            {
+                type: 'pie',
+                radius: '60%',
+                center: ['60%', '50%'],
+                data: [
+                    {value: industryValue[0], name: industryList[0]},
+                    {value: industryValue[1], name: industryList[1]},
+                    {value: industryValue[2], name: industryList[2]},
+                    {value: industryValue[3], name: industryList[3]},
+                    {value: industryValue[4], name: industryList[4]},
+                    {value: industryValue[5], name: industryList[5]},
+                    {value: industryValue[6], name: industryList[6]},
+                    {value: industryValue[7], name: industryList[7]},
+                    {value: industryValue[8], name: industryList[8]},
+                    {value: industryValue[9], name: industryList[9]}
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+
 </html>

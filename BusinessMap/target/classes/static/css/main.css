@@ -80,3 +80,15 @@ industry page
      margin-top:5em;
 
  }
+
+ .box-container{
+     margin-top:3em;
+     padding:2em 1em;
+     background: #FAFAFA;
+     border: 1px solid #979797;
+     box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.50);
+     border-radius: 5px;
+     min-height:350px;
+
+     margin-bottom:100px;
+ }
