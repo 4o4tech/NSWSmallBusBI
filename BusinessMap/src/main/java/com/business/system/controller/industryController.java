@@ -1,5 +1,6 @@
 package com.business.system.controller;
 
+import cn.hutool.json.JSON;
 import cn.hutool.json.JSONObject;
 import com.business.system.entity.Industry;
 import com.business.system.service.IndustryRepository;
@@ -39,13 +40,17 @@ public class industryController {
     @GetMapping("/industry_search")
     public String industryPage(Model model) {
         model.addAttribute("searchIndustry", new Industry());
+//        model.addAttribute("json",);
         return "industry";
     }
 
     @PostMapping("/industry_search")
     public String industrySubmit(@ModelAttribute Industry searchIndustry, Model model){
 //        Industry newIndustry  = new Industry();
+
+
         model.addAttribute("searchIndustry", searchIndustry);
+
 
         return "industry_dashboard";
     }
@@ -54,8 +59,19 @@ public class industryController {
     public String getMessage(@ModelAttribute Industry searchIndustry,Model model){
 //        model.addAttribute("searchIndustry", searchIndustry);
 
-        searchIndustry.setName("Cafe");
+        MongoCollection<org.bson.Document> resData = mongoTemplate.getCollection("cafe");
+        Bson regBson = regex("results.formatted_address", "2000");
+        FindIterable<org.bson.Document> documents = resData.find(regBson);
+
+        StringBuilder sb = new StringBuilder();
+        for(Document document : documents) {
+            sb.append(document.toJson() + ",\n");
+        }
+
+        searchIndustry.setName("121");
         model.addAttribute("searchIndustry", searchIndustry);
+//        model.addAttribute("resList", "{a:1,b:2}");
+
         return "industry_dashboard";
     }
 
@@ -74,7 +90,7 @@ public class industryController {
 //    @ResponseBody
 //    @GetMapping("/industry/{name}")
 
-    @ResponseBody
+//    @ResponseBody
     @RequestMapping("/industry/{name}")
     public String readIndustryByName(@PathVariable String name, @RequestParam (value="code") String address){
 

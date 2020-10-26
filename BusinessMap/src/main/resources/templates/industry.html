@@ -63,23 +63,47 @@
         </div>
 
 
-        <div class="industry-search col-md-12">
-            <h2>
-                Search
-            </h2>
-            <hr>
-            <div class="search-notice">
+        <div class="industry-search row">
+            <div class="col-md-12">
+                <h2>
+                    Search
+                </h2>
+                <hr>
 
             </div>
 
-            <div class="industry-search-form col-12">
-                <form class="form-inline" th:action="@{/industry_search}" th:object="${searchIndustry}" method="post">
 
-                    <div class="form-group col-md-8">
-                        <label for="inputIndustry" class="sr-only">Industry</label>
-                        <input type="search" th:field="*{name}"  class="form-control offset-md-4  col-md-8" id="inputIndustry" placeholder="Enter a Industry to continue">
+            <div class="industry-search-form col-md-12">
+                <form  th:action="@{/industry_search}" th:object="${searchIndustry}" method="post">
+
+                    <div class="form-group row">
+<!--                        <label for="inputIndustry" class="sr-only">Industry</label>-->
+<!--                        <label for="inputIndustry">Industry: </label>-->
+                        <div class="col-md-1 ">
+
+                        </div>
+                        <div class="col-md-5 mb-3 ">
+                            <label for="inputIndustry">Industry: </label>
+                            <input type="search" th:field="*{name}"  class="form-control" id="inputIndustry" placeholder="Enter a Industry, E.g.Cafe" required>
+                            <div class="invalid-feedback">
+                                Industry name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="inputPostCode">PostCode: </label>
+                            <input type="search" th:field="*{postCode}"  class="form-control" id="inputPostCode" placeholder="PostCode E.g.2000">
+                            <div class="invalid-feedback">
+                                Industry name is required.
+                            </div>
+                        </div>
+                        <div class="col-md-1 mb-3 mt-2">
+                            <label> </label>
+                            <button type="submit" class="offset-8 form-inline btn btn-primary">Search</button>
+                        </div>
+<!--                        <input type="search" th:field="*{postCode}"  class="form-control  offset-md-1 col-md-3" id="inputPostCide" placeholder="PostCode E.g.2000">-->
                     </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
+
                 </form>
 
 <!--                <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">-->

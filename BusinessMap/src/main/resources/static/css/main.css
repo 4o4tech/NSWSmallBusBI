@@ -55,6 +55,10 @@ industry page
      box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.50);
      border-radius: 5px;
  }
+
+ .describe-h3{
+     padding:2em 1em;
+ }
  .describe-content{
      padding:2em 1em;
      min-height:150px;
@@ -91,4 +95,8 @@ industry page
      min-height:350px;
 
      margin-bottom:100px;
+ }
+
+ .footer{
+     margin-top:5em;
  }

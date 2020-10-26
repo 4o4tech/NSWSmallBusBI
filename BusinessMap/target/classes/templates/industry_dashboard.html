@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="../static/css/mian.css">-->
     <link rel="stylesheet" th:href="@{/css/main.css}">
+    <script src="webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
+
+
 <body>
 
 
@@ -25,11 +29,14 @@
     </div>
 
     <div class="industry-describe col-md-12">
+
+
         <h2>
             Result
         </h2>
-        <h3 th:text="'Industry: ' + ${searchIndustry.name}" /></h3>
         <hr>
+
+        <h3 th:text="'Industry: ' + ${searchIndustry.name}" class="describe-h3"/></h3>
         <div class="describe-content">
             <p>
                 Approximately 39% of the cafe of small business operators live outside the Sydney Greater Metropolitan Region
@@ -40,7 +47,8 @@
 
     </div>
 
-       p
+        <div class="industry-describe">
+            <div class=" span6 offset-3" style="margin-top:5em">
                 <h2>Rank in Industry</h2>
                 <div id="relatedIndustry" style="width: 500px;height:300px;border:2px solid green; margin-top:2em"></div>
 
@@ -60,12 +68,12 @@
             </div>
         </div>
 
-        <div class="industry-describe row-fluid">
-            <div class="span8 offset2">
-                <h2>Top Suburb about Industry</h2>
-                <canvas class="my-4 w-100" id="myChart" width="900" height="380" style="margin-top:2em;"></canvas>
-            </div>
-        </div>
+<!--        <div class="industry-describe row-fluid">-->
+<!--            <div class="span8 offset2">-->
+<!--                <h2>Top Suburb about Industry</h2>-->
+<!--                <canvas class="my-4 w-100" id="myChart" width="900" height="380" style="margin-top:2em;"></canvas>-->
+<!--            </div>-->
+<!--        </div>-->
 
 
 
@@ -73,11 +81,43 @@
 
 </body>
 
-<link rel="stylesheet" href="webjars/bootstrap/4.1.0/js/bootstrap.min.js">
-<link rel="stylesheet" href="webjars/jquery/3.5.1/jquery.min.js">
+
+<footer class="footer">
+    <hr>
+    <div class="col-12 col-md">
+        <div class="d-block mb-3 text-muted">&copy; USYD,CS,2020</div>
+    </div>
+</footer>
+
+
+
 <script th:src="@{js/main.js}"></script>
 <script th:src="@{/js/echart.js}"></script>
-<script th:src="@{/visual_js/visualMap.js}"></script>
+<!--<script th:src="@{/visual_js/visualMap.js}"></script>-->
+
+<script th:inline="JavaScript">
+
+    /*<![CDATA[*/
+
+    var test = [[${searchIndustry}]];
+
+    var resList = 'localhost:8080/getData/' + [[${searchIndustry.name}]]+ "?code=2000";
+    console.log(test);
+    /*]]>*/
+
+    // if(resList != '') {
+    //     resList = $.parse(resList);
+    //     for (var p in resList) {
+    //         console.log("************" + resList[p].results["name"]);
+    //     }
+    // }else{
+    //     console.log(" resList" + "   ")
+    // }
+    // $(document).ready(function (){
+    //
+    //
+    // })
+</script>
 
 <script type="text/javascript">
 

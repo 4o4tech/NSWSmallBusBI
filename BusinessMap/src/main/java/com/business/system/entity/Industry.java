@@ -9,10 +9,10 @@ import lombok.Data;
 
 public class Industry{
     private String name;
-   private String result;
-   private String industryData;
+    private String postCode;
+    private String result;
+    private String industryData;
 
-   private String postCode;
 
 
 
@@ -24,6 +24,13 @@ public class Industry{
         this.name = industryName;
     }
 
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
 
     public String getResult() {
         return result;
