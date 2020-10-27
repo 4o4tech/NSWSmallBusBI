@@ -36,8 +36,13 @@
         </h2>
         <hr>
 
-        <h3 th:text="'Industry: ' + ${searchIndustry.name}" class="describe-h3"/></h3>
+<!--        <h3 th:text="'Industry: ' + ${searchIndustry.name} +  + 'Area PostCode' + ${searchIndustry.postCode}" class="describe-h3"/></h3>-->
+
         <div class="describe-content">
+            <i class="text-content"> Industry:</i> <strong class="text-content" style="color:#c23531" th:text="${searchIndustry.name}"></strong>
+            <p></p>
+            <i class="text-content" > Area PostCode:</i> <strong class="text-content" th:text="${searchIndustry.postCode}"></strong>
+            <p></p>
             <p>
                 Approximately 39% of the cafe of small business operators live outside the Sydney Greater Metropolitan Region
             </p>
@@ -99,14 +104,15 @@
 
     /*<![CDATA[*/
 
-    var test = [[${searchIndustry}]];
+    var queryRes = [[${searchIndustry}]];
 
-    var code = test.postCode;
+
+    var code = queryRes.postCode;
 
     if(code === null || code ==''){
         code = 2000;
     }
-    var resList = 'getData/' + [[${searchIndustry.name}]]+ "?code=" + code ;
+    var resList = 'getData/' + queryRes.name+ "?code=" + code ;
     console.log(resList);
     /*]]>*/
 
@@ -114,14 +120,13 @@
 
     var report = {};
 
-    var option = {
+    var optionSet = {
         url: resList,
         type: 'GET',
         dataType: 'json',
-        contentType: 'application/x-www-form-urlencoded',//默认就是这种格式
-        data: report //默认情况下，通过data选项传递进来的数据，如果是一个对象(技术上讲只要不是字符串)，都会处
-        //理转化成一个查询字符串，
-        //以配合默认内容类型 "application/x-www-form-urlencoded"。
+        contentType: 'application/x-www-form-urlencoded',// default format
+        data: report // default have dat into data
+
     };
     var resData = $.ajax(resList);
 
@@ -139,105 +144,243 @@
     //
     //
     // })
+
+
+
+    function getRankIndustry(){
+
+        var getColletURL = 'getCollection/' + queryRes.name
+        var getRankIndustry;
+
+        // $(document).ready(function(){
+        return new Promise((resolve, reject) => {
+            $.post(getColletURL,
+                function (data) {
+                    resolve(data)
+                });
+        })
+        // });
+
+    }
+
+
+    // var industryName = [];
+    // var industryAmount = [];
+    //
+    // $(document).ready(function(){
+    //     getRankIndustry()
+    //         .then((res) =>{
+    //             for( var i = 0; i < res.length; i++){
+    //                 industryName.push(res[i].name)
+    //                 industryAmount.push(res[i].count)
+    //
+    //             }
+    //             console.log("test")
+    //         // console.log(res)
+    //     })
+    //         .catch((error) => {
+    //         console.log(error)
+    //     })
+    // });
+
+
+
+
 </script>
 
 <script type="text/javascript">
+    var getColletURL = 'getCollection/' + queryRes.name
 
     // 基于准备好的dom，初始化echarts实例
-    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
+    //var colorList = ['#2f4554', '#61a0a8', '#d48265', '#4169E1','#c23531','#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493'];
     var industry = ['cafe', 'store', 'book_store', 'pet_store', 'casino', 'hardware_store', 'night_club', 'liquor_store', 'book_store', 'beauty_salon'];
     var data = [9, 13, 15, 27, 31, 33, 55, 79, 88, 90];
-    var IDC = industry;
     var myChart = echarts.init(document.getElementById('relatedIndustry'));
-    var DATA = data;
-    // 指定图表的配置项和数据
-    option = {
+
+
+
+
+    // myChart.showLoading();  // 开启 loading 效果
+   $.get(getColletURL).done(function(data) {
+
+
+       function newSort(x,y){
+           return x.count-y.count;
+       }
+       data.sort(newSort);
+
+       console.log(data)
+
+       var industryName = [];
+       var industryAmount = [];
+       for( var i = 0; i < data.length; i++){
+           industryName.push(data[i].name)
+           industryAmount.push(data[i].count)
+
+       }
+
+       console.log("******Data loading Done!!!******")
+
+       console.log(industryName)
+       console.log(industryAmount)
+
+
+       let option = {
+
+           title: {
+               text: 'Related 10 industries in NSW',
+               x: 'center'
+           },
+           tooltip: {
+               trigger: 'axis',
+               axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                   "type": "shadow" // 默认为直线，可选为："line" | "shadow"
+               },
+               formatter: function (params)//数据格式
+               {
+                   var relVal = params[0].name + "<br/>";
+                   relVal += params[0].name + ' : ' + params[0]['value']
+                   return relVal;
+               },
+           },
+           grid: {
+               left: '3%',
+               right: '4%',
+               bottom: '3%',
+               top: '10%',
+               containLabel: true
+           },
+           xAxis: {
+               show: false,
+               type: 'value',
+               //刻度线设置
+               axisTick: {
+                   //隐藏刻度线
+                   show: true,
+               },
+               axisLine: {
+                   //轴线样式
+                   lineStyle: {
+                       //设置轴线宽度
+                       width: 1,
+                       //轴线颜色
+                       color: 'rgba(1,134,198,0.8)'
+                   }
+               },
+           },
+           yAxis: {
+               type: 'category',
+               // axisTick:{
+               //     show:false
+               // },
+               axisLabel: {
+                   textStyle: {
+                       color: 'rgb(119 ,136 ,153)'
+                   }
+               },
+               data:industryName ,
+
+               axisLine: {
+                   //轴线样式
+                   lineStyle: {
+                       //设置轴线宽度
+                       width: 1,
+                       //轴线颜色
+                       color: 'rgba(1,134,198,0.8)'
+                   }
+               },
+           },
+           series: [
+               {
+                   name: industryName[0],
+                   type: 'bar',
+                   barWidth: 15,
+                   barCategoryGap: '15%',
+                   boundaryGap: true,
+                   itemStyle: {
+                       normal: {
+                           // color: function (params) {
+                           //     return colorList[params.dataIndex]
+                           // }
+                           color: function(params) {
+                               var colorList = ['#2f4554', '#61a0a8', '#d48265', '#4169E1','#91c7ae', '#c23531','#749f83', '#ca8622', '#4B0082', '#FF1493'];
+                               return colorList[params.dataIndex]
+                           }
+
+                       },
+                   },
+                   data: industryAmount
+               }
+           ]
+
+       };
+       myChart.setOption(option);
+
+   }, 'json')
+
+
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    // myChart.setOption(option)
+
+
+
+
+</script>
+
+<script type="text/javascript">
+    var myChart_hottestIndustry = echarts.init(document.getElementById('hottestIndustry'));
+    var industryList=['Gym', 'Beauty Salon', 'Book Store', 'Cafe', 'Casino','Drug Store','Locksmith','Night Club','Store','Storage'];
+    var industryValue=[335,310,234,135,548,335,353,345,345,123];
+    let option = {
 
         title: {
-            text: 'Related 10 industries in NSW',
+            text: 'Hottest industries in NSW',
             x: 'center'
         },
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                "type": "shadow" // 默认为直线，可选为："line" | "shadow"
-            },
-            formatter: function (params)//数据格式
-            {
-                var relVal = params[0].name + "<br/>";
-                relVal += params[0].name + ' : ' + params[0]['value']
-                return relVal;
-            },
-        },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            top: '10%',
-            containLabel: true
-        },
-        xAxis: {
-            show: false,
-            type: 'value',
-            //刻度线设置
-            axisTick: {
-                //隐藏刻度线
-                show: true,
-            },
-            axisLine: {
-                //轴线样式
-                lineStyle: {
-                    //设置轴线宽度
-                    width: 1,
-                    //轴线颜色
-                    color: 'rgba(1,134,198,0.8)'
-                }
-            },
-        },
-        yAxis: {
-            type: 'category',
-            // axisTick:{
-            //     show:false
-            // },
-            axisLabel: {
-                textStyle: {
-                    color: 'rgb(119 ,136 ,153)'
-                }
-            },
-            data: IDC,
 
-            axisLine: {
-                //轴线样式
-                lineStyle: {
-                    //设置轴线宽度
-                    width: 1,
-                    //轴线颜色
-                    color: 'rgba(1,134,198,0.8)'
-                }
-            },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            top:'8%',
+            data: industryList
         },
         series: [
             {
-                name: IDC[0],
-                type: 'bar',
-                barWidth: 15,
-                barCategoryGap: '15%',
-                boundaryGap: true,
-                itemStyle: {
-                    normal: {
-                        color: function (params) {
-                            return colorList[params.dataIndex]
-                        }
-                    },
-                },
-                data: DATA
+                type: 'pie',
+                radius: '60%',
+                center: ['60%', '50%'],
+                data: [
+                    {value: industryValue[0], name: industryList[0]},
+                    {value: industryValue[1], name: industryList[1]},
+                    {value: industryValue[2], name: industryList[2]},
+                    {value: industryValue[3], name: industryList[3]},
+                    {value: industryValue[4], name: industryList[4]},
+                    {value: industryValue[5], name: industryList[5]},
+                    {value: industryValue[6], name: industryList[6]},
+                    {value: industryValue[7], name: industryList[7]},
+                    {value: industryValue[8], name: industryList[8]},
+                    {value: industryValue[9], name: industryList[9]}
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
             }
         ]
-
     };
-    // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
+    myChart_hottestIndustry.setOption(option);
 </script>
+
+
 <script type="text/javascript">
     var name = ['Airds', 'Afterlee', 'Adjungbilly', 'Adamstown Heights', 'Agnes Banks'];
     var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
@@ -251,8 +394,8 @@
         ],
         name: ['Airds', 'Afterlee', 'Adjungbilly', 'Adamstown Heights', 'Agnes Banks']
     };
-    var myChart = echarts.init(document.getElementById('rentalFees'));
-    var option = {
+    var myChart_rentalFees = echarts.init(document.getElementById('rentalFees'));
+    let option_rentalFees = {
         title: {
             text: 'Top 5 rental suburb in hardware store',
             x: 'center'
@@ -354,58 +497,9 @@
             }
         ]
     };
-    myChart.setOption(option);
+    myChart_rentalFees.setOption(option_rentalFees);
 
 </script>
-<script type="text/javascript">
-    var myChart = echarts.init(document.getElementById('hottestIndustry'));
-    var industryList=['Gym', 'Beauty Salon', 'Book Store', 'Cafe', 'Casino','Drug Store','Locksmith','Night Club','Store','Storage'];
-    var industryValue=[335,310,234,135,548,335,353,345,345,123];
-    var option = {
 
-        title: {
-            text: 'Hottest industries in NSW',
-            x: 'center'
-        },
-
-        tooltip: {
-            trigger: 'item',
-            formatter: '{a} <br/>{b} : {c} ({d}%)'
-        },
-        legend: {
-            orient: 'vertical',
-            left: 'left',
-            top:'8%',
-            data: industryList
-        },
-        series: [
-            {
-                type: 'pie',
-                radius: '60%',
-                center: ['60%', '50%'],
-                data: [
-                    {value: industryValue[0], name: industryList[0]},
-                    {value: industryValue[1], name: industryList[1]},
-                    {value: industryValue[2], name: industryList[2]},
-                    {value: industryValue[3], name: industryList[3]},
-                    {value: industryValue[4], name: industryList[4]},
-                    {value: industryValue[5], name: industryList[5]},
-                    {value: industryValue[6], name: industryList[6]},
-                    {value: industryValue[7], name: industryList[7]},
-                    {value: industryValue[8], name: industryList[8]},
-                    {value: industryValue[9], name: industryList[9]}
-                ],
-                emphasis: {
-                    itemStyle: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)'
-                    }
-                }
-            }
-        ]
-    };
-    myChart.setOption(option);
-</script>
 
 </html>

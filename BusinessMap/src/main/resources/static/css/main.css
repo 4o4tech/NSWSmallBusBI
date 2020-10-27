@@ -47,6 +47,14 @@ industry page
      /*display:inline-block;*/
  }
 
+ .describe-h3{
+     padding:10px 5px;
+ }
+
+ .text-content{
+     font-size:24px;
+ }
+
  .industry-describe{
      margin-top:3em;
      padding:2em 1em;
@@ -56,9 +64,7 @@ industry page
      border-radius: 5px;
  }
 
- .describe-h3{
-     padding:2em 1em;
- }
+
  .describe-content{
      padding:2em 1em;
      min-height:150px;
