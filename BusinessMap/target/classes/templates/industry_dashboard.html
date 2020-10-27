@@ -101,9 +101,31 @@
 
     var test = [[${searchIndustry}]];
 
-    var resList = 'localhost:8080/getData/' + [[${searchIndustry.name}]]+ "?code=2000";
-    console.log(test);
+    var code = test.postCode;
+
+    if(code === null || code ==''){
+        code = 2000;
+    }
+    var resList = 'getData/' + [[${searchIndustry.name}]]+ "?code=" + code ;
+    console.log(resList);
     /*]]>*/
+
+
+
+    var report = {};
+
+    var option = {
+        url: resList,
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/x-www-form-urlencoded',//默认就是这种格式
+        data: report //默认情况下，通过data选项传递进来的数据，如果是一个对象(技术上讲只要不是字符串)，都会处
+        //理转化成一个查询字符串，
+        //以配合默认内容类型 "application/x-www-form-urlencoded"。
+    };
+    var resData = $.ajax(resList);
+
+    console.log(resData)
 
     // if(resList != '') {
     //     resList = $.parse(resList);
