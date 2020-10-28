@@ -42,10 +42,17 @@ public class dashboardData {
 //        Industry testIndustry = industryRepository.findbyName(name);
 
 //        MongoCollection<Document> collection = mongoTemplate.getCollection("bank");
-        System.out.println("Collection:  " +name);
+
+
         if(name == null || name == ""){
             name = "cafe"; // setDefault result
         }
+//        else{
+//            name.replaceAll("\\s*", "_");
+//        }
+        name = name.toLowerCase();
+
+        System.out.println("Collection:  " +name);
         MongoCollection<Document> collection = mongoTemplate.getCollection(name);
 
 
@@ -98,6 +105,8 @@ public class dashboardData {
 //    @RequestMapping("/getCollect")
     @RequestMapping("/getCollection/{name}")
     public List<industryCount> getCollectionsList(@PathVariable String name) {
+
+        name = name.toLowerCase();
 
         Query query = new Query();
         CriteriaDefinition criteriaDefinition = Criteria.where("name").is(name);
