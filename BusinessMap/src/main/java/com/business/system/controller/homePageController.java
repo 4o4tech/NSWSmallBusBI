@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class homePageController {
+    @RequestMapping(value="")
+    public String defualtPage(){
+        return "homePage";
+    }
+
     @RequestMapping(value="/index")
     public String homePage(){
         return "homePage";
@@ -14,7 +19,7 @@ public class homePageController {
 
     @RequestMapping("/location_dashboard")
     public String locationPage(){
-        return "location";
+        return "idx";
     }
 
     @RequestMapping("/license_dashboard")

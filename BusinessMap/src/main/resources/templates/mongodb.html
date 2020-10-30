@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/jquery.bootgrid.min.css"/>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.bootgrid.min.js"></script>
+    <script src="/js/mongo.js"></script>
+    <script type="text/javascript" src="/js/test.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><br/>
+            <div class="row">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group"><label for="address" class="col-sm-3 control-label">Please enter an
+                        address</label>
+                        <div class="col-sm-3"><input type="text" class="form-control" id="address2"
+                                                     placeholder="postcode or suburb"/></div>
+                        <button type="button" id="search" class="btn btn-primary">search<span
+                                class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        <button type="submit" id="Homepage" onclick="window.open('/test')" class="btn btn-primary">
+                            Visualized
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <table id="grid-data" class="table table-condensed table-hover table-striped">
+                <thead>
+                <tr>
+                    <th data-column-id="id" data-identifier="true">id</th>
+                    <th data-column-id="address" data-sortable="false">address</th>
+                    <th data-column-id="name" data-sortable="false">name</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <form method="post" action="picture">
+                <div class="modal-body">
+                    <div class="form-group"><label for="rental_date2">address</label><input type="text" name="address"
+                                                                                            class="form-control"
+                                                                                            id="address"/></div>
+                    <div class="form-group"><label for="path">name</label><input type="text" name="name"
+                                                                                 class="form-control" id="name"/></div>
+                </div>
+                <input type="hidden" id="id" name="id"/>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" id="save" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
