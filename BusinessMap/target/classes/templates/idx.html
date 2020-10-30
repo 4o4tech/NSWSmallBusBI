@@ -25,7 +25,7 @@
 
         <title>New South Wales Business Map</title>
 
-        <link rel="icon" type="image/png" href="assets/img/NSW_LOGO.png"/>
+<!--        <link rel="icon" type="image/png" href="assets/img/NSW_LOGO.png"/>-->
     	
         <script src="/js/jquery-1.11.3.min.js"></script>
         <script src="/js/jquery-navigated.js"></script>
@@ -38,13 +38,13 @@
             <div class="main-nav">
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="mongodb.html">
+                        <a class="navbar-brand" href="/mongodb">
                             <img src="assets/img/Side_logo.png" alt="Logo"/>
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="idx" class="nav-link">Home page</a>
+                                    <a href="index" class="nav-link">Home page</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="idx" class="nav-link">Suburb Data</a>
@@ -53,7 +53,7 @@
                                     <a href="idx" class="nav-link">Search Industries</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="industry" class="nav-link">Industry 1</a>
+                                            <a href="" class="nav-link">Industry 1</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="" class="nav-link">Industry 2</a>
@@ -65,9 +65,10 @@
 
                                 </li>
 
-                                <li class="nav-item">
+                                <li class="nav-item dropdown">
                                     <a href="toPage/contact" class="nav-link">Contact Us</a>
-                                    <ul class="dropdown-menu">
+
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li class="nav-item">
                                             <a href="toPage/contact" class="nav-link">Find us</a>
                                         </li>
@@ -79,6 +80,21 @@
                                         </li>
                                     </ul>
                                 </li>
+
+<!--                                <li class="nav-item dropdown">-->
+<!--                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                                        Dropdown-->
+<!--                                    </a>-->
+<!--                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                                        <a class="dropdown-item" href="#">Action</a>-->
+<!--                                        <a class="dropdown-item" href="#">Another action</a>-->
+<!--                                        <div class="dropdown-divider"></div>-->
+<!--                                        <a class="dropdown-item" href="#">Something else here</a>-->
+<!--                                    </div>-->
+<!--                                </li>-->
+
+
+
                             </ul>
                         </div>
                     </nav>
@@ -97,9 +113,14 @@
                                 <div class="banner-content">
                                     <h1>What are you looking for in NSW today?</h1>
                                     <p>This is text.This is text.This is text.This is text.This is text.</p>
-                                    <form>
-                                        <input id = "name" name="name" type="text" class="form-control" placeholder="Enter postcode or suburb"/>
-                                        <button type="submit" onclick="openWin()" class="btn banner-form-btn">Search Now</button>
+<!--                                    <form>-->
+<!--                                        <input id = "name" name="name" type="text" class="form-control" placeholder="Enter postcode or suburb"/>-->
+<!--                                        <button type="submit" onclick="openWin()" class="btn banner-form-btn">Search Now</button>-->
+<!--                                    </form>-->
+
+                                    <form action="/test">
+                                        <input id = "keywords" name="keywords" type="text" class="form-control" placeholder="Enter postcode or suburb"/>
+                                        <button type="submit" class="btn banner-form-btn">Search Now</button>
                                     </form>
                                 </div>
                             </div>
@@ -122,6 +143,8 @@
             </div>
         </div> 
         <!-- End Banner -->
+
+
         <!-- Essential JS -->
         <script src="assets/js/jquery-1.10.2.js"></script>
         <script src="assets/js/popper.min.js"></script>

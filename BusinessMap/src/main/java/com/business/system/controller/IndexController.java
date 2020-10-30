@@ -17,10 +17,10 @@ import javax.annotation.Resource;
 
 @Controller
 public class IndexController {
-	@RequestMapping("/test")
-    public String test(){ 
-        return "index";
-    }
+//	@RequestMapping("/test")
+//    public String test(){
+//        return "index";
+//    }
 
     @Resource
     private MongoTemplate mongoTemplate;

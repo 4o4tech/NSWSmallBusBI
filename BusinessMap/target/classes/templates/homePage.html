@@ -11,13 +11,15 @@
     <script src="webjars/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.min.css">
-<!--    <link rel="stylesheet" href="../static/css/mian.css">-->
-    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" href="../static/css/mian.css">
     <script th:src="@{js/main.js}"></script>
+
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 
 </head>
 
-    <body class="main_container">
+
+<body class="main_container">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-color">
             <a class="navbar-brand" href="#">NSW Business Map</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbars">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                             <a class="nav-link" href="/industry_search">Dashboard</a>
@@ -35,6 +37,22 @@
                     <li class="nav-item">
                         <a class="nav-link " href="#">Business</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a  class="nav-link">Contact Us</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a href="toPage/contact" class="nav-link">Find us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="feedback" class="nav-link">Feedback</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="FAQs" class="nav-link">FAQs</a>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -75,7 +93,7 @@
 
                         <p>Provide information about the area <br> <br><br>
                         </p>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                        <p><a class="btn btn-secondary" href="/idx" role="button">View details &raquo;</a></p>
                     </div>
                     <div class="col-md-4">
                         <h2>Licence</h2>
@@ -91,6 +109,7 @@
                 <!--<hr>-->
 
             </div> <!-- /container -->
+
 
             <div class="row">
                 <div class=" businessInfo news col-md-4 ">
@@ -145,7 +164,15 @@
             </div>
         </footer>
 
+
+
+
+
     </body>
+
+
+
+
 
 
 
@@ -156,5 +183,6 @@
         <!--<div class="business_new"></div>-->
         <!--<div class="other_info"></div>-->
     <!--</div>-->
+
 
 </html>

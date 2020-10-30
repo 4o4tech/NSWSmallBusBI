@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class IndexController_diff {
+public class IdxController {
 	@RequestMapping("/idx")
     public String indexpage(){ 
         return "/idx";

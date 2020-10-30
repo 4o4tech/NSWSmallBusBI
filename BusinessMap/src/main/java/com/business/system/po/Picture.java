@@ -22,7 +22,6 @@ public class Picture implements Serializable{
 	}
 
 
-
 	public String getId() {
 		return id;
 	}
@@ -32,17 +31,14 @@ public class Picture implements Serializable{
 	}
 
 
-
 	public String getAddress() {
 		return address;
 	}
 
 
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
 
 
 	public String getName() {

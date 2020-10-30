@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PictureRepository extends MongoRepository<Picture, String>{
-	Picture findById(String id);
-//	default Picture findById(String id) {
-//		return null;
-//	}
+//	@Override
+//	Optional<Picture> findById(String s);
+
+	Optional<Picture> findById(String s);
 
 	Page<Picture> findAll(Pageable pageable);
 	Page<Picture> findByAddressContaining(String address,Pageable pageable);
