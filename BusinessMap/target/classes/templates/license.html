@@ -10,12 +10,38 @@
             margin: 0 auto;
         }
 
-        .start-btn {
-            font-size: 28px;
-            margin: 0 auto;
+        .top{
+            background: #F5F5F5;
+
         }
 
+        .title {
+            font-size: 35px;
+            margin: 0 auto;
+            width: 800px;
+            height: 200px;
+            text-align:left;
+            background: #F5F5F5;
+            line-height: 200px;
+        }
+
+        .sub_text{
+            margin: 20px;
+        }
+
+        .sub-btn{
+            font-size: 28px;
+            width: 800px;
+            height: 75px;
+            text-align:left;
+            border: 0 ;
+            background: #DCDCDC;
+        }
+
+
     </style>
+
+
 
 </head>
 <body>
@@ -23,35 +49,42 @@
 
 
     <div align="center">
-        <button class="start-btn" onclick=hide_show("business_process")>Start a business in NSW
-        </button>
+        <div class="top">
+            <h1 class="title" >Start a business in NSW
+            </h1>
+        </div>
+
     </div>
-    <div id="business_process" style="display: none" class="text-body">
+    <div id="business_process" style="display: block" class="text-body">
         <div class="container">
             <section>
-                <h2>
-                    Check out the industry
-                </h2>
-                <p>Check out the industry specific guides for starting a new business:</p>
+                <h2 >
+                    <button class="sub-btn" onclick=hide_show("check_industry") >Check out the industry</button>
 
-                <ul>
-                    <li><a href="https://mybusiness.service.nsw.gov.au/crsb/guides">Cafe, restaurant or small bar</a>
-                    </li>
-                    <li><a href="https://www.service.nsw.gov.au/guide/open-clothing-retail-business-nsw">Clothing retail
-                        business</a></li>
-                    <li><a href="https://www.service.nsw.gov.au/guide/open-print-business-nsw">Print business</a></li>
-                    <li><a href="https://mybusiness.service.nsw.gov.au/housing-construction">Housing construction
-                        business</a></li>
-                    <li><a href="https://www.service.nsw.gov.au/guide/start-road-freight-transport-business-nsw">Road
-                        freight transport business</a></li>
-                </ul>
+                </h2>
+                <div id="check_industry" style="display: block" class="sub_text">
+                    <p>Check out the industry specific guides for starting a new business:</p>
+
+                    <ul>
+                        <li><a href="https://mybusiness.service.nsw.gov.au/crsb/guides">Cafe, restaurant or small bar</a>
+                        </li>
+                        <li><a href="https://www.service.nsw.gov.au/guide/open-clothing-retail-business-nsw">Clothing retail
+                            business</a></li>
+                        <li><a href="https://www.service.nsw.gov.au/guide/open-print-business-nsw">Print business</a></li>
+                        <li><a href="https://mybusiness.service.nsw.gov.au/housing-construction">Housing construction
+                            business</a></li>
+                        <li><a href="https://www.service.nsw.gov.au/guide/start-road-freight-transport-business-nsw">Road
+                            freight transport business</a></li>
+                    </ul>
+
+                </div>
 
                 <div>
                     <section id="planning-a-business">
                         <h2>
-                            Planning a business
+                            <button class="sub-btn" onclick=hide_show("plan_business")>Planning a business</button>
                         </h2>
-                        <div>
+                        <div id="plan_business" style="display: none" class="sub_text">
                             <p>Before you invest time and money into setting up your business by registering and
                                 applying
                                 for the right business licences, make sure you put together a business plan and
@@ -68,9 +101,9 @@
 
                     <section id="choosing-a-business-structure">
                         <h2>
-                            Choosing a business structure
+                            <button class="sub-btn" onclick=hide_show("check_business_structure")>Choosing a business structure</button>
                         </h2>
-                        <div>
+                        <div id="check_business_structure" style="display: none" class="sub_text">
                             <p>It's important you choose the best structure for your business type. The most commonly
                                 used business structures are sole trader, company, partnership, and trust.</p>
 
@@ -113,9 +146,10 @@
 
                     <section id="starting-a-business">
                         <h2>
-                            Starting a business
+                            <button class="sub-btn" onclick=hide_show("start_business")>Starting a business</button>
+
                         </h2>
-                        <div>
+                        <div id="start_business" style="display: none" class="sub_text">
                             <p>
                                 <a href="https://www.service.nsw.gov.au/transaction/register-australian-business-number-abn">Register
                                     an Australian Business Number (ABN)</a><br>
@@ -173,9 +207,9 @@
 
                     <section id="developing-your-premises">
                         <h2>
-                            Developing your premises
+                            <button class="sub-btn" onclick=hide_show("develop_premises")>Developing your premises</button>
                         </h2>
-                        <div>
+                        <div id="develop_premises" style="display: none" class="sub_text">
                             <p><a href="https://www.service.nsw.gov.au/transaction/help-leasing-business-premises">Help
                                 with leasing business premises</a><br>You can find out about commercial leasing on the
                                 Office of the&nbsp;NSW&nbsp;Small Business Commissioner&nbsp;website.</p>
@@ -257,9 +291,9 @@
 
                     <section id="before-you-start-trading">
                         <h2>
-                            Before you start trading
+                            <button class="sub-btn" onclick=hide_show("before_trading")>Before you start trading</button>
                         </h2>
-                        <div>
+                        <div id="before_trading" style="display:none" class="sub_text">
                             <p>
                                 <a href="https://www.service.nsw.gov.au/transaction/apply-discharge-commercial-trade-wastewater">Apply
                                     to discharge commercial trade waste water</a><br>You may need approval from your
@@ -286,9 +320,11 @@
 
                     <section id="selling-goods">
                         <h2>
-                            Selling goods
+                            <button class="sub-btn" onclick=hide_show("sell_goods")>Selling goods</button>
+
+
                         </h2>
-                        <div>
+                        <div id="sell_goods" style="display:none" class="sub_text">
                             <p><a href="https://www.service.nsw.gov.au/transaction/comply-australian-consumer-law">Comply
                                 with Australian Consumer Law</a><br>It's important you're familiar with consumers'
                                 rights for purchases of goods and services under Australian Consumer Law, and understand
@@ -325,9 +361,9 @@
 
                     <section id="setting-up-workers">
                         <h2>
-                            Setting up workers
+                            <button class="sub-btn" onclick=hide_show("setup_workers")>Setting up workers</button>
                         </h2>
-                        <div>
+                        <div id="setup_workers" style="display: none" class="sub_text">
                             <p><a href="https://www.service.nsw.gov.au/transaction/comply-fair-work-requirements">Comply
                                 with Fair Work requirements</a><br>If you’re employing staff you must comply with Fair
                                 Work requirements like minimum pay and conditions.</p>
@@ -379,9 +415,11 @@
 
                     <section id="other-things-to-consider">
                         <h2>
-                            Other things to consider
+                            <button class="sub-btn" onclick=hide_show("other_consider")>Other things to consider</button>
+
+
                         </h2>
-                        <div>
+                        <div id="other_consider" style="display: none" class="sub_text">
                             <p><a href="https://www.service.nsw.gov.au/transaction/register-trade-mark">Register a trade
                                 mark</a><br>A trade mark (sometimes called a brand) is the way you show your customers
                                 and the public who you are.</p>
