@@ -4,6 +4,7 @@ import cn.hutool.json.JSON;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import com.business.system.entity.Industry;
+import com.business.system.entity.hottestIndustry;
 import com.business.system.entity.industryCount;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -148,15 +149,34 @@ public class dashboardData {
 
 
 //        gteResult.addAll(ltResult);
-
+        //merge two list together
         ltResult.addAll(gteResult);
-//
-//        Query query = new Query();
-//        query.addCriteria(Criteria.where("age").lt(50).gt(20));
-//        List<User> users = mongoTemplate.find(query,User.class);
+
 
 
         return ltResult;
     }
+
+
+
+    //    @RequestMapping("/getCollect")
+    @RequestMapping("/hottestIndustry")
+    public List<industryCount>  getCollectionsList() {
+
+        Query sortQuery = new Query();
+        sortQuery.with(new Sort(Sort.Direction.DESC, "count"));
+
+//        db.industryCount.find().sort({count: -1}).limit(10)
+        List<industryCount> topIndustry = mongoTemplate
+                .find(sortQuery.limit(10), industryCount.class);
+
+
+//        System.out.printf("Count Number is  %d", topIndustry);
+
+        return topIndustry;
+    }
+
+
+
 
 }
