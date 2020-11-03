@@ -1,8 +1,10 @@
 package com.business.system.entity;
 
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@Document(collection = "industryCount")
 public class industryCount {
     private String name;
     private int count;

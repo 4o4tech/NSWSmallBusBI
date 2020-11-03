@@ -29,7 +29,6 @@ function getUrlParam(name) {
                 }else{
                     list1.push(arr[i].num);
                 }
-
             }
 
             var myChart = echarts.init(document.querySelector(".radar .chart"));
