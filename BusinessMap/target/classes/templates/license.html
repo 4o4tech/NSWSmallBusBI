@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>License</title>
@@ -41,12 +41,51 @@
 
     </style>
 
+    <link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="../static/css/mian.css">-->
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 
 
 </head>
-<body>
-<article class="page-wrapper">
 
+<body class="main_container">
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-color">
+    <a class="navbar-brand" href="index">NSW Business Map</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbars">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link" href="/index">Home </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/industry_search">Dashboard</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link " href="#">Business License</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+
+
+<main class="container">
+    <div class="nav-breadcrumb">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Liense</a></li>
+            </ol>
+        </nav>
+    </div>
 
     <div align="center">
         <div class="top">
@@ -478,7 +517,16 @@
             </section>
         </div>
     </div>
-</article>
+</main>
+
+
+<footer class="footer">
+    <hr>
+    <div class="col-12 col-md">
+        <div class="d-block mb-3 text-muted">&copy; USYD,CS,2020</div>
+    </div>
+</footer>
+
 
 <script type="text/javascript">
     function hide_show(id) {
@@ -490,5 +538,11 @@
         }
     }
 </script>
+
+
+<script href="webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script href="webjars/jquery/3.5.1/jquery.min.js"></script>
+<script th:src="@{js/main.js}"></script>
+
 </body>
 </html>

@@ -16,11 +16,29 @@
     /*margin:5em 0em;*/
 }
  .banner_page {
-      padding:5em 1em;
+     position:relative;
+     height:400px;
+      /*padding:5em 1em;*/
+      margin-top:4em;
       margin-bottom:2em;
       background-color:#e9ecef;
-      border-radius:.3rem
+      border-radius:.3rem;
+     background-image: url("../img/banner_bg.jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-color: #FFFFFF;
+
  }
+
+ .inner{
+     height: 400px;
+
+     background: rgba(0,0,0,.5);
+ }
+
+.inner >* {
+    color:#FAFAFA;
+}
 
  .businessInfo{
      margin:auto;
@@ -38,6 +56,15 @@
      border-radius: 3px;
  }
 
+
+ .function{
+     margin-top:5em;
+
+ }
+
+ .bottom_info{
+     margin-top:5em;
+ }
 
 /*
 industry page

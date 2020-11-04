@@ -18,7 +18,10 @@ import com.mongodb.client.MongoCursor;
 
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static com.mongodb.client.model.Filters.regex;
 
@@ -55,21 +58,25 @@ public class industryController {
         return "industry_dashboard";
     }
 
-    @GetMapping("/search_all")
-    public String getMessage(@ModelAttribute Industry searchIndustry,Model model){
+//    @GetMapping("/search_all")
+    @GetMapping("/industry/link/{name}")
+    public String getMessage(@PathVariable String name,Model model){
 //        model.addAttribute("searchIndustry", searchIndustry);
 
-        MongoCollection<org.bson.Document> resData = mongoTemplate.getCollection("cafe");
-        Bson regBson = regex("results.formatted_address", "2000");
-        FindIterable<org.bson.Document> documents = resData.find(regBson);
+//        MongoCollection<org.bson.Document> resData = mongoTemplate.getCollection("cafe");
+//        Bson regBson = regex("results.formatted_address", "2000");
+//        FindIterable<org.bson.Document> documents = resData.find(regBson);
+//
+//        StringBuilder sb = new StringBuilder();
+//        for(Document document : documents) {
+//            sb.append(document.toJson() + ",\n");
+//        }
 
-        StringBuilder sb = new StringBuilder();
-        for(Document document : documents) {
-            sb.append(document.toJson() + ",\n");
-        }
+        HashMap<String,String> hmap = new HashMap<>();
+        hmap.put("name", name);
+        hmap.put("postCode", "2000");
 
-        searchIndustry.setName("121");
-        model.addAttribute("searchIndustry", searchIndustry);
+        model.addAttribute("searchIndustry",hmap);
 //        model.addAttribute("resList", "{a:1,b:2}");
 
         return "industry_dashboard";

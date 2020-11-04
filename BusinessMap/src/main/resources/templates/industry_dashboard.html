@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="author" content="Jimze">
     <title>NSW Business Map Dashboard</title>
-    <link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="../static/css/mian.css">-->
     <link rel="stylesheet" th:href="@{/css/main.css}">
-    <script src="webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
@@ -76,12 +76,8 @@
 
         <div class="industry-describe row-fluid">
             <div class="span8 offset-2">
-                <h2>Top Suburb about Industry</h2>
-                <div class="panel radar">
-                    <!-- <h2>Radar chart</h2>-->
-                    <div class="crimeRate"></div>
-                    <div class="panel-footer"></div>
-                </div>
+                <h2>Population</h2>
+                <div id="Population" style="width: 600px;height:400px;border:2px solid green;"></div>
             </div>
         </div>
 
@@ -108,7 +104,7 @@
 
 
 
-<script th:src="@{js/main.js}"></script>
+<script th:src="@{/js/main.js}"></script>
 <script th:src="@{/js/echart.js}"></script>
 
 <!--<script th:src="@{/visual_js/visualMap.js}"></script>-->
@@ -126,6 +122,7 @@
     var resList = 'getData/' + queryRes.name+ "?code=" + code ;
     console.log(resList);
     /*]]>*/
+
 
 
     var report = {};
@@ -315,9 +312,9 @@
     // myChart.setOption(option)
 
 
-/*
 
-    function extraData(data){
+    /*
+    function extractData(data){
         function newSort(x,y){
             return x.count-y.count;
         }
@@ -342,10 +339,9 @@
     }
 
 
-    // myChart.showLoading();  // 开启 loading 效果
     $.get(getColletURL).done(function(data) {
 
-        var industryName, industryAmount = extraData(data)
+        var industryName, industryAmount = extractData(data)
 
         // add option
 
@@ -353,19 +349,20 @@
 
     }, 'json')
 
- */
+     */
 
 
 </script>
 
+<!--Rank in Industry EChart Start Here-->
 <script type="text/javascript">
     var myChart_hottestIndustry = echarts.init(document.getElementById('hottestIndustry'));
     var industryList=['Gym', 'Beauty Salon', 'Book Store', 'Cafe', 'Casino','Drug Store','Locksmith','Night Club','Store','Storage'];
     var industryValue=[335,310,234,135,548,335,353,345,345,123];
 
 
-    // extra data to two lists, Name + Value
-    function extraData(data){
+    // extract data to two lists, Name + Value
+    function extractData(data){
         function newSort(x,y){
             return x.count-y.count;
         }
@@ -388,7 +385,7 @@
     let dataUrl =  '/hottestIndustry';
     $.get(dataUrl).done(function(data) {
 
-        var getData = extraData(data)
+        var getData = extractData(data)
 
         var industryList = getData["name"];
         var industryValue = getData["value"];
@@ -451,8 +448,9 @@
 
 
 </script>
+<!--Rank in Industry EChart end Here-->
 
-
+<!--Top 10 IndustriesEChart Start Here-->
 <script type="text/javascript">
     var name = ['Airds', 'Afterlee', 'Adjungbilly', 'Adamstown Heights', 'Agnes Banks'];
     var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
@@ -572,6 +570,133 @@
     myChart_rentalFees.setOption(option_rentalFees);
 
 </script>
+<!--Top 10 IndustriesEChart end Here-->
+
+
+<!--Retal EChart End Here-->
+
+<!--Population EChart Start Here-->
+<script type="text/javascript">
+    var name = ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)'];
+    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
+    var data = {
+        numbers: [
+            [, 26040, 25716, 25284, 24989, 24790,],
+            [, 27727, 27273, 26887, 26497, 26200,],
+            [, 53767, 52989, 52171, 51486, 50990,],
+            [, 175.7, 173.2, 170.5, 168.3, 166.7,]
+        ],
+        name: ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)']
+    };
+    var PopulationChart = echarts.init(document.getElementById('Population'));
+    var PopulationOption = {
+        title: {
+            text: 'Population in This LGA (Albury)',
+            x: 'center'
+        },
+        color: colorList,
+        tooltip: {
+            // trigger with axis
+            trigger: "axis"
+        },
+        legend: {
+            left: "5%",
+            right: "5%",
+            top: "20",
+            textStyle: {
+                color: "#040000"
+            }
+        },
+        grid: {
+            top: "25%",
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            show: true,
+            borderColor: "#012f4a",
+            containLabel: true
+        },
+
+        xAxis: {
+            type: "category",
+            boundaryGap: false,
+            data: [
+                "2011",
+                "2014",
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019"
+            ],
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false
+            }
+        },
+        yAxis: [{
+            type: "value",
+            name:"Population",
+            axisTick: {
+                show: false
+            },
+            // 修改y轴分割线的颜色
+            splitLine: {
+                lineStyle: {
+                    color: "#012f4a"
+                }
+            }
+        },
+            {
+                type: "value",
+                min:0,
+                max:9000,
+                name:"Density (pp/km2)",
+                position: 'right',
+            }],
+        series: [
+            {
+                name: data.name[0],
+                type: "line",
+                yAxisIndex: 0,
+                smooth: true,
+                data: data.numbers[0]
+            },
+            {
+                name: data.name[1],
+                type: "line",
+                yAxisIndex: 0,
+                smooth: true,
+                data: data.numbers[1]
+            },
+            {
+                name: data.name[2],
+                type: "line",
+                yAxisIndex: 0,
+                smooth: true,
+                data: data.numbers[2]
+            },
+            {
+                name:data.name[3],
+                type:"bar",
+                yAxisIndex: 1,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: data.numbers[3]
+            }
+        ]
+    };
+    // 3. 把配置和数据给实例对象
+    PopulationChart.setOption(PopulationOption);
+</script>
+
+<!--Population EChart End Here-->
 
 
 <!--<script th:src="@{/js/resData.js}"></script>-->
