@@ -27,6 +27,12 @@ public class homePageController {
         return "license";
     }
 
+    @RequestMapping("/demographic")
+    public String testGraph(){
+        return "demographic_graphic";
+    }
+
+
 }
 //
 //@Controller

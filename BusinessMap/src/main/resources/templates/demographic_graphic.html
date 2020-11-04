@@ -163,8 +163,9 @@
 <script type="text/javascript">
     var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
     var medianIncomeData = {
-        numbers: [[, 43695, 44586, 45504, 46426, ,],
-            [, 45828, 46854, 47692, 48360, ,]],
+        numbers: [
+            [43695, 44586, 45504, 46426],[45828, 46854, 47692, 48360]
+        ],
         name: ['Albury', 'NSW']
     };
     var medianIncomeChart = echarts.init(document.getElementById('Income'));
@@ -318,7 +319,8 @@
 <!--Number of business in this LGA-->
 <script type="text/javascript">
     var numberOfBusinessData = {
-        numbers: [[0, 1878, 1548, 628, 437],
+        numbers: [
+            [0, 1878, 1548, 628, 437],
             [4617, 2738, 1190, 562, 125]
         ],
         name: ['Total number', '0 employee', '1-4 employees', '5-19 employees', 'more than 20']
