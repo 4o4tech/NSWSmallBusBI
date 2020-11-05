@@ -36,7 +36,7 @@
         </h2>
         <hr>
 
-<!--        <h3 th:text="'Industry: ' + ${searchIndustry.name} +  + 'Area PostCode' + ${searchIndustry.postCode}" class="describe-h3"/></h3>-->
+        <!--        <h3 th:text="'Industry: ' + ${searchIndustry.name} +  + 'Area PostCode' + ${searchIndustry.postCode}" class="describe-h3"/></h3>-->
 
         <div class="describe-content">
             <i class="text-content"> Industry:</i> <strong class="text-content" style="color:#c23531" th:text="${searchIndustry.name}"></strong>
@@ -46,47 +46,54 @@
             <p>
                 Approximately 39% of the cafe of small business operators live outside the Sydney Greater Metropolitan Region
             </p>
-<!--            <p th:text="${industryResult.content}">-->
-<!--            </p>-->
+            <!--            <p th:text="${industryResult.content}">-->
+            <!--            </p>-->
         </div>
 
     </div>
 
-        <div class="industry-describe">
-            <div class=" span6 offset-3" style="margin-top:5em">
-                <h2>Rank in Industry</h2>
-                <div id="relatedIndustry" style="width: 500px;height:300px;border:2px solid green; margin-top:2em"></div>
-
-            </div>
-
-            <div class="span6 offset-3" style="margin-top:5em">
-                <h2>Top 10 Industries in NSW</h2>
-                <div id="hottestIndustry"  style="width:500px;height:300px;border:2px solid green; margin-top:2em;"></div>
-            </div>
+    <div class="industry-describe">
+        <div class=" span6 offset-3" style="margin-top:5em">
+            <h2>Rank in Industry</h2>
+            <div id="relatedIndustry" style="width: 500px;height:300px;border:2px solid green; margin-top:2em"></div>
 
         </div>
 
-        <div class="industry-describe row-fluid">
-            <div class="span8 offset-2">
-                <h2>Top Suburb about Industry</h2>
-                <div id="rentalFees"  style="width: 750px;height:375px;border:2px solid green; margin-top:2em;"></div>
-            </div>
+        <div class="span6 offset-3" style="margin-top:5em">
+            <h2>Top 10 Industries in NSW</h2>
+            <div id="hottestIndustry"  style="width:500px;height:300px;border:2px solid green; margin-top:2em;"></div>
         </div>
 
+    </div>
 
-        <div class="industry-describe row-fluid">
-            <div class="span8 offset-2">
-                <h2>Population</h2>
-                <div id="Population" style="width: 600px;height:400px;border:2px solid green;"></div>
-            </div>
+    <div class="industry-describe row-fluid">
+        <div class="span8 offset-2">
+            <h2>Top Suburb about Industry</h2>
+            <div id="rentalFees"  style="width: 750px;height:375px;border:2px solid green; margin-top:2em;"></div>
         </div>
+    </div>
 
-<!--        <div class="industry-describe row-fluid">-->
-<!--            <div class="span8 offset2">-->
-<!--                <h2>Top Suburb about Industry</h2>-->
-<!--                <canvas class="my-4 w-100" id="myChart" width="900" height="380" style="margin-top:2em;"></canvas>-->
-<!--            </div>-->
-<!--        </div>-->
+
+    <div class="industry-describe row-fluid">
+        <div class="span8 offset-2">
+            <h2>Population</h2>
+            <div id="Population" style="width: 600px;height:400px;border:2px solid green;"></div>
+        </div>
+    </div>
+
+    <div class="industry-describe row-fluid">
+        <div class="span8 offset-2">
+            <h2>Income</h2>
+            <div id="income" style="width: 600px;height:400px;border:2px solid green;"></div>
+        </div>
+    </div>
+
+    <!--        <div class="industry-describe row-fluid">-->
+    <!--            <div class="span8 offset2">-->
+    <!--                <h2>Top Suburb about Industry</h2>-->
+    <!--                <canvas class="my-4 w-100" id="myChart" width="900" height="380" style="margin-top:2em;"></canvas>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
 
 
@@ -110,23 +117,17 @@
 <!--<script th:src="@{/visual_js/visualMap.js}"></script>-->
 
 <script th:inline="JavaScript">
-
     /*<![CDATA[*/
-
     var queryRes = [[${searchIndustry}]];
     var code = queryRes.postCode;
-
     if(code === null || code ==''){
         code = 2000;
     }
     var resList = 'getData/' + queryRes.name+ "?code=" + code ;
+
     console.log(resList);
     /*]]>*/
-
-
-
     var report = {};
-
     var optionSet = {
         url: resList,
         type: 'GET',
@@ -135,14 +136,10 @@
         data: report // default have dat into data
     };
     var resData = $.ajax(resList);
-
     console.log(resData)
-
-
     function getRankIndustry(){
         var getColletURL = 'getCollection/' + queryRes.name
         var getRankIndustry;
-
         return new Promise((resolve, reject) => {
             $.post(getColletURL,
                 function (data) {
@@ -150,8 +147,6 @@
                 });
         })
     }
-
-
     // var industryName = [];
     // var industryAmount = [];
     //
@@ -170,50 +165,32 @@
     //         console.log(error)
     //     })
     // });
-
-
-
-
 </script>
 
 <script type="text/javascript">
     var getColletURL = 'getCollection/' + queryRes.name
-
     // 基于准备好的dom，初始化echarts实例
     //var colorList = ['#2f4554', '#61a0a8', '#d48265', '#4169E1','#c23531','#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493'];
     var industry = ['cafe', 'store', 'book_store', 'pet_store', 'casino', 'hardware_store', 'night_club', 'liquor_store', 'book_store', 'beauty_salon'];
     var data = [9, 13, 15, 27, 31, 33, 55, 79, 88, 90];
     var myChart = echarts.init(document.getElementById('relatedIndustry'));
-
-
-
-
     // myChart.showLoading();  // 开启 loading 效果
    $.get(getColletURL).done(function(data) {
-
        function newSort(x,y){
            return x.count-y.count;
        }
        data.sort(newSort);
-
        // console.log(data)
-
        var industryName = [];
        var industryAmount = [];
        for( var i = 0; i < data.length; i++){
            industryName.push(data[i].name)
            industryAmount.push(data[i].count)
-
        }
-
        console.log("******Data loading Done!!!******")
-
        console.log(industryName)
        console.log(industryAmount)
-
-
        let option = {
-
            title: {
                text: 'Related 10 industries in NSW',
                x: 'center'
@@ -266,7 +243,6 @@
                    }
                },
                data:industryName ,
-
                axisLine: {
                    //轴线样式
                    lineStyle: {
@@ -293,26 +269,16 @@
                                var colorList = ['#2f4554', '#61a0a8', '#d48265', '#4169E1','#91c7ae', '#c23531','#749f83', '#ca8622', '#4B0082', '#FF1493'];
                                return colorList[params.dataIndex]
                            }
-
                        },
                    },
                    data: industryAmount
                }
            ]
-
        };
        myChart.setOption(option);
-
    }, 'json')
-
-
-
-
     // 使用刚指定的配置项和数据显示图表。
     // myChart.setOption(option)
-
-
-
     /*
     function extractData(data){
         function newSort(x,y){
@@ -326,32 +292,20 @@
             industryName.push(data[i].name)
             industryAmount.push(data[i].count)
         }
-
         console.log("******Data loading Done!!!******")
         console.log(industryName)
         console.log(industryAmount)
-
          return {
         name: industryName,
         value: industryAmount,
     };
-
     }
-
-
     $.get(getColletURL).done(function(data) {
-
         var industryName, industryAmount = extractData(data)
-
         // add option
-
         //add setoption here
-
     }, 'json')
-
      */
-
-
 </script>
 
 <!--Rank in Industry EChart Start Here-->
@@ -359,8 +313,6 @@
     var myChart_hottestIndustry = echarts.init(document.getElementById('hottestIndustry'));
     var industryList=['Gym', 'Beauty Salon', 'Book Store', 'Cafe', 'Casino','Drug Store','Locksmith','Night Club','Store','Storage'];
     var industryValue=[335,310,234,135,548,335,353,345,345,123];
-
-
     // extract data to two lists, Name + Value
     function extractData(data){
         function newSort(x,y){
@@ -374,36 +326,26 @@
             industryName.push(data[i].name)
             industryAmount.push(data[i].count)
         }
-
         return {
             name: industryName,
             value: industryAmount,
         };
     }
-
     // change url name here
     let dataUrl =  '/hottestIndustry';
     $.get(dataUrl).done(function(data) {
-
         var getData = extractData(data)
-
         var industryList = getData["name"];
         var industryValue = getData["value"];
-
         console.log("******Data loading Done!!!******")
         console.log(industryList)
         console.log(industryValue)
-
-
-
         // add option
         let option = {
-
             title: {
                 text: 'Hottest industries in NSW',
                 x: 'center'
             },
-
             tooltip: {
                 trigger: 'item',
                 formatter: '{a} <br/>{b} : {c} ({d}%)'
@@ -443,10 +385,7 @@
         };
         //add setoption here
         myChart_hottestIndustry.setOption(option);
-
     }, 'json')
-
-
 </script>
 <!--Rank in Industry EChart end Here-->
 
@@ -492,7 +431,6 @@
             borderColor: "#012f4a",
             containLabel: true
         },
-
         xAxis: {
             type: "category",
             boundaryGap: false,
@@ -568,7 +506,6 @@
         ]
     };
     myChart_rentalFees.setOption(option_rentalFees);
-
 </script>
 <!--Top 10 IndustriesEChart end Here-->
 
@@ -576,127 +513,314 @@
 <!--Retal EChart End Here-->
 
 <!--Population EChart Start Here-->
-<script type="text/javascript">
-    var name = ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)'];
-    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
-    var data = {
-        numbers: [
-            [, 26040, 25716, 25284, 24989, 24790,],
-            [, 27727, 27273, 26887, 26497, 26200,],
-            [, 53767, 52989, 52171, 51486, 50990,],
-            [, 175.7, 173.2, 170.5, 168.3, 166.7,]
-        ],
-        name: ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)']
-    };
-    var PopulationChart = echarts.init(document.getElementById('Population'));
-    var PopulationOption = {
-        title: {
-            text: 'Population in This LGA (Albury)',
-            x: 'center'
-        },
-        color: colorList,
-        tooltip: {
-            // trigger with axis
-            trigger: "axis"
-        },
-        legend: {
-            left: "5%",
-            right: "5%",
-            top: "20",
-            textStyle: {
-                color: "#040000"
-            }
-        },
-        grid: {
-            top: "25%",
-            left: "3%",
-            right: "4%",
-            bottom: "3%",
-            show: true,
-            borderColor: "#012f4a",
-            containLabel: true
-        },
 
-        xAxis: {
-            type: "category",
-            boundaryGap: false,
-            data: [
-                "2011",
-                "2014",
-                "2015",
-                "2016",
-                "2017",
-                "2018",
-                "2019"
-            ],
-            axisTick: {
-                show: false
-            },
-            axisLine: {
-                show: false
-            }
-        },
-        yAxis: [{
-            type: "value",
-            name:"Population",
-            axisTick: {
-                show: false
-            },
-            // 修改y轴分割线的颜色
-            splitLine: {
-                lineStyle: {
-                    color: "#012f4a"
-                }
-            }
-        },
-            {
-                type: "value",
-                min:0,
-                max:9000,
-                name:"Density (pp/km2)",
-                position: 'right',
-            }],
-        series: [
-            {
-                name: data.name[0],
-                type: "line",
-                yAxisIndex: 0,
-                smooth: true,
-                data: data.numbers[0]
-            },
-            {
-                name: data.name[1],
-                type: "line",
-                yAxisIndex: 0,
-                smooth: true,
-                data: data.numbers[1]
-            },
-            {
-                name: data.name[2],
-                type: "line",
-                yAxisIndex: 0,
-                smooth: true,
-                data: data.numbers[2]
-            },
-            {
-                name:data.name[3],
-                type:"bar",
-                yAxisIndex: 1,
-                label: {
-                    normal: {
-                        show: true,
-                        position: 'top'
-                    }
-                },
-                data: data.numbers[3]
-            }
-        ]
-    };
-    // 3. 把配置和数据给实例对象
-    PopulationChart.setOption(PopulationOption);
+<script type="text/javascript">
+   var populationChart = echarts.init(document.getElementById('Population'));
+   var populationData = {
+       numbers: [
+           [, 26040, 25716, 25284, 24989, 24790,],
+           [, 27727, 27273, 26887, 26497, 26200,],
+           [, 53767, 52989, 52171, 51486, 50990,],
+           [, 175.7, 173.2, 170.5, 168.3, 166.7,]
+       ],
+       populationName: ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)']
+   };
+
+   // extract data to two lists, Name + Value
+   function extractData(data){
+       var populationMales = [''];
+       for( var i = 0; i < data.length; i++){
+           populationMales.push(data[i].males)
+           // console.log(data[i])
+       }
+       populationMales.push('');
+
+       var populationFemales=[''];
+       for( var i = 0; i < data.length; i++){
+           populationFemales.push(data[i].females)
+       }
+       populationFemales.push('');
+
+       var populationPerson=[''];
+       for( var i = 0; i < data.length; i++){
+           populationPerson.push(data[i].person)
+       }
+       populationPerson.push('');
+
+       var populationDensity=[''];
+       for( var i = 0; i < data.length; i++){
+           populationDensity.push(data[i].density)
+       }
+       populationDensity.push('');
+
+       var populationT=[];
+       populationT.push(populationMales);
+       populationT.push(populationFemales);
+       populationT.push(populationPerson);
+       populationT.push(populationDensity);
+
+       var populationName= ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)'];
+       return {
+           populationName: populationName,
+           numbers: populationT,
+       };
+   }
+
+   //TODO change url name here  这个我不知道怎么改变url地址，还有一个小bug，这个script放在上面的时候图2无法正常运行，删除这个script就可以正常运行。。/晕
+   let populationUrl =  '/population?code=2000';
+   $.get(populationUrl).done(function(data) {
+       var getData = extractData(data)
+       var populationName = getData["populationName"];
+       var populationNumbers = getData["numbers"];
+       console.log("******Population Data loading Done!!!******")
+       console.log(populationName)
+       console.log(populationNumbers)
+       // add option
+       let populationOption = {
+           title: {
+               text: 'Population in This LGA (Albury)',
+               x: 'center'
+           },
+           color: colorList,
+           tooltip: {
+               // trigger with axis
+               trigger: "axis"
+           },
+           legend: {
+               left: "5%",
+               right: "5%",
+               top: "20",
+               textStyle: {
+                   color: "#040000"
+               }
+           },
+           grid: {
+               top: "25%",
+               left: "3%",
+               right: "4%",
+               bottom: "3%",
+               show: true,
+               borderColor: "#012f4a",
+               containLabel: true
+           },
+           xAxis: {
+               type: "category",
+               boundaryGap: false,
+               data: [
+                   "2011",
+                   "2014",
+                   "2015",
+                   "2016",
+                   "2017",
+                   "2018",
+                   "2019"
+               ],
+               axisTick: {
+                   show: false
+               },
+               axisLine: {
+                   show: false
+               }
+           },
+           yAxis: [{
+               type: "value",
+               name: "Population",
+               axisTick: {
+                   show: false
+               },
+               // 修改y轴分割线的颜色
+               splitLine: {
+                   lineStyle: {
+                       color: "#012f4a"
+                   }
+               }
+           },
+               {
+                   type: "value",
+                   min: 0,
+                   max: 9000,
+                   name: "Density (pp/km2)",
+                   position: 'right',
+               }],
+           series: [
+               {
+                   name: populationName[0],
+                   type: "line",
+                   yAxisIndex: 0,
+                   smooth: true,
+                   data: populationNumbers[0]
+               },
+               {
+                   name: populationName[1],
+                   type: "line",
+                   yAxisIndex: 0,
+                   smooth: true,
+                   data: populationNumbers[1]
+               },
+               {
+                   name: populationName[2],
+                   type: "line",
+                   yAxisIndex: 0,
+                   smooth: true,
+                   data: populationNumbers[2]
+               },
+               {
+                   name: populationName[3],
+                   type: "bar",
+                   yAxisIndex: 1,
+                   label: {
+                       normal: {
+                           show: true,
+                           position: 'top'
+                       }
+                   },
+                   data: populationNumbers[3]
+               }
+           ]
+       };
+       // 3. 把配置和数据给实例对象
+       populationChart.setOption(populationOption);
+   }, 'json')
 </script>
 
 <!--Population EChart End Here-->
+
+
+
+<script type="text/javascript">
+    var medianIncomeChart = echarts.init(document.getElementById('income'));
+    var sampleData = {
+        numbers: [
+            [,43695, 44586, 45504, 46426],[,45828, 46854, 47692, 48360]
+        ],
+        name: ['Albury', 'NSW']
+    };
+
+    // extract data to two lists, Name + Value
+    function extractData(data){
+        var incomeNSWData = [''];
+        var incomeSuburbData = [''];
+        var incomeData=[];
+        for( var i = 0; i < data.length; i++){
+            if (data[i].lga_Name=="New South Wales"){
+                incomeNSWData.push(data[i].median_Income)
+            }else if (data[i].lga_Name=="Sydney (C)"){
+                incomeSuburbData.push(data[i].median_Income)
+            }
+            // console.log(data[i])
+        }
+        incomeNSWData.push('');
+        incomeSuburbData.push('');
+
+        incomeData.push(incomeNSWData);
+        incomeData.push(incomeSuburbData)
+
+        var incomeName= ['Albury', 'NSW'];
+        return {
+            incomeName: incomeName,
+            incomeData: incomeData,
+        };
+    }
+
+    //TODO suburb 无法改变，用的都是Google drive上面发的链接的数据
+    let incomeUrl =  '/income';
+    $.get(incomeUrl).done(function(data) {
+        var getData = extractData(data)
+        var incomeName = getData["incomeName"];
+        var incomeData = getData["incomeData"];
+        console.log("******Income Data loading Done!!!******")
+        console.log(incomeName)
+        console.log(incomeData)
+        // add option
+        let medianIncomeOption = {
+            title: {
+                text: 'Median income in This LGA (Albury)',
+                x: 'center'
+            },
+            color: colorList,
+            tooltip: {
+                // trigger with axis
+                trigger: "axis"
+            },
+            legend: {
+                left: "5%",
+                right: "5%",
+                top: "20",
+                textStyle: {
+                    color: "#040000"
+                }
+            },
+            grid: {
+                top: "25%",
+                left: "3%",
+                right: "4%",
+                bottom: "3%",
+                show: true,
+                borderColor: "#012f4a",
+                containLabel: true
+            },
+            xAxis: {
+                type: "category",
+                boundaryGap: false,
+                data: [
+                    "2011",
+                    "2014",
+                    "2015",
+                    "2016",
+                    "2017",
+                    "2018",
+                ],
+                axisTick: {
+                    show: false
+                },
+                axisLine: {
+                    show: false
+                }
+            },
+            yAxis: [{
+                type: "value",
+                name: "Income",
+                axisTick: {
+                    show: false
+                },
+                // 修改y轴分割线的颜色
+                splitLine: {
+                    lineStyle: {
+                        color: "#012f4a"
+                    }
+                }
+            }],
+            series: [
+                {
+                    name: incomeName[0],
+                    type: "bar",
+                    smooth: true,
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    data: incomeData[0]
+                },
+                {
+                    name: incomeName[1],
+                    type: "bar",
+                    smooth: true,
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    data: incomeData[1]
+                }
+            ]
+        };
+        // 3. 把配置和数据给实例对象
+        medianIncomeChart.setOption(medianIncomeOption);
+    }, 'json')
+</script>
 
 
 <!--<script th:src="@{/js/resData.js}"></script>-->
