@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="../static/css/mian.css">-->
     <link rel="stylesheet" th:href="@{/css/main.css}">
-    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/jquery/3.5.1/jquery.js"></script>
+    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.js"></script>
 
 </head>
 
@@ -187,7 +187,7 @@
            industryName.push(data[i].name)
            industryAmount.push(data[i].count)
        }
-       console.log("******Data loading Done!!!******")
+       console.log("****** Rank in Industry Data loading Done!!!******")
        console.log(industryName)
        console.log(industryAmount)
        let option = {
@@ -315,10 +315,6 @@
     var industryValue=[335,310,234,135,548,335,353,345,345,123];
     // extract data to two lists, Name + Value
     function extractData(data){
-        function newSort(x,y){
-            return x.count-y.count;
-        }
-        data.sort(newSort);
         // console.log(data)
         var industryName = [];
         var industryAmount = [];
@@ -334,14 +330,22 @@
     // change url name here
     let dataUrl =  '/hottestIndustry';
     $.get(dataUrl).done(function(data) {
-        var getData = extractData(data)
-        var industryList = getData["name"];
-        var industryValue = getData["value"];
-        console.log("******Data loading Done!!!******")
-        console.log(industryList)
-        console.log(industryValue)
+        // var getData = extractData(data)
+        // var industryList = getData["name"];
+        // var industryValue = getData["value"];
+        // console.log("******Data loading Done!!!******")
+        // console.log(industryList)
+        // console.log(industryValue)
         // add option
-        let option = {
+
+
+        var trasferData  = data.map(o => {return{value:o.count, name:o.name}});
+
+
+        console.log("******Hottest Indusry  Data loading Done!!!******")
+        console.log(trasferData)
+
+        let HottestIndustry_option = {
             title: {
                 text: 'Hottest industries in NSW',
                 x: 'center'
@@ -354,25 +358,14 @@
                 orient: 'vertical',
                 left: 'left',
                 top:'8%',
-                data: industryList
+                data: trasferData.name
             },
             series: [
                 {
                     type: 'pie',
                     radius: '60%',
                     center: ['60%', '50%'],
-                    data: [
-                        {value: industryValue[0], name: industryList[0]},
-                        {value: industryValue[1], name: industryList[1]},
-                        {value: industryValue[2], name: industryList[2]},
-                        {value: industryValue[3], name: industryList[3]},
-                        {value: industryValue[4], name: industryList[4]},
-                        {value: industryValue[5], name: industryList[5]},
-                        {value: industryValue[6], name: industryList[6]},
-                        {value: industryValue[7], name: industryList[7]},
-                        {value: industryValue[8], name: industryList[8]},
-                        {value: industryValue[9], name: industryList[9]}
-                    ],
+                    data:trasferData,
                     emphasis: {
                         itemStyle: {
                             shadowBlur: 10,
@@ -384,12 +377,12 @@
             ]
         };
         //add setoption here
-        myChart_hottestIndustry.setOption(option);
+        myChart_hottestIndustry.setOption(HottestIndustry_option);
     }, 'json')
 </script>
 <!--Rank in Industry EChart end Here-->
 
-<!--Top 10 IndustriesEChart Start Here-->
+<!--Top 10 e Start Here-->
 <script type="text/javascript">
     var name = ['Airds', 'Afterlee', 'Adjungbilly', 'Adamstown Heights', 'Agnes Banks'];
     var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
@@ -526,8 +519,9 @@
        populationName: ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)']
    };
 
-   // extract data to two lists, Name + Value
-   function extractData(data){
+   // extract data to two lists, Name +
+   // Value
+   function populationExtract(data){
        var populationMales = [''];
        for( var i = 0; i < data.length; i++){
            populationMales.push(data[i].males)
@@ -568,17 +562,21 @@
 
    //TODO change url name here  这个我不知道怎么改变url地址，还有一个小bug，这个script放在上面的时候图2无法正常运行，删除这个script就可以正常运行。。/晕
    let populationUrl =  '/population?code=2000';
+
    $.get(populationUrl).done(function(data) {
-       var getData = extractData(data)
+       var getData = populationExtract(data)
        var populationName = getData["populationName"];
        var populationNumbers = getData["numbers"];
+
        console.log("******Population Data loading Done!!!******")
-       console.log(populationName)
-       console.log(populationNumbers)
+       console.log(populationData)
+
+       // console.log(populationName)
+       // console.log(populationNumbers)
        // add option
        let populationOption = {
            title: {
-               text: 'Population in This LGA (Albury)',
+               text: "Population in This LGA (" + data[0]["lga_Name"] +")",
                x: 'center'
            },
            color: colorList,
@@ -681,6 +679,7 @@
        // 3. 把配置和数据给实例对象
        populationChart.setOption(populationOption);
    }, 'json')
+
 </script>
 
 <!--Population EChart End Here-->
@@ -704,7 +703,7 @@
         for( var i = 0; i < data.length; i++){
             if (data[i].lga_Name=="New South Wales"){
                 incomeNSWData.push(data[i].median_Income)
-            }else if (data[i].lga_Name=="Sydney (C)"){
+            }else{
                 incomeSuburbData.push(data[i].median_Income)
             }
             // console.log(data[i])
@@ -734,7 +733,7 @@
         // add option
         let medianIncomeOption = {
             title: {
-                text: 'Median income in This LGA (Albury)',
+                text: 'Median income in LGA (' + incomeName[0] + ')',
                 x: 'center'
             },
             color: colorList,
