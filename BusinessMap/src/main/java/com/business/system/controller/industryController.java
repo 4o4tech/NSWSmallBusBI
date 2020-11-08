@@ -58,6 +58,25 @@ public class industryController {
         return "industry_dashboard";
     }
 
+    @GetMapping("/industry_dashboard/{postcode}")
+    public String dashboard(@PathVariable String postcode, Model model){
+//        Industry newIndustry  = new Industry();
+
+        if( postcode == ""){
+            postcode = "2000";
+        }
+        HashMap<String,String> hmap = new HashMap<>();
+        hmap.put("name", "cafe");
+        hmap.put("postCode", postcode);
+
+        model.addAttribute("searchIndustry", hmap);
+
+
+        return "industry_dashboard_tmp";
+    }
+
+
+
 //    @GetMapping("/search_all")
     @GetMapping("/industry/link/{name}")
     public String getMessage(@PathVariable String name,Model model){
