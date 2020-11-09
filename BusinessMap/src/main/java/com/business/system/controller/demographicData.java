@@ -28,7 +28,7 @@ import static com.mongodb.client.model.Filters.eq;
 public class demographicData {
     @Resource
     private MongoTemplate mongoTemplate;
-    private String getName = "Parramatta (C)";
+    static String setName;
 
     // 人口数量
 
@@ -58,7 +58,7 @@ public class demographicData {
         }
 
         System.out.println("LGA Name is: " + getLGAName.get(0));
-        getName = getLGAName.get(0);
+        setName = getLGAName.get(0);
 
 
 //       db.population.aggregate([
@@ -75,7 +75,7 @@ public class demographicData {
 //])
 
         Aggregation agg = Aggregation.newAggregation(
-                Aggregation.match(Criteria.where("LGA_Name").is(getName)),
+                Aggregation.match(Criteria.where("LGA_Name").is(setName)),
                 Aggregation.match(Criteria.where("Year").gte(2014).lte(2018)),
                 Aggregation.project("Year", "LGA_Name")
                         .and("Males - Total (no)").as("Males")
@@ -123,7 +123,7 @@ public class demographicData {
 
         // search area
         Aggregation incomeAgg = Aggregation.newAggregation(
-                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(getName), Criteria.where("LGA_Name").is("New South Wales"))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(setName), Criteria.where("LGA_Name").is("New South Wales"))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
                 Aggregation.match(Criteria.where("Year").gte(2014).lte(2017)),  //{ "$match" : { "Year" : { "$gte" : 2014 , "$lte" : 2017}}}
                 Aggregation.project("Year", "LGA_Name")
                             .and("Median_Total_Income").as("Median_Income")
