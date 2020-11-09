@@ -12,15 +12,15 @@ public class ageRange {
     @Field("LGA_Name")
     private String LGA_Name;
     @Field("zero_to_19")
-    private int Age_0_19;
+    private int zero_to_19;
     @Field("twenty_to_39")
-    private int Age_20_39;
+    private int twenty_to_39;
     @Field("fourty_to_59")
-    private int Age_40_59;
+    private int fourty_to_59;
     @Field("sixty_to_79")
-    private int Age_60_79;
+    private int sixty_to_79;
     @Field("eighty_over")
-    private int Age_80_over;
+    private int eighty_over;
 
 
     public String getLGA_Name() {
@@ -32,42 +32,42 @@ public class ageRange {
     }
 
     public int getAge_0_19() {
-        return Age_0_19;
+        return zero_to_19;
     }
 
     public void setAge_0_19(int age_0_19) {
-        Age_0_19 = age_0_19;
+        zero_to_19 = age_0_19;
     }
 
     public int getAge_20_39() {
-        return Age_20_39;
+        return twenty_to_39;
     }
 
     public void setAge_20_39(int age_20_39) {
-        Age_20_39 = age_20_39;
+        twenty_to_39 = age_20_39;
     }
 
     public int getAge_40_59() {
-        return Age_40_59;
+        return fourty_to_59;
     }
 
     public void setAge_40_59(int age_40_59) {
-        Age_40_59 = age_40_59;
+        fourty_to_59 = age_40_59;
     }
 
     public int getAge_60_79() {
-        return Age_60_79;
+        return sixty_to_79;
     }
 
     public void setAge_60_79(int age_60_79) {
-        Age_60_79 = age_60_79;
+        sixty_to_79 = age_60_79;
     }
 
     public int getAge_80_over() {
-        return Age_80_over;
+        return eighty_over;
     }
 
     public void setAge_80_over(int age_80_over) {
-        Age_80_over = age_80_over;
+        eighty_over = age_80_over;
     }
 }

@@ -2,7 +2,7 @@ package com.business.system.entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-@Document(collection = "businessNumber")
+@Document(collection = "economy")
 public class businessNumber {
 
 //    {
@@ -18,83 +18,52 @@ public class businessNumber {
 
     @Field("LGA_Name")
     private String LGA_Name;
-    @Field("support1")
-    private int support1;
-    @Field("support2")
-    private int support2;
-    @Field("support3")
-    private int support3;
-    @Field("number0")
-    private int number0;
-    @Field("number1")
-    private int number1;
-    @Field("number2")
-    private int number2;
-    @Field("number3")
-    private int number3;
+    @Field("Total_number")
+    private int Total_number;
+    @Field("Employ_1_4")
+    private int Employ_1_4;
+    @Field("Employ_5_19")
+    private int Employ_5_19;
+    @Field("Employ_20_more")
+    private int Employ_20_more;
 
 
     public String getLGA_Name() {
         return LGA_Name;
     }
-
-    public int getSupport1() {
-        return support1;
-    }
-
-    public int getSupport2() {
-        return support2;
-    }
-
-    public int getSupport3() {
-        return support3;
-    }
-
-    public int getNumber0() {
-        return number0;
-    }
-
-    public int getNumber1() {
-        return number1;
-    }
-
-    public int getNumber2() {
-        return number2;
-    }
-
-    public int getNumber3() {
-        return number3;
-    }
-
     public void setLGA_Name(String LGA_Name) {
         this.LGA_Name = LGA_Name;
     }
 
-    public void setSupport1(int support1) {
-        this.support1 = support1;
+    public int getEmploy_1_4() {
+        return Employ_1_4;
     }
 
-    public void setSupport2(int support2) {
-        this.support2 = support2;
+    public void setEmploy_1_4(int employ_1_4) {
+        Employ_1_4 = employ_1_4;
     }
 
-    public void setSupport3(int support3) {
-        this.support3 = support3;
+    public int getEmploy_5_19() {
+        return Employ_5_19;
     }
 
-    public void setNumber0(int number0) {
-        this.number0 = number0;
+    public void setEmploy_5_19(int employ_5_19) {
+        Employ_5_19 = employ_5_19;
     }
 
-    public void setNumber1(int number1) {
-        this.number1 = number1;
+    public int getEmploy_20_more() {
+        return Employ_20_more;
     }
 
-    public void setNumber2(int number2) {
-        this.number2 = number2;
+    public void setEmploy_20_more(int employ_20_more) {
+        Employ_20_more = employ_20_more;
     }
 
-    public void setNumber3(int number3) {
-        this.number3 = number3;
+    public int getTotal_number() {
+        return Total_number;
+    }
+
+    public void setTotal_number(int total_number) {
+        Total_number = total_number;
     }
 }
