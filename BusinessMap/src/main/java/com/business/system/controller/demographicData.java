@@ -32,7 +32,7 @@ public class demographicData {
     // 人口数量
 
     @RequestMapping("/population")
-    public List<population> getPopulationData(@RequestParam(value="code") Integer postCode) {
+    public List<population> getPopulationData(@RequestParam(value = "code") Integer postCode) {
 
 
         //var name = db.LGA_postcode.find({POSTCODE:2127}).next().LGA_NAME
@@ -44,14 +44,14 @@ public class demographicData {
         MongoCollection<Document> collection = mongoTemplate.getCollection("LGA_postcode");
 
 
-        Bson eqBson = eq("POSTCODE",postCode);
+        Bson eqBson = eq("POSTCODE", postCode);
         BasicDBObject fieldsObject = new BasicDBObject();
         fieldsObject.put("LGA_NAME", 1);
 
         FindIterable<Document> documents = collection.find(eqBson).projection(Document.parse(fieldsObject.toString()));
         List<String> getLGAName = new ArrayList<>();
         // Print the name from the list....
-        for(Document document : documents) {
+        for (Document document : documents) {
             String result = (String) document.get("LGA_NAME");
             getLGAName.add(result);
         }
@@ -83,14 +83,13 @@ public class demographicData {
                         .and("Population density (persons/km2)").as("Density")
         );
 
-        AggregationResults<population> output = mongoTemplate.aggregate(agg, "population",population.class);
+        AggregationResults<population> output = mongoTemplate.aggregate(agg, "population", population.class);
 //        System.out.println(output.getMappedResults());
 
         List<population> resultList = output.getMappedResults();
 
         return resultList;
     }
-
 
 
     @RequestMapping("/income")
@@ -125,11 +124,11 @@ public class demographicData {
                 Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(setName), Criteria.where("LGA_Name").is("New South Wales"))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
                 Aggregation.match(Criteria.where("Year").gte(2014).lte(2017)),  //{ "$match" : { "Year" : { "$gte" : 2014 , "$lte" : 2017}}}
                 Aggregation.project("Year", "LGA_Name")
-                            .and("Median_Total_Income").as("Median_Income")
+                        .and("Median_Total_Income").as("Median_Income")
 
         );
 
-        AggregationResults<Income> output = mongoTemplate.aggregate(incomeAgg, "income",Income.class);
+        AggregationResults<Income> output = mongoTemplate.aggregate(incomeAgg, "income", Income.class);
 //        System.out.println(output.getMappedResults());
 
         List<Income> resultList = output.getMappedResults();
@@ -160,7 +159,7 @@ public class demographicData {
 
         );
 
-        AggregationResults<ageRange> output = mongoTemplate.aggregate(ageRangeAgg, "population",ageRange.class);
+        AggregationResults<ageRange> output = mongoTemplate.aggregate(ageRangeAgg, "population", ageRange.class);
 
         List<ageRange> resultList = output.getMappedResults();
 
@@ -184,7 +183,7 @@ public class demographicData {
 
         );
 
-        AggregationResults<businessNumber> output = mongoTemplate.aggregate(businessNumberAgg, "economy",businessNumber.class);
+        AggregationResults<businessNumber> output = mongoTemplate.aggregate(businessNumberAgg, "economy", businessNumber.class);
 
         List<businessNumber> resultList = output.getMappedResults();
 
@@ -209,11 +208,60 @@ public class demographicData {
 
         );
 
-        AggregationResults<businessEntries> output = mongoTemplate.aggregate(businessEntriesAgg, "economy",businessEntries.class);
+        AggregationResults<businessEntries> output = mongoTemplate.aggregate(businessEntriesAgg, "economy", businessEntries.class);
 
         List<businessEntries> resultList = output.getMappedResults();
 
         return resultList;
     }
+
+    @RequestMapping("/exits")
+    public List<Exits> getExitsData(){
+        Criteria newCri = new Criteria();
+
+        Aggregation BusinessExits = Aggregation.newAggregation(
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(getName))),
+                Aggregation.match(Criteria.where("Year").gte(2016).lte(2019)),
+                Aggregation.project("Year", "LGA_Name")
+                        .and("Number of non employing business exits (no)").as("zero_employee")
+                        .and("Number of employing business exits: 1-4 employees (no)").as("one_to_4")
+                        .and("Number of employing business exits: 5-19 employees (no)").as("five_to_20")
+                        .and("Number of employing business exits: 20 or more employees (no)").as("more_than_20")
+                        .and("Number of employing business exits: 20 or more employees (no)").as("total")
+        );
+
+        AggregationResults<Exits> output = mongoTemplate.aggregate(BusinessExits,"economy", Exits.class);
+
+        List<Exits> resultList = output.getMappedResults();
+
+        return resultList;
+    }
+
+    @RequestMapping("/education")
+    public List<Education> getEducationata(){
+        Criteria newCri = new Criteria();
+
+        Aggregation education = Aggregation.newAggregation(
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is("Albury (C)"))),
+                Aggregation.match(Criteria.where("Year").is(2016)),
+                Aggregation.project("Year", "LGA_Name")
+                        .and("Non-School Qualifications (%)").as("non_school")
+                        .and("Postgraduate Degree (%)").as("post_grad")
+                        .and("Graduate Diploma/Graduate Certificate (%)").as("grad")
+                        .and("Bachelor Degree (%)").as("bachelor")
+                        .and("Advanced Diploma/Diploma (%)").as("advanced")
+                        .and("Certificate (%)").as("certificate")
+                        .and("Non-School Qualifications - Inadequately described (%)").as("non_school_inadequate")
+        );
+
+        AggregationResults<Education> output = mongoTemplate.aggregate(education,"health_disability", Education.class);
+
+        List<Education> resultList = output.getMappedResults();
+
+        return resultList;
+    }
+
+
+
 
 }
