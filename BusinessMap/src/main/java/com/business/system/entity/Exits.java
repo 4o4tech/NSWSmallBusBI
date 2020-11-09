@@ -1,10 +1,8 @@
 package com.business.system.entity;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.io.Serializable;
 
 
 @Document(collection = "economy")
@@ -20,8 +18,6 @@ public class Exits {
 	 *    "total" : 524 }
 	 */
 	
-	  @Id
-//    private String id;
     @Field("Year")
     private Integer Year;
     @Field("LGA_Name")
@@ -36,17 +32,6 @@ public class Exits {
     private Integer More_than_20;
     @Field("total")
     private Integer Total;
-
-    public Exits(Integer Year, String LGA_Name, Integer Zero_employee, Integer One_to_4, Integer Five_to_20,Integer More_than_20, Integer Total ){
-
-        this.Year = Year;
-        this.LGA_Name = LGA_Name;
-        this.Zero_employee = Zero_employee;
-        this.One_to_4 = One_to_4;
-        this.Five_to_20 = Five_to_20;
-        this.More_than_20 = More_than_20;
-        this.Total = Total;
-    }
 
 
     public Integer getYear() {
