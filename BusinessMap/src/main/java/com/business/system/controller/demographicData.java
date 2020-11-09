@@ -1,7 +1,6 @@
 package com.business.system.controller;
 
-import com.business.system.entity.Income;
-import com.business.system.entity.population;
+import com.business.system.entity.*;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -138,6 +137,81 @@ public class demographicData {
 
 //        resultList.addAll(nswResultList);
 
+
+        return resultList;
+    }
+
+    @RequestMapping("/ageRange")
+    public List<ageRange> getAgeRangeData() {
+
+        Criteria newCri = new Criteria();
+
+        // search area
+        Aggregation ageRangeAgg = Aggregation.newAggregation(
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is("Albury (C)"))),
+                //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
+                Aggregation.match(Criteria.where("Year").gte(2018).lte(2018)),
+                Aggregation.project("Year", "LGA_Name")
+                        .and("zero_to_19").as("zero_to_19")
+                        .and("twenty_to_39").as("twenty_to_39")
+                        .and("fourty_to_59").as("fourty_to_59")
+                        .and("sixty_to_79").as("sixty_to_79")
+                        .and("eighty_over").as("eighty_over")
+
+        );
+
+        AggregationResults<ageRange> output = mongoTemplate.aggregate(ageRangeAgg, "population",ageRange.class);
+
+        List<ageRange> resultList = output.getMappedResults();
+
+        return resultList;
+    }
+
+    @RequestMapping("/businessNumber")
+    public List<businessNumber> getBusinessNumberData() {
+
+        Criteria newCri = new Criteria();
+
+        // search area
+        Aggregation businessNumberAgg = Aggregation.newAggregation(
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is("Albury (C)"))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
+                Aggregation.match(Criteria.where("Year").gte(2019).lte(2019)),  //{ "$match" : { "Year" : { "$gte" : 2014 , "$lte" : 2017}}}
+                Aggregation.project("Year", "LGA_Name")
+                        .and("Number of employing businesses: 1-4 employees (no)").as("Employ_1_4")
+                        .and("Number of employing businesses: 5-19 employees (no)").as("Employ_5_19")
+                        .and("Number of employing businesses: 20 or more employees (no)").as("Employ_20_more")
+                        .and("Total number of businesses (no)").as("Total_number")
+
+        );
+
+        AggregationResults<businessNumber> output = mongoTemplate.aggregate(businessNumberAgg, "economy",businessNumber.class);
+
+        List<businessNumber> resultList = output.getMappedResults();
+
+        return resultList;
+    }
+
+    @RequestMapping("/businessEntries")
+    public List<businessEntries> getBusinessEntriesData() {
+
+        Criteria newCri = new Criteria();
+
+        // search area
+        Aggregation businessEntriesAgg = Aggregation.newAggregation(
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is("Albury (C)"))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
+                Aggregation.match(Criteria.where("Year").gte(2016).lte(2019)),  //{ "$match" : { "Year" : { "$gte" : 2014 , "$lte" : 2017}}}
+                Aggregation.project("Year", "LGA_Name")
+                        .and("Number of non employing business entries (no)").as("zero_employee")
+                        .and("Number of employing business entries: 1-4 employees (no)").as("one_to_4")
+                        .and("Number of employing business entries: 5-19 employees (no)").as("five_to_20")
+                        .and("Number of employing business entries: 20 or more employees (no)").as("more_than_20")
+                        .and("Total number of business entries (no)").as("total")
+
+        );
+
+        AggregationResults<businessEntries> output = mongoTemplate.aggregate(businessEntriesAgg, "economy",businessEntries.class);
+
+        List<businessEntries> resultList = output.getMappedResults();
 
         return resultList;
     }
