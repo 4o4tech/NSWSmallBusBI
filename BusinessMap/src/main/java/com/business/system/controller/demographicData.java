@@ -57,7 +57,7 @@ public class demographicData {
         }
 
         System.out.println("LGA Name is: " + getLGAName.get(0));
-        setName = getLGAName.get(0);
+        this.setName = getLGAName.get(0);
 
 
 //       db.population.aggregate([
@@ -119,9 +119,11 @@ public class demographicData {
 
         Criteria newCri = new Criteria();
 
+        String newLGAName;
+        newLGAName = setName;
         // search area
         Aggregation incomeAgg = Aggregation.newAggregation(
-                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(setName), Criteria.where("LGA_Name").is("New South Wales"))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(newLGAName), Criteria.where("LGA_Name").is("New South Wales"))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
                 Aggregation.match(Criteria.where("Year").gte(2014).lte(2017)),  //{ "$match" : { "Year" : { "$gte" : 2014 , "$lte" : 2017}}}
                 Aggregation.project("Year", "LGA_Name")
                         .and("Median_Total_Income").as("Median_Income")
@@ -149,8 +151,10 @@ public class demographicData {
         Criteria newCri = new Criteria();
 
         // search area
+        String newLGAName;
+        newLGAName = setName;
         Aggregation ageRangeAgg = Aggregation.newAggregation(
-                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is("Albury (C)"))),
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(newLGAName))),
                 //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
                 Aggregation.match(Criteria.where("Year").gte(2018).lte(2018)),
                 Aggregation.project("Year", "LGA_Name")
@@ -177,7 +181,7 @@ public class demographicData {
 
         // search area
         Aggregation businessNumberAgg = Aggregation.newAggregation(
-                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is("Albury (C)"))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(setName))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
                 Aggregation.match(Criteria.where("Year").gte(2019).lte(2019)),  //{ "$match" : { "Year" : { "$gte" : 2014 , "$lte" : 2017}}}
                 Aggregation.project("Year", "LGA_Name")
                         .and("Number of employing businesses: 1-4 employees (no)").as("Employ_1_4")
@@ -202,7 +206,7 @@ public class demographicData {
 
         // search area
         Aggregation businessEntriesAgg = Aggregation.newAggregation(
-                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is("Albury (C)"))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(setName))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
                 Aggregation.match(Criteria.where("Year").gte(2016).lte(2019)),  //{ "$match" : { "Year" : { "$gte" : 2014 , "$lte" : 2017}}}
                 Aggregation.project("Year", "LGA_Name")
                         .and("Number of non employing business entries (no)").as("zero_employee")
@@ -248,7 +252,7 @@ public class demographicData {
         Criteria newCri = new Criteria();
 
         Aggregation education = Aggregation.newAggregation(
-                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is("Albury (C)"))),
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(setName))),
                 Aggregation.match(Criteria.where("Year").is(2016)),
                 Aggregation.project("Year", "LGA_Name")
                         .and("Non-School Qualifications (%)").as("non_school")

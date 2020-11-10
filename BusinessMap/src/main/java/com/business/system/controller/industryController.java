@@ -55,7 +55,7 @@ public class industryController {
         model.addAttribute("searchIndustry", searchIndustry);
 
 
-        return "industry_dashboard";
+        return "asycDashboard";
     }
 
     @GetMapping("/industry_dashboard/{postcode}")
