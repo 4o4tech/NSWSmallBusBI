@@ -140,6 +140,9 @@ public class demographicData {
         return resultList;
     }
 
+
+    // age range fetch mongo data
+
     @RequestMapping("/ageRange")
     public List<ageRange> getAgeRangeData() {
 
@@ -166,6 +169,7 @@ public class demographicData {
         return resultList;
     }
 
+    // business Number fetch mongo data
     @RequestMapping("/businessNumber")
     public List<businessNumber> getBusinessNumberData() {
 
@@ -190,6 +194,7 @@ public class demographicData {
         return resultList;
     }
 
+//    Business Entries  fetch mongo data
     @RequestMapping("/businessEntries")
     public List<businessEntries> getBusinessEntriesData() {
 
@@ -215,12 +220,13 @@ public class demographicData {
         return resultList;
     }
 
+    //    Business Exits  fetch mongo data
     @RequestMapping("/exits")
     public List<Exits> getExitsData(){
         Criteria newCri = new Criteria();
 
         Aggregation BusinessExits = Aggregation.newAggregation(
-                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(getName))),
+                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(setName))),
                 Aggregation.match(Criteria.where("Year").gte(2016).lte(2019)),
                 Aggregation.project("Year", "LGA_Name")
                         .and("Number of non employing business exits (no)").as("zero_employee")
@@ -236,7 +242,7 @@ public class demographicData {
 
         return resultList;
     }
-
+    //    education  fetch mongo data
     @RequestMapping("/education")
     public List<Education> getEducationata(){
         Criteria newCri = new Criteria();
