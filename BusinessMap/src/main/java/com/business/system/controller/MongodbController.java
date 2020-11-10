@@ -2,20 +2,16 @@ package com.business.system.controller;
 
 
 import com.business.system.pagemodel.DataGrid;
-import com.business.system.po.CrimeNumber;
-import com.business.system.po.Picture;
-import com.business.system.po.RentalPrice;
-import com.business.system.po.TrainStationTimetable;
-import com.business.system.service.CrimeNumberService;
-import com.business.system.service.PictureService;
-import com.business.system.service.RentalPriceService;
-import com.business.system.service.TrainStationTimetableService;
+import com.business.system.po.*;
+import com.business.system.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Controller
@@ -30,6 +26,17 @@ public class MongodbController {
 	private RentalPriceService rentalPriceService;
 	@Autowired
 	private TrainStationTimetableService trainStationTimetableService;
+	@Autowired
+	private BusStationService busStationService;
+	@Autowired
+	private BankService bankService;
+	@Autowired
+	private ParkService parkService;
+	@Autowired
+	private ShoppingMallService shoppingMallService;
+	@Autowired
+	private TouristAttractionService touristAttractionService;
+
 
 
 	@RequestMapping(value="/pictures", method=RequestMethod.GET)
@@ -88,6 +95,30 @@ public class MongodbController {
 	public List<CrimeNumber> getCrimeNumberList(@RequestParam("keywords") String keywords){
 		List<CrimeNumber> crimeNumberList = crimeRateService.findByPostCodeOrSuburb(keywords);
 		return crimeNumberList;
+	}
+
+	@RequestMapping(value="/getPieList")
+	@ResponseBody
+	public Map<String,Integer> getPieList(@RequestParam("keywords") String keywords){
+		List<BusStation> busStationList = busStationService.findByAddress(keywords);
+		List<Bank> bankList = bankService.findByAddress(keywords);
+		List<Park> parkList = parkService.findByAddress(keywords);
+		List<ShoppingMall> shoppingMallList = shoppingMallService.findByAddress(keywords);
+		List<TouristAttraction> touristAttractionList = touristAttractionService.findByAddress(keywords);
+		Integer busStaitons = busStationList == null ? 0 : busStationList.size();
+		Integer banks = bankList == null ? 0 : bankList.size();
+		Integer parks = parkList == null ? 0 : parkList.size();
+		Integer shoppingMalls = shoppingMallList == null ? 0 : shoppingMallList.size();
+		Integer touristAttractions = touristAttractionList == null ? 0 : touristAttractionList.size();
+
+		Map<String,Integer> map = new HashMap<String,Integer>();
+		map.put("busStation",busStaitons);
+		map.put("bank",banks);
+		map.put("park",parks);
+		map.put("shoppingMall",shoppingMalls);
+		map.put("touristAttraction",touristAttractions);
+
+		return map;
 	}
 
 
