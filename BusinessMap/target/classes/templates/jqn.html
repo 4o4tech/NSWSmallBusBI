@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style type="text/css">
+table.gridtable {
+	margin: 11px;
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+</style>
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="/css/jquery.bootgrid.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/vis.css"/>
+
+</head>
+<body>
+    <p class="title" id = "menubar"></p>
+
+          	<div class="row">
+  		<div class="col-md-12">
+  	<div class="row">
+
+    	<input id = "name" name="name" type="text"  class="form-control" />
+
+          <button type="submit" id="submit" name="submit" class="btn btn-primary">Search</button>
+ 	<button type="submit" id="Homepage2" onclick="window.open('/index')" class="btn btn-primary">Return</button>
+  	</div>  </div></div>
+
+        <table id="tt" class="gridtable" >
+            <tr >
+                <th>name	</th>
+                <th>address	</th>
+                <th>types	</th>
+            </tr>
+        </table>
+<script src="js/jqn.js"></script>
+<script src="js/vis.js"></script>
+<script>
+/*乱码就format一下*/
+console.log("111");
+$(function() {
+
+	$("#submit").click(demo);
+
+});
+function demo() {
+	var name = $("#name").val().trim();
+	alert(name);
+	var str={"name":name};
+	$.ajax({
+        async : false,  
+        type : "post",   
+        url : "/getName",
+        dataType : "json",
+        contentType: "application/json",
+        data:JSON.stringify(str),
+        success: function (result) {
+          console.log(result); 
+          if (result.status == true) {
+        	  alert(result.data);
+              var tab = '<tr>' +
+                  '<td>' + result.data[0] + '</td>' +
+                  '<td>' + result.data[1] + '</td>' +
+                  '<td>' + result.data[2] + '</td>' + 
+                  '</tr>';
+              $("#tt").append(tab);
+          }
+        },
+        error:function (result) {
+            alert(result.status);
+        }
+    });
+
+
+}
+</script>
+<script>
+var url = window.location.search; 
+var afterUrl =  url.substr(url.lastIndexOf('=')+1, url.length);;
+var b = afterUrl.split("%20").join(" ").split("%27").join("'").split("%C3%A9").join("é");
+console.log(afterUrl);
+document.getElementById('name').value = b;
+</script>
+</body>
+</html>

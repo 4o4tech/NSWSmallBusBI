@@ -1,9 +1,5 @@
 package com.business.system.entity;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
-import lombok.Data;
-
 //import org.springframework.data.mongodb.core.mapping.Document;
 //import org.springframework.data.mongodb.core.MongoTemplate;
 

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>ECharts</title>
+
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+    <script src="https://echarts-maps.github.io/echarts-countries-js/echarts-countries-js/Australia.js"></script>
+
+
+</head>
+<body>
+<!--<div id="chart" class="chart" style="width: 600px;height:400px;"></div>-->
+<div>
+    <div id="Population" style="float: left;width: 600px;height:400px;border:2px solid green;"></div>
+    <div id="Income" style="float: left;width: 600px;height:400px;border:2px solid green;margin-left:10px;"></div>
+    <div id="Age" style="float: left;width: 600px;height:400px;border:2px solid green;margin-left:10px;"></div>
+    <div id="Num_of_business"
+         style="float: left;width: 907px;height:400px;border:2px solid green;margin-top: 10px;"></div>
+    <div id="Num_of_business_entries"
+         style="float: left;width: 907px;height:400px;border:2px solid green;margin-top: 10px;margin-left: 10px;"></div>
+    <div id="Num_of_business_exits"
+         style="float: left;width: 907px;height:400px;border:2px solid green;margin-top: 10px;"></div>
+    <div id="Education"
+         style="float: left;width: 907px;height:400px;border:2px solid green;margin-top: 10px;margin-left: 10px"></div>
+</div>
+
+<!--Population in this LGA-->
+<script type="text/javascript">
+    // name with Population eg. Name to populationName, data to populationData
+
+    var populationName = ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)'];
+    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
+    var populationData = {
+        numbers: [
+            [, 26040, 25716, 25284, 24989, 24790,],
+            [, 27727, 27273, 26887, 26497, 26200,],
+            [, 53767, 52989, 52171, 51486, 50990,],
+            [, 175.7, 173.2, 170.5, 168.3, 166.7,]
+        ],
+        populationName: ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)']
+    };
+    var populationChart = echarts.init(document.getElementById('Population'));
+    var populationOption = {
+        title: {
+            text: 'Population in This LGA (Albury)',
+            x: 'center'
+        },
+        color: colorList,
+        tooltip: {
+            // trigger with axis
+            trigger: "axis"
+        },
+        legend: {
+            left: "5%",
+            right: "5%",
+            top: "20",
+            textStyle: {
+                color: "#040000"
+            }
+        },
+        grid: {
+            top: "25%",
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            show: true,
+            borderColor: "#012f4a",
+            containLabel: true
+        },
+
+        xAxis: {
+            type: "category",
+            boundaryGap: false,
+            data: [
+                "2011",
+                "2014",
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019"
+            ],
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false
+            }
+        },
+        yAxis: [{
+            type: "value",
+            name: "Population",
+            axisTick: {
+                show: false
+            },
+            // 修改y轴分割线的颜色
+            splitLine: {
+                lineStyle: {
+                    color: "#012f4a"
+                }
+            }
+        },
+            {
+                type: "value",
+                min: 0,
+                max: 9000,
+                name: "Density (pp/km2)",
+                position: 'right',
+            }],
+        series: [
+
+            {
+                name: populationData.populationName[0],
+                type: "line",
+                yAxisIndex: 0,
+                smooth: true,
+                data: populationData.numbers[0]
+            },
+            {
+                name: populationData.populationName[1],
+                type: "line",
+                yAxisIndex: 0,
+                smooth: true,
+                data: populationData.numbers[1]
+            },
+            {
+                name: populationData.populationName[2],
+                type: "line",
+                yAxisIndex: 0,
+                smooth: true,
+                data: populationData.numbers[2]
+            },
+            {
+                name: populationData.populationName[3],
+                type: "bar",
+                yAxisIndex: 1,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: populationData.numbers[3]
+            }
+        ]
+    };
+    // 3. 把配置和数据给实例对象
+    populationChart.setOption(populationOption);
+</script>
+
+<!--Median income in this LGA-->
+<script type="text/javascript">
+    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
+    var medianIncomeData = {
+        numbers: [
+            [43695, 44586, 45504, 46426],[45828, 46854, 47692, 48360]
+        ],
+        name: ['Albury', 'NSW']
+    };
+    var medianIncomeChart = echarts.init(document.getElementById('Income'));
+    var medianIncomeOption = {
+        title: {
+            text: 'Median income in This LGA (Albury)',
+            x: 'center'
+        },
+        color: colorList,
+        tooltip: {
+            // trigger with axis
+            trigger: "axis"
+        },
+        legend: {
+            left: "5%",
+            right: "5%",
+            top: "20",
+            textStyle: {
+                color: "#040000"
+            }
+        },
+        grid: {
+            top: "25%",
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            show: true,
+            borderColor: "#012f4a",
+            containLabel: true
+        },
+
+        xAxis: {
+            type: "category",
+            boundaryGap: false,
+            data: [
+                "2011",
+                "2014",
+                "2015",
+                "2016",
+                "2017",
+                "2018",
+                "2019"
+            ],
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false
+            }
+        },
+        yAxis: [{
+            type: "value",
+            name: "Population",
+            axisTick: {
+                show: false
+            },
+            // 修改y轴分割线的颜色
+            splitLine: {
+                lineStyle: {
+                    color: "#012f4a"
+                }
+            }
+        }],
+        series: [
+            {
+                name: medianIncomeData.name[0],
+                type: "bar",
+                smooth: true,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: medianIncomeData.numbers[0]
+            },
+            {
+                name: medianIncomeData.name[1],
+                type: "bar",
+                smooth: true,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: medianIncomeData.numbers[1]
+            }
+        ]
+    };
+    // 3. 把配置和数据给实例对象
+    medianIncomeChart.setOption(medianIncomeOption);
+</script>
+
+<!--Age range in this LGA-->
+<script type="text/javascript">
+    var ageRangeData = {
+        numbers: [13764, 14068, 13230, 10116, 2589],
+        name: ['0-19', '20-39', '40-59', '60-79', '80 and over']
+    };
+    var ageRangeChart = echarts.init(document.getElementById('Age'));
+
+    var ageRangeOption = {
+        title: {
+            text: 'Age range in This LGA (Albury)',
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c} ({d}%)'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 10,
+            data: ['0-19', '20-39', '40-59', '60-79', '80 and over']
+        },
+        series: [
+            {
+                name: 'age range',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    {value: ageRangeData.numbers[0], name: ageRangeData.name[0]},
+                    {value: ageRangeData.numbers[1], name: ageRangeData.name[1]},
+                    {value: ageRangeData.numbers[2], name: ageRangeData.name[2]},
+                    {value: ageRangeData.numbers[3], name: ageRangeData.name[3]},
+                    {value: ageRangeData.numbers[4], name: ageRangeData.name[4]},
+                ]
+            }
+        ]
+    };
+
+    ageRangeChart.setOption(ageRangeOption);
+</script>
+
+<!--Number of business in this LGA-->
+<script type="text/javascript">
+    var numberOfBusinessData = {
+        numbers: [
+            [0, 1878, 1548, 628, 437],
+            [4617, 2738, 1190, 562, 125]
+        ],
+        name: ['Total number', '0 employee', '1-4 employees', '5-19 employees', 'more than 20']
+    };
+    var numberOfBusinessChart = echarts.init(document.getElementById('Num_of_business'));
+
+    var numberOfBusinessOption = {
+        title: {
+            text: 'Number of Business in this LGA (2019)',
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+            },
+            formatter: function (params) {
+                var tar = params[1];
+                return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'category',
+            splitLine: {show: false},
+            data: numberOfBusinessData.name
+        },
+        yAxis: {
+            type: 'value',
+            name: "no."
+        },
+        series: [
+            {
+                name: 'support',
+                type: 'bar',
+                stack: '总量',
+                itemStyle: {
+                    barBorderColor: 'rgba(0,0,0,0)',
+                    color: 'rgba(0,0,0,0)'
+                },
+                emphasis: {
+                    itemStyle: {
+                        barBorderColor: 'rgba(0,0,0,0)',
+                        color: 'rgba(0,0,0,0)'
+                    }
+                },
+                data: numberOfBusinessData.numbers[0]
+            },
+            {
+                name: 'Numbers',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'inside'
+                },
+                data: numberOfBusinessData.numbers[1]
+            }
+        ]
+    };
+    numberOfBusinessChart.setOption(numberOfBusinessOption);
+</script>
+
+<!--<script type="text/javascript">-->
+<!--    var name = ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)'];-->
+<!--    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];-->
+<!--    var data = {-->
+<!--        numbers: [-->
+<!--            [, 26040, 25716, 25284, 24989, 24790,],-->
+<!--            [, 27727, 27273, 26887, 26497, 26200,],-->
+<!--            [, 53767, 52989, 52171, 51486, 50990,],-->
+<!--            [, 175.7, 173.2, 170.5, 168.3, 166.7,]-->
+<!--        ],-->
+<!--        name: ['Males (no.)', 'Females (no.)', 'Persons (no.)', 'Population Density (pp/km2)']-->
+<!--    };-->
+<!--    var myChart = echarts.init(document.getElementById('Population'));-->
+<!--    var option = {-->
+<!--        title: {-->
+<!--            text: 'Population in This LGA (Albury)',-->
+<!--            x: 'center'-->
+<!--        },-->
+<!--        color: colorList,-->
+<!--        tooltip: {-->
+<!--            // trigger with axis-->
+<!--            trigger: "axis"-->
+<!--        },-->
+<!--        legend: {-->
+<!--            left: "5%",-->
+<!--            right: "5%",-->
+<!--            top: "20",-->
+<!--            textStyle: {-->
+<!--                color: "#040000"-->
+<!--            }-->
+<!--        },-->
+<!--        grid: {-->
+<!--            top: "25%",-->
+<!--            left: "3%",-->
+<!--            right: "4%",-->
+<!--            bottom: "3%",-->
+<!--            show: true,-->
+<!--            borderColor: "#012f4a",-->
+<!--            containLabel: true-->
+<!--        },-->
+
+<!--        xAxis: {-->
+<!--            type: "category",-->
+<!--            boundaryGap: false,-->
+<!--            data: [-->
+<!--                "2011",-->
+<!--                "2014",-->
+<!--                "2015",-->
+<!--                "2016",-->
+<!--                "2017",-->
+<!--                "2018",-->
+<!--                "2019"-->
+<!--            ],-->
+<!--            axisTick: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisLine: {-->
+<!--                show: false-->
+<!--            }-->
+<!--        },-->
+<!--        yAxis: [{-->
+<!--            type: "value",-->
+<!--            name:"Population",-->
+<!--            axisTick: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            // 修改y轴分割线的颜色-->
+<!--            splitLine: {-->
+<!--                lineStyle: {-->
+<!--                    color: "#012f4a"-->
+<!--                }-->
+<!--            }-->
+<!--        },-->
+<!--        {-->
+<!--            type: "value",-->
+<!--            min:0,-->
+<!--            max:9000,-->
+<!--            name:"Density (pp/km2)",-->
+<!--            position: 'right',-->
+<!--        }],-->
+<!--        series: [-->
+<!--            {-->
+<!--                name: data.name[0],-->
+<!--                type: "line",-->
+<!--                yAxisIndex: 0,-->
+<!--                smooth: true,-->
+<!--                data: data.numbers[0]-->
+<!--            },-->
+<!--            {-->
+<!--                name: data.name[1],-->
+<!--                type: "line",-->
+<!--                yAxisIndex: 0,-->
+<!--                smooth: true,-->
+<!--                data: data.numbers[1]-->
+<!--            },-->
+<!--            {-->
+<!--                name: data.name[2],-->
+<!--                type: "line",-->
+<!--                yAxisIndex: 0,-->
+<!--                smooth: true,-->
+<!--                data: data.numbers[2]-->
+<!--            },-->
+<!--            {-->
+<!--                name:data.name[3],-->
+<!--                type:"bar",-->
+<!--                yAxisIndex: 1,-->
+<!--                label: {-->
+<!--                    normal: {-->
+<!--                        show: true,-->
+<!--                        position: 'top'-->
+<!--                    }-->
+<!--                },-->
+<!--                data: data.numbers[3]-->
+<!--            }-->
+<!--        ]-->
+<!--    };-->
+<!--    // 3. 把配置和数据给实例对象-->
+<!--    myChart.setOption(option);-->
+<!--</script>-->
+
+<!--Business entries-->
+<script type="text/javascript">
+    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
+    var businessEntriesData = {
+        numbers: [
+            [294, 353, 346, 362],
+            [153, 154, 128, 144],
+            [19, 19, 7, 29],
+            [3, , 3, 3],
+            [471, 524, 490, 528]
+        ],
+        name: ['0 employee', '1-4 employees', '5-19 employees', '20 and more', 'total entries']
+    };
+    var businessEntriesChart = echarts.init(document.getElementById('Num_of_business_entries'));
+    var businessEntriesOption = {
+        title: {
+            text: 'Business Entries',
+            subtext: 'By number of employees',
+            x: 'center'
+        },
+        color: colorList,
+        tooltip: {
+            // trigger with axis
+            trigger: "axis"
+        },
+        legend: {
+            left: "5%",
+            right: "5%",
+            top: "50",
+            textStyle: {
+                color: "#040000"
+            }
+        },
+        grid: {
+            top: "25%",
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            show: true,
+            borderColor: "#012f4a",
+            containLabel: true
+        },
+
+        xAxis: {
+            type: "category",
+            name: "Year",
+            boundaryGap: ['10%', '10%'],
+            data: [
+                "2016",
+                "2017",
+                "2018",
+                "2019"
+            ],
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false
+            }
+        },
+        yAxis: [{
+            type: "value",
+            name: "Number",
+            axisTick: {
+                show: false
+            },
+            // 修改y轴分割线的颜色
+            splitLine: {
+                lineStyle: {
+                    color: "#012f4a"
+                }
+            }
+        }],
+        series: [
+            {
+                name: businessEntriesData.name[0],
+                type: "bar",
+                smooth: true,
+                barGap: 0,
+                barWidth: 30,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: businessEntriesData.numbers[0]
+            },
+            {
+                name: businessEntriesData.name[1],
+                type: 'bar',
+                barGap: 0,
+                barWidth: 30,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: businessEntriesData.numbers[1]
+            },
+            {
+                name: businessEntriesData.name[2],
+                type: "bar",
+                barGap: 0,
+                smooth: true,
+                barWidth: 30,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: businessEntriesData.numbers[2]
+            },
+            {
+                name: businessEntriesData.name[3],
+                type: "bar",
+                barGap: 0,
+                barWidth: 30,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: businessEntriesData.numbers[3]
+            },
+            {
+                name: businessEntriesData.name[4],
+                type: "bar",
+                barGap: 0,
+                barWidth: 30,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: businessEntriesData.numbers[4]
+            }
+        ]
+    };
+    // 3. 把配置和数据给实例对象
+    businessEntriesChart.setOption(businessEntriesOption);
+</script>
+
+<!--Business exits-->
+<script type="text/javascript">
+    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
+    var businessExitsData = {
+        numbers: [
+            [301, 314, 347, 356],
+            [94, 102, 97, 106],
+            [30, 18, 18, 26],
+            [3, 3, 5, 4],
+            [425, 432, 473, 499]
+        ],
+        name: ['0', '1-4', '5-19', '20 and more', 'total exits']
+    };
+    var businessExitsChart = echarts.init(document.getElementById('Num_of_business_exits'));
+
+
+    var businessExitsOption = {
+        title: {
+            text: 'Business Exits',
+            subtext: 'By number of employees',
+            x: 'center'
+        },
+        color: colorList,
+        tooltip: {
+            // trigger with axis
+            trigger: "axis"
+        },
+        legend: {
+            left: "5%",
+            right: "5%",
+            top: "50",
+            textStyle: {
+                color: "#040000"
+            }
+        },
+        grid: {
+            top: "25%",
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            show: true,
+            borderColor: "#012f4a",
+            containLabel: true
+        },
+
+        xAxis: {
+            type: "category",
+            name: "Year",
+            boundaryGap: ['10%', '10%'],
+            data: [
+                "2016",
+                "2017",
+                "2018",
+                "2019"
+            ],
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false
+            }
+        },
+        yAxis: [{
+            type: "value",
+            name: "Number",
+            axisTick: {
+                show: false
+            },
+            // 修改y轴分割线的颜色
+            splitLine: {
+                lineStyle: {
+                    color: "#012f4a"
+                }
+            }
+        }],
+        series: [
+            {
+                name: businessExitsData.name[0],
+                type: "bar",
+                smooth: true,
+                barGap: 0,
+                barWidth: 30,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: businessExitsData.numbers[0]
+            },
+            {
+                name: businessExitsData.name[1],
+                type: 'bar',
+                barGap: 0,
+                barWidth: 30,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: businessExitsData.numbers[1]
+            },
+            {
+                name: businessExitsData.name[2],
+                type: "bar",
+                barGap: 0,
+                smooth: true,
+                barWidth: 30,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: businessExitsData.numbers[2]
+            },
+            {
+                name: businessExitsData.name[3],
+                type: "bar",
+                barGap: 0,
+                barWidth: 30,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: businessExitsData.numbers[3]
+            },
+            {
+                name: businessExitsData.name[4],
+                type: "bar",
+                barGap: 0,
+                barWidth: 30,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                data: businessExitsData.numbers[4]
+            }
+        ]
+    };
+    // 3. 把配置和数据给实例对象
+    businessExitsChart.setOption(businessExitsOption);
+</script>
+
+<!--Persons with Non-School Qualifications-->
+<script type="text/javascript">
+    var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#4B0082', '#FF1493', '#4169E1'];
+    var nonSchoolData = {
+        numbers: [59.2, 2.5, 2.0, 11.3, 8.5, 23.8, 11.0],
+        name: ['Non-School Qualifications (%)', 'Postgraduate Degree (%)', 'Graduate Diploma/Graduate Certificate (%)', 'Bachelor Degree (%)', 'Advanced Diploma/Diploma (%)', 'Certificate (%)', 'Non-School Qualifications - Inadequately described (%)']
+    };
+    var nonSchoolChart = echarts.init(document.getElementById('Education'));
+
+    var nonSchoolOption = {
+        title: {
+            text: 'Persons with Non-School Qualifications - Persons aged 15 years and over - Census',
+            subtext: 'Year - 2016',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        series: [
+            {
+                name: 'Qualification',
+                type: 'pie',
+                radius: '55%',
+                center: ['40%', '50%'],
+                data: [
+                    {value: nonSchoolData.numbers[0], name: nonSchoolData.name[0]},
+                    {value: nonSchoolData.numbers[1], name: nonSchoolData.name[1]},
+                    {value: nonSchoolData.numbers[2], name: nonSchoolData.name[2]},
+                    {value: nonSchoolData.numbers[3], name: nonSchoolData.name[3]},
+                    {value: nonSchoolData.numbers[4], name: nonSchoolData.name[4]},
+                    {value: nonSchoolData.numbers[5], name: nonSchoolData.name[5]},
+                    {value: nonSchoolData.numbers[6], name: nonSchoolData.name[6]}],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    // 3. 把配置和数据给实例对象
+    nonSchoolChart.setOption(nonSchoolOption);
+</script>
+
+</body>
+</html>

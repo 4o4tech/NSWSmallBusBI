@@ -367,3 +367,75 @@ function getUrlParam(name) {
         }
     })
 })();
+
+// pie chart function
+(function () {
+
+    var keywords = getUrlParam("keywords");
+
+    $.ajax({
+
+        type: 'get',
+
+        url: '/getPieList',
+
+        data: {"keywords": keywords},
+
+        success: function (data) {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.querySelector(".pie .chart"));
+
+            var busStation = data["busStation"];
+            var bank = data["bank"];
+            var park = data["park"];
+            var shoppingMall = data["shoppingMall"];
+            var touristAttraction = data["touristAttraction"];
+
+            var option = {
+                title:{
+                    text: 'The composition of some important places in this suburb',
+                    x:'center',
+                    y:'bottom',
+                    textStyle:{
+                        fontSize:18,
+                        fontWeight: "bolder",
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b} : {c} ({d}%)'
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['Shopping Mall', 'Bus Station', 'Tourist attraction', 'Bank', 'Park']
+                },
+                series: [
+                    {
+                        name:'Place',
+                        type: 'pie',
+                        radius: '60%',
+                        center: ['60%', '40%'],
+                        data: [
+                            {value: shoppingMall, name: 'Shopping Mall'},
+                            {value: busStation, name: 'Bus Station'},
+                            {value: touristAttraction, name: 'Tourist attraction'},
+                            {value: bank, name: 'Bank'},
+                            {value: park, name: 'Park'}
+                        ],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]};
+            myChart.setOption(option);
+            window.addEventListener("resize", function () {
+                myChart.resize();
+            });
+        }
+    })
+})();

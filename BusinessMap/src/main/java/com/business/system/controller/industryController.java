@@ -58,6 +58,7 @@ public class industryController {
         return "asycDashboard";
     }
 
+
     @GetMapping("/industry_dashboard/{postcode}")
     public String dashboard(@PathVariable String postcode, Model model){
 //        Industry newIndustry  = new Industry();
