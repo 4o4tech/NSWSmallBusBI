@@ -1,6 +1,6 @@
 <!DYPE html>
 <!--industry_dashboard page-->
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Jimze">
@@ -10,6 +10,33 @@
     <link rel="stylesheet" th:href="@{/css/main.css}">
     <script src="/webjars/jquery/3.5.1/jquery.js"></script>
     <script src="/webjars/bootstrap/4.1.0/js/bootstrap.js"></script>
+
+    <style type="text/css">
+        .sub-btn{
+            font-size: 28px;
+            width: 800px;
+            height: 75px;
+            text-align:left;
+            border: 0 ;
+            <!--background: #FFFFFF;-->
+        }
+
+        .description{
+            font-size: 20px;
+
+
+
+        }
+
+        .graph{
+            width: 700px;
+            height:400px;
+            border:2px ;
+            margin: 20px 30px 20px 25px;
+
+        }
+
+    </style>
 
 </head>
 
@@ -39,12 +66,15 @@
         <!--        <h3 th:text="'Industry: ' + ${searchIndustry.name} +  + 'Area PostCode' + ${searchIndustry.postCode}" class="describe-h3"/></h3>-->
 
         <div class="describe-content">
-            <i class="text-content"> Industry:</i> <strong class="text-content" style="color:#c23531" th:text="${searchIndustry.name}"></strong>
+            <i class="text-content"> Industry:</i> <strong class="text-content" style="color:#c23531"
+                                                           th:text="${searchIndustry.name}"></strong>
             <p></p>
-            <i class="text-content" > Area PostCode:</i> <strong class="text-content" th:text="${searchIndustry.postCode}"></strong>
+            <i class="text-content"> Area PostCode:</i> <strong class="text-content"
+                                                                th:text="${searchIndustry.postCode}"></strong>
             <p></p>
             <p>
-                Approximately 39% of the cafe of small business operators live outside the Sydney Greater Metropolitan Region
+                Approximately 39% of the cafe of small business operators live outside the Sydney Greater Metropolitan
+                Region
             </p>
             <!--            <p th:text="${industryResult.content}">-->
             <!--            </p>-->
@@ -52,83 +82,156 @@
 
     </div>
 
+
     <div class="industry-describe">
-        <div class=" span6 offset-3" style="margin-top:5em">
-            <h2>Rank in Industry</h2>
-            <div id="relatedIndustry" style="width: 500px;height:300px;border:2px solid green; margin-top:2em"></div>
-
-        </div>
-
-        <div class="span6 offset-3" style="margin-top:5em">
-            <h2>Top 10 Industries in NSW</h2>
-            <div id="hottestIndustry"  style="width:500px;height:300px;border:2px solid green; margin-top:2em;"></div>
-        </div>
-
-    </div>
-
-    <!--    <div class="industry-describe row-fluid">-->
-    <!--        <div class="span8 offset-2">-->
-    <!--            <h2>Top Suburb about Industry</h2>-->
-    <!--            <div id="rentalFees"  style="width: 750px;height:375px;border:2px solid green; margin-top:2em;"></div>-->
-    <!--        </div>-->
-    <!--    </div>-->
 
 
-    <div class="industry-describe row-fluid">
         <div class="span8 offset-2">
-            <h2>Population</h2>
-            <div id="Population" style="width: 600px;height:400px;border:2px solid green;"></div>
+            <h2>
+                <button class="sub-btn" onclick=hide_show("industry_in_postal_Box")>Number of small business</button>
+            </h2>
+            <div id="industry_in_postal_Box" style="display: block">
+                <div id="industry_in_postal" class="graph"></div>
+                <p class="description">The number of cafes in this postal area is: 139<br>
+                    In average, every postal area has 17 cafes<br>
+                </p>
+            </div>
         </div>
+
+        <div class="span8 offset-2">
+            <h2>
+                <button class="sub-btn" onclick=hide_show("hottestIndustryBox")>Top 10 Industries in NSW</button>
+            </h2>
+            <div id="hottestIndustryBox" style="display: none">
+                <div id="hottestIndustry" class="graph"></div>
+                <p class="description">The chart shows the top 10 popular small business in NSW.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="span8 offset-2">
+            <h2>
+                <button class="sub-btn" onclick=hide_show("Population_and_other_Box")>Population, Age, Income, Education & Certificate.</button>
+            </h2>
+            <div id="Population_and_other_Box" style="display: none">
+                <div >
+                    <h2>
+                        Population
+                    </h2>
+                    <div id="PopulationBox">
+                        <div id="Population"  class="graph"></div>
+                        <p class="description">The lines represent the male, female and total population trend from 2014 to 2018.<br>
+                            The bars represent the population density in the LGA.<br>
+                            Population in Greater Sydney: 5,230,330<br>
+                            The population density in Greater Sydney(2014 - 2018): 391.4, 398.6, 406.3, 415.3, 422.9<br>
+                            Population in the rest of NSW: 2,757,911<br>
+                            The population density in the rest of NSW (2014 - 2018): 3.4, 3.4, 3.4, 3.5, 3.5<br>
+                        </p>
+                    </div>
+
+                </div>
+                <div >
+                    <h2>
+                        Age range
+                    </h2>
+                    <div id="AgeBox">
+                        <div id="Age"  class="graph"></div>
+                        <p class="description">The chart shows the age composition in the searched LGA in 2018<br>
+                            Median Age in this LGA:<br>
+                            Median Age in NSW: 37.5<br>
+                        </p>
+                    </div>
+                </div>
+                <div >
+
+                    <h2>
+                        Income
+                    </h2>
+                    <div id="IncomeBox">
+                        <div id="Income"  class="graph"></div>
+                        <p class="description">The chart shows the median income in this LGA and NSW.<br>
+                            We can use the chart to interpret purchasing power.<br>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div >
+
+                    <h2>
+                        Persons with Non-School Qualifications
+                    </h2>
+                    <div id="EducationBox">
+                        <h5> --Persons aged 15 years and over - Census</h5>
+                        <div id="Education" class="graph"></div>
+                        <p class="description">The chart shows the composition of diplomas and certificates in this LGA.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="span8 offset-2">
+            <h2>
+                <button class="sub-btn" onclick=hide_show("relatedIndustryBox")>Popular small business</button>
+            </h2>
+            <div id="relatedIndustryBox" style="display: none">
+                <div id="relatedIndustry"  class="graph">
+                </div>
+                <p class="description">The chart shows the number of small business inputted and the other 9 small business close to it in
+                    the rank. </p>
+            </div>
+        </div>
+        <div class="span8 offset-2">
+
+            <h2>
+                <button class="sub-btn" onclick=hide_show("Num_of_businessBox")>Number of Business in This LGA</button>
+            </h2>
+            <div id="Num_of_businessBox" style="display: none">
+                <div id="Num_of_business"  class="graph"></div>
+                <p class="description">The chart shows the number of businesses in this LGA categorized by the number of employees.
+                </p>
+            </div>
+
+
+        </div>
+        <div class="span8 offset-2">
+
+            <h2>
+                <button class="sub-btn" onclick=hide_show("Num_of_business_entries_Box")>Number of Business Entries in This LGA</button>
+            </h2>
+            <div id="Num_of_business_entries_Box" style="display: none">
+                <div id="Num_of_business_entries"  class="graph"></div>
+                <p class="description">Business entries: business had entered the market.</p>
+            </div>
+
+        </div>
+        <div class="span8 offset-2">
+
+            <h2>
+                <button class="sub-btn" onclick=hide_show("Num_of_business_exits_Box")>Number of Business Exits in This LGA</button>
+            </h2>
+            <div id="Num_of_business_exits_Box" style="display: none">
+                <div id="Num_of_business_exits"  class="graph"></div>
+                <p class="description">Business exits: business had left the market.</p>
+            </div>
+
+        </div>
+
+
     </div>
 
-    <div class="industry-describe row-fluid">
-        <div class="span8 offset-2">
-            <h2>Income</h2>
-            <div id="Income" style="width: 600px;height:400px;border:2px solid green;"></div>
-        </div>
-    </div>
-    <div class="industry-describe row-fluid">
-        <div class="span8 offset-2">
-            <h2>Number of small business</h2>
-            <div id="industry_in_postal" style="width: 600px;height:400px;border:2px solid green;"></div>
-        </div>
-    </div>
-
-    <div class="industry-describe row-fluid">
-        <div class="span8 offset-2">
-            <h2>Age range</h2>
-            <div id="Age" style="width: 600px;height:400px;border:2px solid green;"></div>
-        </div>
-    </div>
-
-    <div class="industry-describe row-fluid">
-        <div class="span8 offset-2">
-            <h2>Number of Business in This LGA</h2>
-            <div id="Num_of_business" style="width: 600px;height:400px;border:2px solid green;"></div>
-        </div>
-    </div>
-
-    <div class="industry-describe row-fluid">
-        <div class="span8 offset-2">
-            <h2>Number of Business Entries in This LGA</h2>
-            <div id="Num_of_business_entries" style="width: 600px;height:400px;border:2px solid green;"></div>
-        </div>
-    </div>
-
-    <div class="industry-describe row-fluid">
-        <div class="span8 offset-2">
-            <h2>Number of Business Exits in This LGA</h2>
-            <div id="Num_of_business_exits" style="width: 600px;height:400px;border:2px solid green;"></div>
-        </div>
-    </div>
-
-    <div class="industry-describe row-fluid">
-        <div class="span8 offset-2">
-            <h2>Persons with Non-School Qualifications</h2>
-            <h5>   --Persons aged 15 years and over - Census</h5>
-            <div id="Education" style="width: 600px;height:400px;border:2px solid green;"></div>
-        </div>
-    </div>
 
     <!--        <div class="industry-describe row-fluid">-->
     <!--            <div class="span8 offset2">-->
@@ -136,7 +239,6 @@
     <!--                <canvas class="my-4 w-100" id="myChart" width="900" height="380" style="margin-top:2em;"></canvas>-->
     <!--            </div>-->
     <!--        </div>-->
-
 
 
 </div>
@@ -152,11 +254,23 @@
 </footer>
 
 
-
 <script th:src="@{/js/main.js}"></script>
 <script th:src="@{/js/echart.js}"></script>
 
 <!--<script th:src="@{/visual_js/visualMap.js}"></script>-->
+
+<script type="text/javascript">
+    function hide_show(id) {
+        var target = document.getElementById(id);
+        if (target.style.display == "none") {
+            target.style.display = "block";
+        } else {
+            target.style.display = "none";
+        }
+    }
+
+</script>
+
 
 <script th:inline="JavaScript">
     /*<![CDATA[*/
@@ -193,6 +307,7 @@
     //     })
     // }
 
+
 </script>
 
 <!--Rank in Industry EChart start Here-->
@@ -221,7 +336,7 @@
         console.log(industryAmount)
         let option = {
             title: {
-                text: 'Related 10 industries in NSW',
+                text: 'Industry rank by number',
                 x: 'center'
             },
             tooltip: {
@@ -335,6 +450,7 @@
         //add setoption here
     }, 'json')
      */
+
 </script>
 <!--Rank in Industry EChart end Here-->
 
@@ -409,6 +525,7 @@
         //add setoption here
         myChart_hottestIndustry.setOption(HottestIndustry_option);
     }, 'json')
+
 </script>
 <!--hottestIndustry end Here-->
 
@@ -592,6 +709,7 @@
         populationChart.setOption(populationOption);
     }, 'json')
 
+
 </script>
 
 <!--Population EChart End Here-->
@@ -733,6 +851,7 @@
         // 3. 把配置和数据给实例对象
         medianIncomeChart.setOption(medianIncomeOption);
     }, 'json')
+
 </script>
 <!--income  end Here-->
 
@@ -828,6 +947,7 @@
         industry_in_postal_Chart.setOption(industry_in_postal_option);
     },JSON)
 
+
 </script>
 <!--Industry in postal EChart End Here-->
 
@@ -918,6 +1038,7 @@
 
         ageRangeChart.setOption(ageRangeOption);
     }, 'json')
+
 
 
 </script>
@@ -1039,6 +1160,7 @@
         };
         numberOfBusinessChart.setOption(numberOfBusinessOption);
     }, 'json')
+
 
 
 </script>
@@ -1299,6 +1421,7 @@
         businessEntriesChart.setOption(businessEntriesOption);
     }, 'json')
 
+
 </script>
 <!-- Number of Business Entries End Here -->
 
@@ -1548,6 +1671,7 @@
 
 
 
+
 </script>
 <!--Number of Business exits End Here-->
 
@@ -1614,6 +1738,7 @@
 
 
 
+
 </script>
 <!--Persons with Non-School Qualifications End Here-->
 
@@ -1637,6 +1762,7 @@
     }).fail(function(err){
         console.log("error");
     })
+
 
 </script>
 
