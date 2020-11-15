@@ -1,5 +1,5 @@
 <!DYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Jimze">
@@ -21,172 +21,263 @@
 
 
 <body class="main_container">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-color">
-            <a class="navbar-brand" href="#">NSW Business Map</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-color">
+    <a class="navbar-brand" href="#">NSW Business Map</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <div class="collapse navbar-expand-lg" id="navbars">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+    <div class="collapse navbar-expand-lg" id="navbars">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/industry_search">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Business</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link">Contact Us</a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item">
+                        <a href="toPage/contact" class="nav-link">Find us</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link" href="/industry_search">Dashboard</a>
+                        <a href="feedback" class="nav-link">Feedback</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#">Business</a>
+                        <a href="FAQs" class="nav-link">FAQs</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a  class="nav-link">Contact Us</a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a href="toPage/contact" class="nav-link">Find us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="feedback" class="nav-link">Feedback</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="FAQs" class="nav-link">FAQs</a>
-                            </li>
-                        </ul>
-                    </li>
-
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+
+<main role="main">
+    <div class="banner_page ">
+        <div class="inner">
+            <div class="container ">
+                <h1 class="display-3">Small Business Map</h1>
+                <p class="col-md-6"><b>What we do.</b><br>
+                    If you’re a small business in NSW, we’re your biggest ally.
+                    Through advocacy and mediation we help resolve
+                    issues impacting your business.
+                </p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
             </div>
-        </nav>
+        </div>
 
+    </div>
 
-        <main role="main" >
-            <div class="banner_page ">
-                <div class="inner">
-                    <div class="container ">
-                        <h1 class="display-3">Small Business Map</h1>
-                        <p class="col-md-6"> <b>What we do.</b><br>
-                            If you’re a small business in NSW, we’re your biggest ally.
-                            Through advocacy and mediation we help resolve
-                            issues impacting your business.
-                        </p>
-                        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-                    </div>
-                </div>
+    <div class="container function">
 
+        <div class="row">
+
+            <h2>Choose the support that’s right for you</h2>
+
+            <p>
+                Starting or growing a business is exciting. We can help you understand government requirements you need
+                to make opening and growing your small business easier.
+                That’s why we have a range of help available to guide you through what you need to do.
+            </p>
+
+        </div>
+
+        <br><br>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Industry</h2>
+                <hr>
+                <h5>Popular Business</h5>
+                <p> Recommend where to start: Using data to recommend where it is better to start a new small business.
+                </p>
+                <p><a class="btn btn-secondary" href="/industry_search" role="button">View details &raquo;</a></p>
             </div>
+            <div class="col-md-4">
+                <h2> Location/LGA</h2>
+                <hr>
+                <h5> New Business Address</h5>
 
-            <div class="container function">
-                <!-- Example row of columns -->
-                <div class="row">
-                    <div class="col-md-4">
-                        <h2>Industry</h2>
-                        <hr>
-                        <h5>Popular Business</h5>
-                        <p> Recommend where to start: Using data to recommend where it is better to start a new small business.
-                        </p>
-                        <p><a class="btn btn-secondary" href="/industry_search" role="button">View details &raquo;</a></p>
-                    </div>
-                    <div class="col-md-4">
-                        <h2> Location/LGA</h2>
-                        <hr>
-                        <h5> New Business Address</h5>
-
-                        <p>Provide information about the area <br> <br><br>
-                        </p>
-                        <p><a class="btn btn-secondary" href="/idx" role="button">View details &raquo;</a></p>
-                    </div>
-                    <div class="col-md-4">
-                        <h2>Licence</h2>
-                        <hr>
-                        <h5>Know Permission</h5>
-                        <p> Information about how to start this specific industry. E.g, licence & permits. <br><br>
-                        </p>
-                        <!--<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>-->
-                        <p><a class="btn btn-secondary" href="/license_dashboard" role="button">View details &raquo;</a></p>
-                    </div>
-                </div>
-
-                <!--<hr>-->
-
-            </div> <!-- /container -->
-
-
-            <div class="row bottom_info">
-                <div class=" businessInfo news col-md-4 ">
-                    <h5>Business New</h5>
-                    <ul class="news-list list-group  list-group-flush">
-                        <li class="list-group-item">news</li>
-                        <li class="list-group-item">news</li>
-                        <li class="list-group-item">news</li>
-                        <li class="list-group-item">news</li>
-                        <li class="list-group-item">news</li>
-                    </ul>
-
-                </div>
-                <div class=" businessInfo other center-block  col-md-4">
-                    <h5>NSW Business Service</h5>
-                    <ul class="other-list list-group  list-group-flush">
-                        <li class="list-group-item">NSW Service</li>
-                        <li class="list-group-item">Small Business</li>
-                        <li class="list-group-item">Government Policy</li>
-                        <li class="list-group-item">Popular in NSW</li>
-                        <li class="list-group-item">NSW Business Info</li>
-                    </ul>
-
-                </div>
+                <p>Provide information about the area <br> <br><br>
+                </p>
+                <p><a class="btn btn-secondary" href="/idx" role="button">View details &raquo;</a></p>
             </div>
-
-
-        </main>
-
-        <footer class="pt-4 my-md-5 pt-md-5 border-top ">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <small class="d-block mb-3 text-muted">&copy; USYD,CS,2020</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Small Business Tool</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="/industry_search">Industry</a></li>
-                        <li><a class="text-muted" href="#">Location/LGA</a></li>
-                        <li><a class="text-muted" href="#">Licence</a></li>
-
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Team</a></li>
-                        <li><a class="text-muted" href="#">USYD</a></li>
-                        <li><a class="text-muted" href="#">&nbsp</a></li>
-                    </ul>
-                </div>
+            <div class="col-md-4">
+                <h2>Licence</h2>
+                <hr>
+                <h5>Know Permission</h5>
+                <p> Information about how to start this specific industry. E.g, licence & permits. <br><br>
+                </p>
+                <!--<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>-->
+                <p><a class="btn btn-secondary" href="/license_dashboard" role="button">View details &raquo;</a></p>
             </div>
-        </footer>
+        </div>
+
+        <!--<hr>-->
+
+    </div> <!-- /container -->
+
+
+    <div class="container otherFunciton">
+
+
+        <br><br>
+
+
+        <div class="jumbotron">
+            <h2>Save time with a Business Insight</h2>
+            <div class="Spacer-sc-15jdacb-3 gIIudP"></div>
+            <p class="lead">Make it faster and easier to transact with the NSW Business Map.</p>
+
+            <ul class="explain">
+                <li>Analyzing the <b>structure of the industry </b>to recommend a location. </li>
+                <br>
+                <li>Preview <b>average number</b>,so recommend opening a restaurant in this area.</li>
+                <br>
+                <li>Find out <b>demographic</b> structure, recommended to open stores to sell health products.
+                </li>
+
+
+            </ul>
+
+            <p class="CopyText-s17pq7-5 fNWaOh">You can search a Business Profile in this NSW Busniness Map.</p>
+
+            <a class="btn btn-lg btn-primary" href="/article" role="button">Find out more&raquo;</a>
+        </div>
 
 
 
+    </div> <!-- /container -->
 
 
-    </body>
+   <div class="container">
+
+       <div class="row featurette">
+           <div class="col-md-7">
+               <h2 class="featurette-heading">Why?  BI is importance for Small Business</h2>
+               <h3> <span class="text-muted">It’ll blow your mind.</span></h3>
+               <p class="lead">
+                   <b>Business intelligence (BI) </b>leverages software and services to transform data into actionable <b>insights</b> that inform an organization’s strategic and tactical business decisions.
+                   BI tools access and analyze data sets and present analytical findings in reports,<b>dashboards, graphs, charts and maps</b> to provide users with detailed intelligence about the state of the business.
+               </p>
+           </div>
+           <div class="col-md-5">
+               <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+           </div>
+       </div>
 
 
 
+       <hr class="featurette-divider">
+
+       <div class="row featurette">
+           <div class="col-md-7 order-md-2">
+               <h2 class="featurette-heading">The NSW Data Visualization is</h2>
+               <h4> <span class="text-muted">Making it easier</span></h4>
+
+               <br>
+               <h4>Here to help</h4>
+
+
+               <p class="lead">
+                   This project will use data to help small business recovery drivers that will boost confidence.
+                   At the same time, We will drive data mining technology which allows the small business to run closer to its potential.
+               </p>
+
+<!--               <p>-->
+
+<!--                   Small businesses have the ability to choose the information of their main concert and this project system <b>gives recommendation or based on their preference gives suggestion</b>.-->
+<!--                   The data visualization, could become more comprehensible for different <b>demographic area or educated people</b>, gives more direct visual perception.-->
+
+<!--               </p> -->
+           </div>
+           <div class="col-md-5 order-md-1">
+               <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+           </div>
+       </div>
 
 
 
+   </div>
 
-        <!--<div id="container">-->
 
-        <!--<div class="banner"></div>-->
-        <!--<div class="func_btn_group"></div>-->
-        <!--<div class="business_new"></div>-->
-        <!--<div class="other_info"></div>-->
-    <!--</div>-->
+
+    <div class="row bottom_info">
+        <div class=" businessInfo news col-md-4 ">
+            <h5>Business New</h5>
+            <ul class="news-list list-group  list-group-flush">
+                <li class="list-group-item">news</li>
+                <li class="list-group-item">news</li>
+                <li class="list-group-item">news</li>
+                <li class="list-group-item">news</li>
+                <li class="list-group-item">news</li>
+            </ul>
+
+        </div>
+        <div class=" businessInfo other center-block  col-md-4">
+            <h5>NSW Business Service</h5>
+            <ul class="other-list list-group  list-group-flush">
+                <li class="list-group-item">NSW Service</li>
+                <li class="list-group-item">Small Business</li>
+                <li class="list-group-item">Government Policy</li>
+                <li class="list-group-item">Popular in NSW</li>
+                <li class="list-group-item">NSW Business Info</li>
+            </ul>
+
+        </div>
+    </div>
+
+
+</main>
+
+<footer class="pt-4 my-md-5 pt-md-5 border-top ">
+    <div class="row">
+        <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted">&copy; USYD,CS,2020</small>
+        </div>
+        <div class="col-6 col-md">
+            <h5>Small Business Tool</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="/industry_search">Industry</a></li>
+                <li><a class="text-muted" href="#">Location/LGA</a></li>
+                <li><a class="text-muted" href="#">Licence</a></li>
+
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Team</a></li>
+                <li><a class="text-muted" href="#">USYD</a></li>
+                <li><a class="text-muted" href="#">&nbsp</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+
+
+<!--<div id="container">-->
+
+<!--<div class="banner"></div>-->
+<!--<div class="func_btn_group"></div>-->
+<!--<div class="business_new"></div>-->
+<!--<div class="other_info"></div>-->
+<!--</div>-->
 
 
 </html>

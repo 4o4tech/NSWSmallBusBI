@@ -32,6 +32,11 @@ public class homePageController {
         return "demographic_graphic";
     }
 
+    @RequestMapping("/article")
+    public String industryArticle(){
+        return "blog/industry_article";
+    }
+
 
 }
 //

@@ -1,0 +1,361 @@
+<!DYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Jimze">
+    <title>NSW Business Map- Indutry</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+
+
+    <link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles -->
+    <link th:href="@{/css/blog.css}" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-color">
+    <a class="navbar-brand" href="index">NSW Business Map</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbars">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link" href="/index">Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/industry_search">Dashboard</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link " href="#"><b>Business Insight</b></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+
+
+<!--    <div class="nav-scroller py-1 mb-2">-->
+<!--        <nav class="nav d-flex justify-content-between">-->
+<!--            <a class="p-2 text-muted" href="#">World</a>-->
+<!--            <a class="p-2 text-muted" href="#">U.S.</a>-->
+<!--            <a class="p-2 text-muted" href="#">Technology</a>-->
+<!--            <a class="p-2 text-muted" href="#">Design</a>-->
+<!--            <a class="p-2 text-muted" href="#">Culture</a>-->
+<!--            <a class="p-2 text-muted" href="#">Business</a>-->
+<!--            <a class="p-2 text-muted" href="#">Politics</a>-->
+<!--            <a class="p-2 text-muted" href="#">Opinion</a>-->
+<!--            <a class="p-2 text-muted" href="#">Science</a>-->
+<!--            <a class="p-2 text-muted" href="#">Health</a>-->
+<!--            <a class="p-2 text-muted" href="#">Style</a>-->
+<!--            <a class="p-2 text-muted" href="#">Travel</a>-->
+<!--        </nav>-->
+<!--    </div>-->
+
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" style="margin-top:5em;">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">NSW Small Business Map Guideline</h1>
+            <p class="lead my-3">Led by the USYD and NSW Service , we’re a driven team of passionate individuals who are dedicated to driving growth and prosperity for small businesses.</p>
+            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">KNOW MORE THIS SITE</a></p>
+        </div>
+    </div>
+
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <h3 class="pb-4 mb-4 font-italic border-bottom">
+                BUSINESS GUIDE TO CORONAVIRUS
+            </h3>
+
+            <div class="blog-post">
+                <h2 class="blog-post-title">To make NSW the easiest state for small business to start, run, adapt & prosper</h2>
+                <p class="blog-post-meta">OCT 1, 2020 by <a href="/feedback">NSW Business Map Team</a></p>
+
+                <p>How can we leverage publicly available data from NSW gov to better inform business decisions?</p>
+                <hr>
+
+                <br>
+                <h2>Project Statement</h2>
+                <p>
+                    NSW businesses are struggling from bushfire and COVID effects. Our team is looking at innovative ways to inform aspiring/recovering businesses of less risky opportunities.
+                </p>
+
+                <p>
+                    We want to use data in the public as well as govt domain to help businesses <b>understand demographic</b> as well as service information around their <b>specific areas</b>.
+                </p>
+
+                <br>
+                <h2>Expected Outcome</h2>
+                <p>Build a smart tool that visualises aggregated data and recommendations for small businesses and helps them understand where best to open up/scale.</p>
+
+                <hr>
+                <br>
+
+                <h2>Overview Condition</h2>
+
+
+                <h3>Performance of the economy:</h3>
+
+                <blockquote cite="https://www.businessaustralia.com/">
+                        Business perceptions about the performance NSW economy fell to record lows in June. But there was a strong recovery in businesses expectations for the September quarter suggesting the reopening of the economy and strong support from governments have boosted business optimism.
+                </blockquote>
+
+
+                <h3>Business expansion:</h3>
+
+                <blockquote  cite="https://www.businessaustralia.com/">
+                    Businesses have continued to scale back their capital spending and staffing levels. Around <i>39 per cent of respondents indicated their staffing levels</i> were lower compared to the previous quarter while <i>57 per cent indicated capital spending was also down</i>.
+                </blockquote>
+
+
+                <h3>Industry assessment:</h3>
+
+
+                <blockquote  cite="https://www.businessaustralia.com/">
+                     <i>Arts and recreation and accommodation and food services</i>, have been the most severely impacted reflecting exposure to government restrictions and weak customer demand.
+                    
+                </blockquote>
+
+
+                <p>(Source from:<a href="https://www.businessaustralia.com">businessaustralia.com</a>)</p>
+
+
+                <hr>
+
+                <h3>Solution</h3>
+                <p>Know information about <b>Small Business Industry</b></p>
+
+                <h4>Input:</h4>
+
+                <p>A specific industry  (e.g. restaurant, cafe, convenient store, hotel, gym) </p>
+
+                <ul>
+                    <li>Analyzing the characteristics of the industry to recommend a location. </li>
+
+                    <li>On average, this area has fewer restaurants than other areas, so recommend opening a restaurant in this area. </li>
+
+                    <li>This area has more elder people, so it’s recommended to open stores to sell health products.
+                    </li>
+                </ul>
+
+
+
+            </div><!-- /.blog-post -->
+
+
+            <div class="row mb-2">
+                <div class="col-md-12">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <h3 class="mb-0"> Search Industry</h3>
+                            <p class="card-text mb-auto">
+                                <b>Visualization data your want</b>
+                            <ul>
+                                <li><i> Hottest Industry in NSW</i></li>
+
+                                <li><i>Demographic Information Visualization</i></li>
+
+                                <li><i>Education</i></li>
+
+                                <li><b>Business Entries</b></li>
+
+                                <li><b>Business Exist</b></li>
+                            </ul>
+
+                            </p>
+
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#8bb6f7"/><text x="50%" y="50%"  dy=".3em">
+                                <a href="/industry_search">> GO Chart</a></text></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+<!--            function 2 post-->
+
+            <div class="blog-post">
+                <h2 class="blog-post-title">To make NSW the easiest state for small business to start, run, adapt & prosper</h2>
+                <p class="blog-post-meta">August 1, 2020 by <a href="/feedback">NSW Business Map Team</a></p>
+
+                <p>How can we leverage publicly available data from NSW gov to better inform business decisions?</p>
+                <hr>
+                <br>
+
+                <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                <blockquote>
+                    <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </blockquote>
+                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            </div><!-- /.blog-post -->
+
+<!--            <div class="blog-post">-->
+<!--                <h2 class="blog-post-title">New feature</h2>-->
+<!--                <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>-->
+
+<!--                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>-->
+<!--                <ul>-->
+<!--                    <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>-->
+<!--                    <li>Donec id elit non mi porta gravida at eget metus.</li>-->
+<!--                    <li>Nulla vitae elit libero, a pharetra augue.</li>-->
+<!--                </ul>-->
+<!--                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>-->
+<!--                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>-->
+<!--            </div>&lt;!&ndash; /.blog-post &ndash;&gt;-->
+
+
+            <div class="row mb-2">
+                <div class="col-md-12">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">LGA/Suburb</strong>
+
+
+                            <h3 class="mb-0"> LGA  Address  </h3>
+                            <p class="card-text mb-auto">
+                                <b>Find some information in Some Suburb
+                                </b>
+                            <ul>
+                                <li>
+                                    Train Station Volume
+                                </li>
+
+                                <li> Rental of Price</li>
+
+                                <li>Number of Crime.</li>
+
+                            </ul>
+
+                            </p>
+
+
+                        </div>
+                        <div class="blogLink col-auto d-none d-lg-block">
+                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#152879"/><text x="50%" y="50%" fill="#ffffff" dy=".3em">
+                                <a href="/idx" style="color:#FFF;">FIND OUT MORE</a>
+
+
+                            </text></svg>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success">Know Permission</strong>
+
+                            <h3 class="mb-0"> Permission</h3>
+                            <p class="card-text mb-auto">
+                                <b>Start a business in NSW</b>
+                                Information about how to start this specific industry.
+                                Following with the steps of  collected information. Small business could clearly know the permission before running business.
+
+                            </p>
+
+                        </div>
+                        <div class="blogLink col-auto d-none d-lg-block">
+                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#152879"/><text x="50%" y="50%" fill="#ffffff" dy=".3em">
+
+                                <a href="/license_dashboard" style="color:#FFF;">FIND OUT MORE</a>
+                            </text></svg>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">Older</a>
+                <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+            </nav>
+
+        </div><!-- /.blog-main -->
+
+
+
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-4 mb-3 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Led by the <em>USYD and NSW Service </em>, we’re a driven team of passionate individuals
+                    who are dedicated to driving growth and prosperity for <b>small businesses</b>.</p>
+            </div>
+
+            <div class="p-4">
+                <h4 class="font-italic">Visualization & Steps</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="/industry_search">Industry</a></li>
+                    <li><a href="/idx">LGA/Location</a></li>
+                    <li><a href="/license_dashboard">Perssion</a></li>
+
+                </ol>
+            </div>
+
+            <div class="p-4">
+                <h4 class="font-italic">Link</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">USYD</a></li>
+                    <li><a href="#">NSW Service</a></li>
+                </ol>
+            </div>
+        </aside><!-- /.blog-sidebar -->
+
+    </div><!-- /.row -->
+
+</main><!-- /.container -->
+
+<footer class="blog-footer">
+    <p><a href="https://www.sydney.edu.au/">USYD</a> </p>
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
+
+<script href="webjars/jquery/3.5.1/jquery.min.js"></script>
+<script href="webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script th:src="@{js/main.js}"></script>
+
+
+</body>
+</html>

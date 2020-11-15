@@ -24,8 +24,6 @@
         .description{
             font-size: 20px;
 
-
-
         }
 
         .graph{
@@ -72,10 +70,22 @@
             <i class="text-content"> Area PostCode:</i> <strong class="text-content"
                                                                 th:text="${searchIndustry.postCode}"></strong>
             <p></p>
-            <p>
-                Approximately 39% of the cafe of small business operators live outside the Sydney Greater Metropolitan
-                Region
-            </p>
+
+
+            <h2>Select Information Your Concerned</h2>
+            <hr>
+
+            <p>A specific industry
+            <ul>
+                <li>Analyzing the characteristics of the industry to recommend a location. </li>
+
+                <li>On average, this area has fewer restaurants than other areas, so recommend opening a restaurant in this area. </li>
+
+                <li>This area has more elder people, so it’s recommended to open stores to sell health products.
+                </li>
+            </ul>
+
+
             <!--            <p th:text="${industryResult.content}">-->
             <!--            </p>-->
         </div>
@@ -83,18 +93,75 @@
     </div>
 
 
+
+    <div class="container otherFunciton">
+
+
+        <br><br>
+
+
+        <div class="jumbotron">
+            <h2>Save time with a Business Insight</h2>
+            <div class="Spacer-sc-15jdacb-3 gIIudP"></div>
+            <p class="lead">Make it faster and easier to transact with the NSW Business Map.</p>
+
+            <ul class="explain">
+                <li>Analyzing the <b>structure of the industry </b>to recommend a location. </li>
+                <br>
+                <li>Preview <b>average number</b>,so recommend opening a restaurant in this area.</li>
+                <br>
+                <li>Find out <b>demographic</b> structure, recommended to open stores to sell health products.
+                </li>
+
+            </ul>
+
+            <p class="CopyText-s17pq7-5 fNWaOh">You can search a Business Profile in this NSW Busniness Map.</p>
+
+            <a class="btn btn-lg btn-primary" href="/article" role="button">Find out more&raquo;</a>
+        </div>
+
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Preview More You Business</h2>
+
+                <br>
+                <h4>What Visual Analytics Tell US</h4>
+
+               <p>
+
+                   Small businesses have the ability to choose the information of their main concert and this project system gives recommendation or based on their preference <b>get Data Insight</b>.
+                   The data visualization, could become more comprehensible for different <b>demographic area or educated people</b>, gives more direct visual perception.
+
+               </p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+            </div>
+        </div>
+
+    </div> <!-- /container -->
+
+
+
     <div class="industry-describe">
 
 
         <div class="span8 offset-2">
-            <h2>
-                <button class="sub-btn" onclick=hide_show("industry_in_postal_Box")>Number of small business</button>
-            </h2>
-            <div id="industry_in_postal_Box" style="display: block">
-                <div id="industry_in_postal" class="graph"></div>
+
+            <div>
+                <h2>
+                    <button class="sub-btn" onclick=hide_show("industry_in_postal_Box")>Number of small business</button>
+                </h2>
                 <p class="description">The number of cafes in this postal area is: 139<br>
                     In average, every postal area has 17 cafes<br>
                 </p>
+            </div>
+
+
+            <div id="industry_in_postal_Box" style="display: block">
+                <div id="industry_in_postal" class="graph"></div>
+
             </div>
         </div>
 
@@ -107,9 +174,6 @@
                 <p class="description">The chart shows the top 10 popular small business in NSW.</p>
             </div>
         </div>
-
-
-
 
 
 
@@ -178,10 +242,6 @@
 
 
 
-
-
-
-
         <div class="span8 offset-2">
             <h2>
                 <button class="sub-btn" onclick=hide_show("relatedIndustryBox")>Popular small business</button>
@@ -231,6 +291,7 @@
 
 
     </div>
+
 
 
     <!--        <div class="industry-describe row-fluid">-->
@@ -319,7 +380,9 @@
     var data = [9, 13, 15, 27, 31, 33, 55, 79, 88, 90];
     var myChart = echarts.init(document.getElementById('relatedIndustry'));
     // myChart.showLoading();  // 开启 loading 效果
-    $.get(getColletURL).done(function(data) {
+
+    myChart.showLoading({ text: 'Loading From Server.' })
+    var RankGet = $.get(getColletURL).done(function(data) {
         function newSort(x,y){
             return x.count-y.count;
         }
@@ -334,6 +397,8 @@
         console.log("****** Rank in Industry Data loading Done!!!******")
         console.log(industryName)
         console.log(industryAmount)
+        myChart.hideLoading();
+
         let option = {
             title: {
                 text: 'Industry rank by number',
@@ -475,6 +540,7 @@
     }
     // change url name here
     let dataUrl =  '/hottestIndustry';
+    myChart_hottestIndustry.showLoading({ text: 'Loading From Server.' })
     $.get(dataUrl).done(function(data) {
         // var getData = extractData(data)
         // var industryList = getData["name"];
@@ -483,6 +549,8 @@
         // console.log(industryList)
         // console.log(industryValue)
         // add option
+
+        myChart_hottestIndustry.hideLoading();
 
 
         var transferData  = data.map(o => {return{value:o.count, name:o.name}});
@@ -1749,6 +1817,7 @@
 
 
     $.when(
+        RankGet,
         populationGet
     ).then(function(){
         incomeGet

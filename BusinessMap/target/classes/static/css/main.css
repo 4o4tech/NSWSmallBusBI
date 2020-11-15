@@ -17,7 +17,7 @@
 }
  .banner_page {
      position:relative;
-     height:400px;
+     height:500px;
       /*padding:5em 1em;*/
       margin-top:4em;
       margin-bottom:2em;
@@ -31,7 +31,7 @@
  }
 
  .inner{
-     height: 400px;
+     height: 500px;
 
      background: rgba(0,0,0,.5);
  }
@@ -59,16 +59,58 @@
 
  .function{
      margin-top:5em;
-
+     padding:2em 1em;
+     background-color: rgb(244,246,248);
  }
 
+
+ .otherFunciton{
+     margin-top:5em;
+     background-color: #fff;
+     /*background-color: rgb(244,246,248);*/
+ }
+
+ .otherFunciton .explain li{
+
+     font-size:18px;
+
+ }
  .bottom_info{
      margin-top:5em;
  }
 
-/*
-industry page
-*/
+
+
+ .featurette-divider {
+     margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+ }
+
+ /* Thin out the marketing headings */
+ .featurette-heading {
+     font-weight: 300;
+     line-height: 1;
+     letter-spacing: -.05rem;
+ }
+
+
+
+ @media (min-width: 40em) {
+     /* Bump up size of carousel content */
+
+     .featurette-heading {
+         font-size: 50px;
+     }
+ }
+
+ @media (min-width: 62em) {
+     .featurette-heading {
+         margin-top: 5rem;
+     }
+ }
+
+ /*
+ industry page
+ */
 
  .nav-breadcrumb{
      margin-top:5em;

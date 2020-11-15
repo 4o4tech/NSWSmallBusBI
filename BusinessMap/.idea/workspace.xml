@@ -24,30 +24,20 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/xhua0091-web-project" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/dev" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a6b0e89-2de0-4e0b-9957-de0eb6621c69" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/system/controller/industryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/system/controller/industryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/jsForTest/reqData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/jsForTest/reqData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/idx.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/idx.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/industry_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/industry_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/industry_dashboard_tmp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/industry_dashboard_tmp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mongodb.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mongodb.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/business/system/controller/IdxController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/business/system/controller/IdxController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/business/system/controller/MongodbController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/business/system/controller/MongodbController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/business/system/controller/demographicData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/business/system/controller/demographicData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/business/system/controller/homePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/business/system/controller/homePageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/business/system/controller/industryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/business/system/controller/industryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/jsForTest/reqData.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/jsForTest/reqData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/idx.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/idx.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/industry_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/industry_dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/industry_dashboard_tmp.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/industry_dashboard_tmp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/mongodb.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/mongodb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/system/controller/demographicData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/system/controller/demographicData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/system/controller/homePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/system/controller/homePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/asycDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/asycDashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/homePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/homePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/industry.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/industry.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/asycDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/asycDashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +50,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaFXApplication" />
         <option value="Interface" />
         <option value="AnnotationType" />
         <option value="JavaScript File" />
         <option value="Class" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -140,13 +130,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -240,7 +232,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/xhua0091-web-project" />
+                        <option value="origin/dev" />
                       </list>
                     </value>
                   </entry>
@@ -282,46 +274,46 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="525" y="328" key="Github.CreatePullRequestDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1602136039039" />
-    <state width="1638" height="255" key="GridCell.Tab.0.bottom" timestamp="1605056636689">
+    <state width="1638" height="369" key="GridCell.Tab.0.bottom" timestamp="1605408362652">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="255" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1605056636689" />
-    <state width="1638" height="230" key="GridCell.Tab.0.bottom/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1603542898335" />
-    <state width="1638" height="255" key="GridCell.Tab.0.center" timestamp="1605056636688">
+    <state width="1638" height="369" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1605404635354" />
+    <state width="1638" height="369" key="GridCell.Tab.0.bottom/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1605408362652" />
+    <state width="1638" height="369" key="GridCell.Tab.0.center" timestamp="1605408362651">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="255" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1605056636688" />
-    <state width="1638" height="230" key="GridCell.Tab.0.center/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1603542898334" />
-    <state width="1638" height="255" key="GridCell.Tab.0.left" timestamp="1605056636688">
+    <state width="1638" height="369" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1605404635353" />
+    <state width="1638" height="369" key="GridCell.Tab.0.center/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1605408362651" />
+    <state width="1638" height="369" key="GridCell.Tab.0.left" timestamp="1605408362651">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="255" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1605056636688" />
-    <state width="1638" height="230" key="GridCell.Tab.0.left/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1603542898334" />
-    <state width="1638" height="255" key="GridCell.Tab.0.right" timestamp="1605056636689">
+    <state width="1638" height="369" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1605404635352" />
+    <state width="1638" height="369" key="GridCell.Tab.0.left/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1605408362651" />
+    <state width="1638" height="369" key="GridCell.Tab.0.right" timestamp="1605408362652">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="255" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1605056636689" />
-    <state width="1638" height="230" key="GridCell.Tab.0.right/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1603542898335" />
-    <state width="1638" height="255" key="GridCell.Tab.1.bottom" timestamp="1605056636691">
+    <state width="1638" height="369" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1605404635354" />
+    <state width="1638" height="369" key="GridCell.Tab.0.right/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1605408362652" />
+    <state width="1638" height="369" key="GridCell.Tab.1.bottom" timestamp="1605408362654">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="255" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1605056636691" />
-    <state width="1638" height="230" key="GridCell.Tab.1.bottom/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1603542898336" />
-    <state width="1638" height="255" key="GridCell.Tab.1.center" timestamp="1605056636690">
+    <state width="1638" height="369" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1605404635356" />
+    <state width="1638" height="369" key="GridCell.Tab.1.bottom/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1605408362654" />
+    <state width="1638" height="369" key="GridCell.Tab.1.center" timestamp="1605408362653">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="255" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1605056636690" />
-    <state width="1638" height="230" key="GridCell.Tab.1.center/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1603542898336" />
-    <state width="1638" height="255" key="GridCell.Tab.1.left" timestamp="1605056636690">
+    <state width="1638" height="369" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1605404635355" />
+    <state width="1638" height="369" key="GridCell.Tab.1.center/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1605408362653" />
+    <state width="1638" height="369" key="GridCell.Tab.1.left" timestamp="1605408362653">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="255" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1605056636690" />
-    <state width="1638" height="230" key="GridCell.Tab.1.left/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1603542898335" />
-    <state width="1638" height="255" key="GridCell.Tab.1.right" timestamp="1605056636691">
+    <state width="1638" height="369" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1605404635355" />
+    <state width="1638" height="369" key="GridCell.Tab.1.left/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1605408362653" />
+    <state width="1638" height="369" key="GridCell.Tab.1.right" timestamp="1605408362654">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="255" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1605056636691" />
-    <state width="1638" height="230" key="GridCell.Tab.1.right/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1603542898336" />
+    <state width="1638" height="369" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1605404635356" />
+    <state width="1638" height="369" key="GridCell.Tab.1.right/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1605408362654" />
     <state width="1638" height="513" key="GridCell.Tab.2.bottom" timestamp="1603247141876">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -374,10 +366,11 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="377" y="279" width="926" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1680.1027@0.23.1680.1027" timestamp="1603180177215" />
-    <state x="242" y="156" width="893" height="630" key="find.popup" timestamp="1605056700086">
+    <state x="242" y="156" width="893" height="630" key="find.popup" timestamp="1605415599456">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="242" y="156" width="893" height="630" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1605056700086" />
+    <state x="242" y="156" width="893" height="630" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1605415599456" />
+    <state x="242" y="156" width="893" height="630" key="find.popup/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1605407184250" />
     <state x="526" y="389" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602135729355">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -386,10 +379,11 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="208" y="159" key="new project wizard/0.23.1680.1027@0.23.1680.1027" timestamp="1603247127618" />
-    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1603248078387">
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1605407828489">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1603248078387" />
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/1680.23.1920.1057/0.23.1680.1027@0.23.1680.1027" timestamp="1605407828489" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

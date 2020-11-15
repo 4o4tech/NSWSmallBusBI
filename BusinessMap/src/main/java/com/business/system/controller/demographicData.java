@@ -28,6 +28,18 @@ public class demographicData {
     @Resource
     private MongoTemplate mongoTemplate;
     static String setName;
+    private String LGAName;
+
+
+    public void setLGAName(String LGAName) {
+        this.LGAName = LGAName;
+    }
+
+    public String getLGAName() {
+        return LGAName;
+    }
+
+
 
     // 人口数量
 
@@ -58,6 +70,8 @@ public class demographicData {
 
         System.out.println("LGA Name is: " + getLGAName.get(0));
         this.setName = getLGAName.get(0);
+
+        setLGAName(getLGAName.get(0));
 
 
 //       db.population.aggregate([
@@ -117,13 +131,17 @@ public class demographicData {
 //
 //        List<Income> nswResultList = nswOutput.getMappedResults();
 
-        Criteria newCri = new Criteria();
+
 
         String newLGAName;
-        newLGAName = setName;
+        newLGAName = getLGAName();
+
+        Criteria newCri = Criteria.where("LGA_Name").is(newLGAName);
+        Criteria newCriNSW = Criteria.where("LGA_Name").is("New South Wales");
+
         // search area
         Aggregation incomeAgg = Aggregation.newAggregation(
-                Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(newLGAName), Criteria.where("LGA_Name").is("New South Wales"))), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
+                Aggregation.match(new Criteria().orOperator(newCri, newCriNSW)), //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
                 Aggregation.match(Criteria.where("Year").gte(2014).lte(2017)),  //{ "$match" : { "Year" : { "$gte" : 2014 , "$lte" : 2017}}}
                 Aggregation.project("Year", "LGA_Name")
                         .and("Median_Total_Income").as("Median_Income")
@@ -147,12 +165,17 @@ public class demographicData {
 
     @RequestMapping("/ageRange")
     public List<ageRange> getAgeRangeData() {
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         Criteria newCri = new Criteria();
 
         // search area
         String newLGAName;
-        newLGAName = setName;
+        newLGAName = getLGAName();
         Aggregation ageRangeAgg = Aggregation.newAggregation(
                 Aggregation.match(newCri.orOperator(Criteria.where("LGA_Name").is(newLGAName))),
                 //"$or" : [ { "LGA_Name" : "Parramatta (C)"} , { "LGA_Name" : "New South Wales"}]}}
@@ -198,7 +221,7 @@ public class demographicData {
         return resultList;
     }
 
-//    Business Entries  fetch mongo data
+    //    Business Entries  fetch mongo data
     @RequestMapping("/businessEntries")
     public List<businessEntries> getBusinessEntriesData() {
 
@@ -227,6 +250,7 @@ public class demographicData {
     //    Business Exits  fetch mongo data
     @RequestMapping("/exits")
     public List<Exits> getExitsData(){
+
         Criteria newCri = new Criteria();
 
         Aggregation BusinessExits = Aggregation.newAggregation(
@@ -249,6 +273,7 @@ public class demographicData {
     //    education  fetch mongo data
     @RequestMapping("/education")
     public List<Education> getEducationata(){
+
         Criteria newCri = new Criteria();
 
         Aggregation education = Aggregation.newAggregation(
