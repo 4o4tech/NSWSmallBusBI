@@ -75,7 +75,8 @@
             <h2>Select Information Your Concerned</h2>
             <hr>
 
-            <p>A specific industry
+            <p>A specific industry</p>
+
             <ul>
                 <li>Analyzing the characteristics of the industry to recommend a location. </li>
 
@@ -89,6 +90,30 @@
             <!--            <p th:text="${industryResult.content}">-->
             <!--            </p>-->
         </div>
+
+
+
+
+        <ul>
+            <li><a href="#industry_in_postal_Box" onClick="$('#industry_in_postal_Box').show()">Average Industry</a></li>
+
+            <li><a href="#relatedIndustry" onClick="$('#relatedIndustryBox').show();">Related Industry</a></li>
+
+            <li><a href ="#hottestIndustryBox" onClick="$('#hottestIndustryBox').show()">Hottest Industry</a> </li>
+            <li> <a href ="#Population_and_other_Box" onClick="$('#Population_and_other_Box').show()">Population</a> </li>
+            <li><a href ="#Num_of_businessBox" onClick="$('#Num_of_businessBox').show()"> Num_of_business</a></li>
+            <li><a href ="#Num_of_business_entries_Box" onClick="$('#Num_of_business_entries_Box').show()">Num of Business Entries </a></li>
+            <li><a href ="#Num_of_business_exits_Box"  onClick="$('#Num_of_business_exits_Box').show()">Num of Business Exits</a></li>
+
+        </ul>
+
+
+        <p>
+            The remainder of visualization chart on the data relating to <b>business exits and entry based on business size,</b>
+            the location of the business, by industry and corporate structure.
+            It also uses the available data to look at some of the characteristics of business owners in Australia and a comparison of the
+            entry and exit of businesses in Australia NSW.
+        </p>
 
     </div>
 
@@ -145,146 +170,163 @@
 
 
     <div class="industry-describe">
+        <div class="span10">
+
+            <div class="span8 offset-1 chart">
+
+                <div>
+                    <h2>
+                        <button class="sub-btn" onclick=hide_show("industry_in_postal_Box")>Number of small business</button>
+                    </h2>
+                    <p class="description">The number of cafes in this postal area is: 139<br>
+                        In average, every postal area has 17 cafes<br>
+                    </p>
+                </div>
 
 
-        <div class="span8 offset-2">
+                <div id="industry_in_postal_Box" style="display: block">
+                    <div id="industry_in_postal" class="graph"></div>
 
-            <div>
+                </div>
+            </div>
+
+            <div class="span8 offset-1 chart">
                 <h2>
-                    <button class="sub-btn" onclick=hide_show("industry_in_postal_Box")>Number of small business</button>
+                    <button class="sub-btn" onclick=hide_show("hottestIndustryBox")>Top 10 Industries in NSW</button>
                 </h2>
-                <p class="description">The number of cafes in this postal area is: 139<br>
-                    In average, every postal area has 17 cafes<br>
-                </p>
+                <div id="hottestIndustryBox" style="display: none">
+
+                    <p>
+
+                        For those who don’t know, Sydney is the economic center of Australia,
+                        the capital of New South Wales and is also the most populous city in Australia.
+                       <b> Sydney’s economy is mainly driven by sectors</b> such as financial services, manufacturing, health, retail, B2B services, etc.
+                        Sydney is a very good place to start a business especially because of its low cost of office space. It is cheaper to rent an office space in Sydney than it is in most popular cities of the world such as London, Paris or Hong Kong.
+                        Below are a few businesses that <b> Hottest Industries in NSW</b> start in Sydney:
+                    </p>
+                    <h4 class="description">
+                        Showing the top 10 small business in NSW or a postal area.
+                    </h4>
+
+                    <hr>
+                    <div id="hottestIndustry" class="graph"></div>
+
+                </div>
             </div>
 
 
-            <div id="industry_in_postal_Box" style="display: block">
-                <div id="industry_in_postal" class="graph"></div>
+            <div class="span8 offset-1 chart">
+                <h2>
+                    <button class="sub-btn" onclick=hide_show("Population_and_other_Box")>Population, Age, Income, Education & Certificate.</button>
+                </h2>
+                <div id="Population_and_other_Box" style="display: none">
+                    <div >
+                        <h2>
+                            Population
+                        </h2>
+                        <div id="PopulationBox">
+                            <div id="Population"  class="graph"></div>
+                            <p class="description">The lines represent the male, female and total population trend from 2014 to 2018.<br>
+                                The bars represent the population density in the LGA.<br>
+                                Population in Greater Sydney: 5,230,330<br>
+                                The population density in Greater Sydney(2014 - 2018): 391.4, 398.6, 406.3, 415.3, 422.9<br>
+                                Population in the rest of NSW: 2,757,911<br>
+                                The population density in the rest of NSW (2014 - 2018): 3.4, 3.4, 3.4, 3.5, 3.5<br>
+                            </p>
+                        </div>
 
-            </div>
-        </div>
+                    </div>
+                    <div >
+                        <h2>
+                            Age range
+                        </h2>
+                        <div id="AgeBox">
+                            <div id="Age"  class="graph"></div>
+                            <p class="description">The chart shows the age composition in the searched LGA in 2018<br>
+                                Median Age in this LGA:<br>
+                                Median Age in NSW: 37.5<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div >
 
-        <div class="span8 offset-2">
-            <h2>
-                <button class="sub-btn" onclick=hide_show("hottestIndustryBox")>Top 10 Industries in NSW</button>
-            </h2>
-            <div id="hottestIndustryBox" style="display: none">
-                <div id="hottestIndustry" class="graph"></div>
-                <p class="description">The chart shows the top 10 popular small business in NSW.</p>
-            </div>
-        </div>
+                        <h2>
+                            Income
+                        </h2>
+                        <div id="IncomeBox">
+                            <div id="Income"  class="graph"></div>
+                            <p class="description">The chart shows the median income in this LGA and NSW.<br>
+                                We can use the chart to interpret purchasing power.<br>
+                            </p>
+                        </div>
 
-
-
-        <div class="span8 offset-2">
-            <h2>
-                <button class="sub-btn" onclick=hide_show("Population_and_other_Box")>Population, Age, Income, Education & Certificate.</button>
-            </h2>
-            <div id="Population_and_other_Box" style="display: none">
-                <div >
-                    <h2>
-                        Population
-                    </h2>
-                    <div id="PopulationBox">
-                        <div id="Population"  class="graph"></div>
-                        <p class="description">The lines represent the male, female and total population trend from 2014 to 2018.<br>
-                            The bars represent the population density in the LGA.<br>
-                            Population in Greater Sydney: 5,230,330<br>
-                            The population density in Greater Sydney(2014 - 2018): 391.4, 398.6, 406.3, 415.3, 422.9<br>
-                            Population in the rest of NSW: 2,757,911<br>
-                            The population density in the rest of NSW (2014 - 2018): 3.4, 3.4, 3.4, 3.5, 3.5<br>
-                        </p>
                     </div>
 
-                </div>
-                <div >
-                    <h2>
-                        Age range
-                    </h2>
-                    <div id="AgeBox">
-                        <div id="Age"  class="graph"></div>
-                        <p class="description">The chart shows the age composition in the searched LGA in 2018<br>
-                            Median Age in this LGA:<br>
-                            Median Age in NSW: 37.5<br>
-                        </p>
+                    <div >
+
+                        <h2>
+                            Persons with Non-School Qualifications
+                        </h2>
+                        <div id="EducationBox">
+                            <h5> --Persons aged 15 years and over - Census</h5>
+                            <div id="Education" class="graph"></div>
+                            <p class="description">The chart shows the composition of diplomas and certificates in this LGA.</p>
+                        </div>
                     </div>
                 </div>
-                <div >
 
-                    <h2>
-                        Income
-                    </h2>
-                    <div id="IncomeBox">
-                        <div id="Income"  class="graph"></div>
-                        <p class="description">The chart shows the median income in this LGA and NSW.<br>
-                            We can use the chart to interpret purchasing power.<br>
-                        </p>
+            </div>
+
+
+            <div class="span8 offset-1 chart">
+                <h2>
+                    <button class="sub-btn" onclick=hide_show("relatedIndustryBox")>Popular small business</button>
+                </h2>
+                <div id="relatedIndustryBox" style="display: none">
+                    <div id="relatedIndustry"  class="graph">
                     </div>
+                    <p class="description">The chart shows the number of small business inputted and the other 9 small business close to it in
+                        the rank. </p>
+                </div>
+            </div>
+            <div class="span8 offset-1 chart">
+
+                <h2>
+                    <button class="sub-btn" onclick=hide_show("Num_of_businessBox")>Number of Business in This LGA</button>
+                </h2>
+                <div id="Num_of_businessBox" style="display: none">
+                    <div id="Num_of_business"  class="graph"></div>
+                    <p class="description">The chart shows the number of businesses in this LGA categorized by the number of employees.
+                    </p>
+                </div>
+
+
+            </div>
+            <div class="span8 offset-1 chart">
+
+                <h2>
+                    <button class="sub-btn" onclick=hide_show("Num_of_business_entries_Box")>Number of Business Entries in This LGA</button>
+                </h2>
+                <div id="Num_of_business_entries_Box" style="display: none">
+                    <p class="description">Business entries: business had entered the market.</p>
+                    <hr>
+                    <div id="Num_of_business_entries"  class="graph"></div>
 
                 </div>
 
-                <div >
+            </div>
+            <div class="span8 offset-1 chart">
 
-                    <h2>
-                        Persons with Non-School Qualifications
-                    </h2>
-                    <div id="EducationBox">
-                        <h5> --Persons aged 15 years and over - Census</h5>
-                        <div id="Education" class="graph"></div>
-                        <p class="description">The chart shows the composition of diplomas and certificates in this LGA.</p>
-                    </div>
+                <h2>
+                    <button class="sub-btn" onclick=hide_show("Num_of_business_exits_Box")>Number of Business Exits in This LGA</button>
+                </h2>
+                <div id="Num_of_business_exits_Box" style="display: none">
+                    <p class="description">Business exits: business had left the market.</p>
+                    <hr>
+                    <div id="Num_of_business_exits"  class="graph"></div>
+
                 </div>
-            </div>
 
-        </div>
-
-
-
-
-        <div class="span8 offset-2">
-            <h2>
-                <button class="sub-btn" onclick=hide_show("relatedIndustryBox")>Popular small business</button>
-            </h2>
-            <div id="relatedIndustryBox" style="display: none">
-                <div id="relatedIndustry"  class="graph">
-                </div>
-                <p class="description">The chart shows the number of small business inputted and the other 9 small business close to it in
-                    the rank. </p>
-            </div>
-        </div>
-        <div class="span8 offset-2">
-
-            <h2>
-                <button class="sub-btn" onclick=hide_show("Num_of_businessBox")>Number of Business in This LGA</button>
-            </h2>
-            <div id="Num_of_businessBox" style="display: none">
-                <div id="Num_of_business"  class="graph"></div>
-                <p class="description">The chart shows the number of businesses in this LGA categorized by the number of employees.
-                </p>
-            </div>
-
-
-        </div>
-        <div class="span8 offset-2">
-
-            <h2>
-                <button class="sub-btn" onclick=hide_show("Num_of_business_entries_Box")>Number of Business Entries in This LGA</button>
-            </h2>
-            <div id="Num_of_business_entries_Box" style="display: none">
-                <div id="Num_of_business_entries"  class="graph"></div>
-                <p class="description">Business entries: business had entered the market.</p>
-            </div>
-
-        </div>
-        <div class="span8 offset-2">
-
-            <h2>
-                <button class="sub-btn" onclick=hide_show("Num_of_business_exits_Box")>Number of Business Exits in This LGA</button>
-            </h2>
-            <div id="Num_of_business_exits_Box" style="display: none">
-                <div id="Num_of_business_exits"  class="graph"></div>
-                <p class="description">Business exits: business had left the market.</p>
             </div>
 
         </div>
@@ -322,6 +364,7 @@
 
 <script type="text/javascript">
     function hide_show(id) {
+
         var target = document.getElementById(id);
         if (target.style.display == "none") {
             target.style.display = "block";

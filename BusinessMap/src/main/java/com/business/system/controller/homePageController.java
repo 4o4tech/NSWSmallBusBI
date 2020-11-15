@@ -37,6 +37,10 @@ public class homePageController {
         return "blog/industry_article";
     }
 
+    @RequestMapping("/VAarticle")
+    public String VAArticle(){
+        return "blog/VA_article";
+    }
 
 }
 //
