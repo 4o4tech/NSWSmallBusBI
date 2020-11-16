@@ -75,6 +75,13 @@
      font-size:18px;
 
  }
+
+ .explain p{
+     font-weight: 400;
+     font-size:18px;
+     letter-spacing: -.05rem;
+
+ }
  .bottom_info{
      margin-top:5em;
  }
