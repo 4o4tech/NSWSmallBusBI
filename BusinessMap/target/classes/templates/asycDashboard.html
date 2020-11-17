@@ -260,22 +260,25 @@
 
             <div class="span8 offset-1 chart">
                 <h2>
-                    <button class="sub-btn" onclick=hide_show("hottestIndustryBox")>Top 10 Industries in NSW</button>
+                    <button class="sub-btn dropdownBtn" onclick=hide_show("hottestIndustryBox") title="Click View More">Top 10 Industries in NSW</button>
                 </h2>
+                <br>
+                <p>
+
+                    For those who don’t know, Sydney is the economic center of Australia,
+                    the capital of New South Wales and is also the most populous city in Australia.
+                    <b> Sydney’s economy is mainly driven by sectors</b> such as financial services, manufacturing, health, retail, B2B services, etc.
+                    Sydney is a very good place to start a business especially because of its low cost of office space. It is cheaper to rent an office space in Sydney than it is in most popular cities of the world such as London, Paris or Hong Kong.
+                    Below are a few businesses that <b> Hottest Industries in NSW</b> start in Sydney:
+                </p>
+                <br>
+
+
+
                 <div id="hottestIndustryBox" style="display: none">
-
-                    <p>
-
-                        For those who don’t know, Sydney is the economic center of Australia,
-                        the capital of New South Wales and is also the most populous city in Australia.
-                       <b> Sydney’s economy is mainly driven by sectors</b> such as financial services, manufacturing, health, retail, B2B services, etc.
-                        Sydney is a very good place to start a business especially because of its low cost of office space. It is cheaper to rent an office space in Sydney than it is in most popular cities of the world such as London, Paris or Hong Kong.
-                        Below are a few businesses that <b> Hottest Industries in NSW</b> start in Sydney:
-                    </p>
                     <h4 class="description">
                         Showing the top 10 small business in NSW or a postal area.
                     </h4>
-
                     <hr>
                     <div id="hottestIndustry" class="graph"></div>
 
@@ -285,8 +288,17 @@
 
             <div class="span8 offset-1 chart">
                 <h2>
-                    <button class="sub-btn" onclick=hide_show("Population_and_other_Box")>Population, Age, Income, Education & Certificate.</button>
+                    <button class="sub-btn dropdownBtn" onclick=hide_show("Population_and_other_Box")>Population, Age, Income, Education & Certificate.</button>
                 </h2>
+
+                <p>
+                    People do not only make buying decisions from where they live, but also from where they work, play and travel.
+
+                    The Business Demographic Summary tells us how many people work in an area, the size of individual businesses and the industry groups local businesses belong to.
+                </p>
+                <p>
+                    This really assists in <b>determining the opportunity</b> for lunchtime trade, business to business marketing and assistance as to <b> which Local Area marketing promotion</b> will be most successful.
+                </p>
                 <div id="Population_and_other_Box" style="display: none">
                     <div >
                         <h2>
@@ -295,12 +307,27 @@
                         <div id="PopulationBox">
                             <div id="Population"  class="graph"></div>
                             <p class="description">The lines represent the male, female and total population trend from 2014 to 2018.<br>
-                                The bars represent the population density in the LGA.<br>
-                                Population in Greater Sydney: 5,230,330<br>
-                                The population density in Greater Sydney(2014 - 2018): 391.4, 398.6, 406.3, 415.3, 422.9<br>
-                                Population in the rest of NSW: 2,757,911<br>
-                                The population density in the rest of NSW (2014 - 2018): 3.4, 3.4, 3.4, 3.5, 3.5<br>
+                                    The bars represent the population density in the LGA.
+                                <br>
+                                    Population in Greater Sydney:
+                                    <span id="population_totle"></span> <br>
+
+                                    The population density in Greater Sydney(2014 - 2018):
+                                    <span id="population_density"></span>
+                                <br>
+
+                                    Population in the rest of NSW:
+                                    <span id="population_rest">2,757,911</span>
+                                <br>
+                                    The population density in the rest of NSW (2014 - 2018):
+                                    <span id="population_rest_density">
+                                        3.4, 3.4, 3.4, 3.5, 3.5
+                                    </span>
+
+                                <br>
+                                <br>
                             </p>
+
                         </div>
 
                     </div>
@@ -315,7 +342,9 @@
                             <div id="Age"  class="graph"></div>
                             <p class="description">The chart shows the age composition in the searched LGA in 2018<br>
                                 Median Age in this LGA:<br>
-                                Median Age in NSW: 37.5<br>
+                                Median Age in NSW:
+                                <span id="median_age">37.5</span>
+                                <br>
                             </p>
                         </div>
                     </div>
@@ -356,7 +385,7 @@
 
             <div class="span8 offset-1 chart">
                 <h2>
-                    <button class="sub-btn" onclick=hide_show("relatedIndustryBox")>Popular small business</button>
+                    <button class="sub-btn dropdownBtn" onclick=hide_show("relatedIndustryBox")>Popular small business</button>
                 </h2>
                 <p class="description">
                     The chart shows the number of small business inputted and the other 9 small business close to it in
@@ -373,7 +402,7 @@
             <div class="span8 offset-1 chart">
 
                 <h2>
-                    <button class="sub-btn" onclick=hide_show("Num_of_businessBox")>Number of Business in This LGA</button>
+                    <button class="sub-btn dropdownBtn" onclick=hide_show("Num_of_businessBox")>Number of Business in This LGA</button>
                 </h2>
                 <p class="description">
                     The number of businesses in this LGA categorized by the number of employees.
@@ -391,7 +420,7 @@
             <div class="span8 offset-1 chart">
 
                 <h2>
-                    <button class="sub-btn" onclick=hide_show("Num_of_business_entries_Box")>Number of Business Entries in This LGA</button>
+                    <button class="sub-btn dropdownBtn" onclick=hide_show("Num_of_business_entries_Box")>Number of Business Entries in This LGA</button>
                 </h2>
                 <p>
                     SMALL BUSINESS COUNT: This value was derived by adding up business counts of businesses with 0, 1-4

@@ -3,6 +3,8 @@
 
     var keywords = getUrlParam("keywords");
 
+    $("#current").html(keywords);
+
     $.ajax({
 
         type: 'get',
@@ -17,11 +19,19 @@
             var entryNumberList = [];
             var exitNumberList = [];
 
+            var entryNumberCount = 0;
+            var exitNumberCount = 0;
+
             for (var i in arr) {
                 dateList.push(arr[i].durationTime);
                 entryNumberList.push(arr[i].entryNumber);
                 exitNumberList.push(arr[i].exitNumber);
+                exitNumberCount = exitNumberCount + arr[i].exitNumber;
+                entryNumberCount = entryNumberCount + arr[i].entryNumber;
             }
+
+            $("#totalNumber").html(entryNumberCount);
+            $("#exitsNumber").html(exitNumberCount);
 
             // 实例化对象
             var myChart = echarts.init(document.querySelector(".bar .chart"));
@@ -109,6 +119,8 @@
     var houseList = [];
     var unitList = [];
     var dataList = [];
+    var houseCount = 0;
+    var unitCount = 0;
 
     $.ajax({
 
@@ -125,10 +137,15 @@
                 if(arr[i].dwellingType == "H"){
                     houseList.push(arr[i].priceValue);
                     dataList.push(arr[i].date);
+                    houseCount = houseCount + arr[i].priceValue;
                 }else{
                     unitList.push(arr[i].priceValue);
+                    unitCount = unitCount + arr[i].priceValue;
                 }
             }
+
+            $("#houseCount").html((houseCount/12).toFixed(2));
+            $("#unitCount").html((unitCount/12).toFixed(2));
 
             var myChart = echarts.init(document.querySelector(".line .chart"));
 
@@ -247,6 +264,9 @@ function getUrlParam(name) {
     //保存 2019 年数据
     var list1 = [];
 
+    var count2018 = 0;
+    var count2019 = 0;
+
     $.ajax({
 
         type: 'get',
@@ -260,11 +280,16 @@ function getUrlParam(name) {
             for (var i in arr) {
                 if(arr[i].month.substring(0,4) == "2018"){
                     list.push(arr[i].num);
+                    count2018 = count2018 + arr[i].num;
                 }else{
                     list1.push(arr[i].num);
+                    count2019 = count2019 + arr[i].num;
                 }
 
             }
+
+            $("#count2018").html(count2018);
+            $("#count2019").html(count2019);
 
             var myChart = echarts.init(document.querySelector(".radar .chart"));
 
