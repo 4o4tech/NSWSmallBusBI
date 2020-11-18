@@ -40,6 +40,35 @@
 
 
 <body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-color">
+    <a class="navbar-brand" href="index">NSW Business Map</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbars">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link" href="/index">Home </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " href="/license_dashboard">Business License</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link " href="/article">Business Insight</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
 
 
 <div class="container">
@@ -162,7 +191,7 @@
                 <li><a href="#relatedIndustry" onClick="$('#relatedIndustryBox').show();">Related Industry</a></li>
 
                 <li><a href ="#hottestIndustryBox" onClick="$('#hottestIndustryBox').show()">Hottest Industry</a> </li>
-                <li> <a href ="#Population_and_other_Box" onClick="$('#Population_and_other_Box').show()">Population</a> </li>
+                <li> <a href ="#Population_and_other_Box" onClick="$('#Population_and_other_Box').show()">Demographic / Age / Income</a> </li>
 
             </ul>
         </div>
@@ -246,13 +275,35 @@
                     <h2>
                         <button class="sub-btn" onclick=hide_show("industry_in_postal_Box")>Number of small business</button>
                     </h2>
-                    <p class="description">The number of cafes in this postal area is: 139<br>
-                        In average, every postal area has 17 cafes<br>
+
+                    <p>
+
+                        Determine the viability of your <b>business idea</b>.
+                        Choosing business your preference and Know the numerical data in NSW and Suburb Area.
                     </p>
                 </div>
 
 
                 <div id="industry_in_postal_Box" style="display: block">
+                    <p class="description">
+                        The number of cafes in this total NSW have:
+                        <b>
+                            <span id="totalSBNumber"></span>
+                        </b>
+
+                        <br>
+                        In average, every postal area has
+                        <b>
+                            <span id="localNumber"></span>
+                        </b>
+                        <b>
+                            <span id="sbName" ></span>
+                        </b>
+
+                        <br>
+                    </p>
+
+                    <hr>
                     <div id="industry_in_postal" class="graph"></div>
 
                 </div>
@@ -306,8 +357,14 @@
                         </h2>
                         <div id="PopulationBox">
                             <div id="Population"  class="graph"></div>
-                            <p class="description">The lines represent the male, female and total population trend from 2014 to 2018.<br>
-                                    The bars represent the population density in the LGA.
+
+                            <h5>
+                                The lines represent the male, female and total population trend from 2014 to 2018.<br>
+                                The bars represent the population density in the LGA.
+                            </h5>
+                            <p class="description">
+
+
                                 <br>
                                     Population in Greater Sydney:
                                     <span id="population_totle"></span> <br>
@@ -316,12 +373,14 @@
                                     <span id="population_density"></span>
                                 <br>
 
-                                    Population in the rest of NSW:
-                                    <span id="population_rest">2,757,911</span>
+                                    Population Males Population (2014-2018) in NSW:
+                                    <span id="population_male">
+
+                                    </span>
                                 <br>
                                     The population density in the rest of NSW (2014 - 2018):
-                                    <span id="population_rest_density">
-                                        3.4, 3.4, 3.4, 3.5, 3.5
+                                    <span id="population_female">
+
                                     </span>
 
                                 <br>
@@ -340,10 +399,15 @@
                         </h2>
                         <div id="AgeBox">
                             <div id="Age"  class="graph"></div>
-                            <p class="description">The chart shows the age composition in the searched LGA in 2018<br>
-                                Median Age in this LGA:<br>
-                                Median Age in NSW:
-                                <span id="median_age">37.5</span>
+                            <h5>
+                                The chart shows the age composition in the searched LGA in 2018
+                            </h5>
+                            <br>
+                            <p class="description">
+                                Median Age in this LGA:<span id="median_age"> 35.3</span>
+                                <br>
+                                Median Age in NSW: 37.5
+
                                 <br>
                             </p>
                         </div>
@@ -830,7 +894,9 @@
         };
     }
 
-    //TODO change url name here  这个我不知道怎么改变url地址，还有一个小bug，这个script放在上面的时候图2无法正常运行，删除这个script就可以正常运行。。/晕
+
+
+
     let populationUrl =  '/population?code=' + code;
 
     LGAName = "Location"
@@ -844,6 +910,16 @@
 
         console.log("******Population Data loading Done!!!******")
         console.log(populationData)
+
+
+
+        $("#population_totle").append(populationNumbers[2].join(", "))
+        $("#population_density").append(populationNumbers[3].join(", "))
+        $("#population_male").append(populationNumbers[0].join("| "))
+        $("#population_female").append(populationNumbers[0].join("| "))
+
+
+
 
         // console.log(populationName)
         // console.log(populationNumbers)
@@ -1100,7 +1176,9 @@
 </script>
 <!--income  end Here-->
 
-<!--Industry in postal EChart Start Here-->
+
+
+<!--Industry in average industry postal EChart Start Here-->
 <script type="text/javascript">
     var industry_in_postal_data = {
         numbers: [119],
@@ -1114,6 +1192,10 @@
 
         console.log("****** Industry in postal Data loading Done!!!******")
         console.log(data.localAmount)
+
+        $("#totalSBNumber").append(data.localAmount)
+        $("#localNumber").append(data.avgIndustry)
+        $("#sbName").append(LGAName)
 
         var industry_in_postal_option = {
             title: {

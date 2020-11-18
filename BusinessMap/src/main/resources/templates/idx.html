@@ -26,6 +26,7 @@
         <title>New South Wales Business Map</title>
 
 <!--        <link rel="icon" type="image/png" href="assets/img/NSW_LOGO.png"/>-->
+        <link rel="stylesheet" th:href="@{/css/main.css}">
     	
         <script src="/js/jquery-1.11.3.min.js"></script>
         <script src="/js/jquery-navigated.js"></script>
@@ -37,34 +38,35 @@
             <!-- Menu -->
             <div class="main-nav">
                 <div class="container">
-                    <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="/mongodb">
-<!--                            <img src="assets/img/Side_logo.png" alt="Logo"/>-->
-                        </a>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a href="index" class="nav-link">Home page</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="mongo_index" class="nav-link">Location/LGA</a>
-                                </li>
-                                <li class="nav-item"> 
-                                    <a href="idx" class="nav-link">Search Industries</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">Industry 1</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">Industry 2</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="" class="nav-link">Industry 3</a>
-                                        </li>
-                                    </ul>
 
+
+                    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-color">
+                        <a class="navbar-brand" href="index">NSW Business Map</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbars">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="/index">Home </a>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a href="idx" class="nav-link active">Location/LGA</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="mongo_index" class="nav-link active">Recommendation</a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="/article">Business Insight</a>
+                                </li>
                                 <li class="nav-item dropdown">
                                     <a href="toPage/contact" class="nav-link">Contact Us</a>
 
@@ -81,23 +83,82 @@
                                     </ul>
                                 </li>
 
-<!--                                <li class="nav-item dropdown">-->
-<!--                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                                        Dropdown-->
-<!--                                    </a>-->
-<!--                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                                        <a class="dropdown-item" href="#">Action</a>-->
-<!--                                        <a class="dropdown-item" href="#">Another action</a>-->
-<!--                                        <div class="dropdown-divider"></div>-->
-<!--                                        <a class="dropdown-item" href="#">Something else here</a>-->
-<!--                                    </div>-->
-<!--                                </li>-->
-
-
-
                             </ul>
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
                         </div>
                     </nav>
+
+
+
+
+<!--                    <nav class="navbar navbar-expand-md navbar-light">-->
+<!--                        <a class="navbar-brand" href="/mongodb">-->
+<!--&lt;!&ndash;                            <img src="assets/img/Side_logo.png" alt="Logo"/>&ndash;&gt;-->
+<!--                        </a>-->
+<!--                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">-->
+<!--                            <ul class="navbar-nav">-->
+<!--                                <li class="nav-item">-->
+<!--                                    <a href="index" class="nav-link">Home page</a>-->
+<!--                                </li>-->
+<!--                                <li class="nav-item">-->
+<!--                                    <a href="mongo_index" class="nav-link">Location/LGA</a>-->
+<!--                                </li>-->
+<!--                                <li class="nav-item"> -->
+<!--                                    <a href="idx" class="nav-link">More function</a>-->
+<!--                                    <ul class="dropdown-menu">-->
+<!--                                        <li class="nav-item active">-->
+<!--                                            <a class="nav-link" href="#">Dashboard</a>-->
+<!--                                        </li>-->
+<!--                                        <li class="nav-item ">-->
+<!--                                            <a class="nav-link " href="#">Business License</a>-->
+<!--                                        </li>-->
+
+<!--                                        <li class="nav-item">-->
+<!--                                            <a class="nav-link " href="/article">Business Insight</a>-->
+<!--                                        </li>-->
+
+<!--                                    </ul>-->
+
+
+
+<!--                                </li>-->
+
+<!--                                <li class="nav-item dropdown">-->
+<!--                                    <a href="toPage/contact" class="nav-link">Contact Us</a>-->
+
+<!--                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                                        <li class="nav-item">-->
+<!--                                            <a href="toPage/contact" class="nav-link">Find us</a>-->
+<!--                                        </li>-->
+<!--                                        <li class="nav-item">-->
+<!--                                            <a href="feedback" class="nav-link">Feedback</a>-->
+<!--                                        </li>-->
+<!--                                        <li class="nav-item">-->
+<!--                                            <a href="FAQs" class="nav-link">FAQs</a>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </li>-->
+
+<!--&lt;!&ndash;                                <li class="nav-item dropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        Dropdown&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <a class="dropdown-item" href="#">Action</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <a class="dropdown-item" href="#">Another action</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="dropdown-divider"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <a class="dropdown-item" href="#">Something else here</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+
+
+
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </nav>-->
                 </div>
             </div>
         </div>
