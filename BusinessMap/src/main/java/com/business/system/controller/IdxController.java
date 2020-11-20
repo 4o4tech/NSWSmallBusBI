@@ -20,11 +20,12 @@ import com.business.util.test;
 public class IdxController {
 	@RequestMapping("/idx")
     public String indexpage(){ 
-        return "/idx";
+        return "idx";
     }
+
     @RequestMapping("/jqn")
     public String jqn(){
-        return "/jqn";
+        return "jqn";
     }
 
 	@RequestMapping("/industry_temp")

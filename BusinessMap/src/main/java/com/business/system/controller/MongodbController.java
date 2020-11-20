@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -72,34 +73,40 @@ public class MongodbController {
 
 	///// George Part
 	@RequestMapping(value="/test")
-	public String returnHomepage(@RequestParam("keywords") String keywords){
+	public String returnHomepage(@RequestParam("keywords") String keywords, HttpServletRequest request){
+		request.getSession().removeAttribute("keywords");
+		request.getSession().setAttribute("keywords",keywords);
 		return "test";
 	}
 
 	@RequestMapping(value="/getRentalPriceList")
 	@ResponseBody
-	public List<RentalPrice> getRentalPriceList(@RequestParam("keywords") String keywords){
+	public List<RentalPrice> getRentalPriceList(@RequestParam("keywords") String keywords,HttpServletRequest request){
+		keywords = (String)request.getSession().getAttribute("keywords");
 		List<RentalPrice> rentalPriceList =	rentalPriceService.findByPostCodeOrSuburb(keywords);
 		return rentalPriceList;
 	}
 
 	@RequestMapping(value="/getTrainStationTimetableList")
 	@ResponseBody
-	public List<TrainStationTimetable> getTrainStationTimetableList(@RequestParam("keywords") String keywords){
+	public List<TrainStationTimetable> getTrainStationTimetableList(@RequestParam("keywords") String keywords,HttpServletRequest request){
+		keywords = (String)request.getSession().getAttribute("keywords");
 		List<TrainStationTimetable> trainStationTimetableList = trainStationTimetableService.findByPostCodeOrSuburb(keywords);
 		return trainStationTimetableList;
 	}
 
 	@RequestMapping(value="/getCrimeNumberList")
 	@ResponseBody
-	public List<CrimeNumber> getCrimeNumberList(@RequestParam("keywords") String keywords){
+	public List<CrimeNumber> getCrimeNumberList(@RequestParam("keywords") String keywords,HttpServletRequest request){
+		keywords = keywords = (String)request.getSession().getAttribute("keywords");
 		List<CrimeNumber> crimeNumberList = crimeRateService.findByPostCodeOrSuburb(keywords);
 		return crimeNumberList;
 	}
 
 	@RequestMapping(value="/getPieList")
 	@ResponseBody
-	public Map<String,Integer> getPieList(@RequestParam("keywords") String keywords){
+	public Map<String,Integer> getPieList(@RequestParam("keywords") String keywords,HttpServletRequest request){
+		keywords = (String)request.getSession().getAttribute("keywords");
 		List<BusStation> busStationList = busStationService.findByAddress(keywords);
 		List<Bank> bankList = bankService.findByAddress(keywords);
 		List<Park> parkList = parkService.findByAddress(keywords);

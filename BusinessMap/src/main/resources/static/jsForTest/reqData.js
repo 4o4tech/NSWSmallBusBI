@@ -103,8 +103,34 @@
                 ]
             };
 
-            // 使用刚指定的配置项和数据显示图表。
-            myChart.setOption(option);
+            var loadOption;
+
+            if(data.length == 0){
+                loadOption = {
+                    title: {
+                        text: 'Sorry, No Result in this Area. Try Another Address!',
+                        x: 'center',
+                        y: 'center',
+                        textStyle: {
+                            color: '#65ABE7',
+                            fontWeight: 'normal',
+                            fontSize: 16
+                        }
+                    }
+                }
+
+            }else{
+                loadOption = option
+            }
+
+            console.log("testtest" + data.length)
+            // 3. 把配置和数据给实例对象
+            myChart.setOption(loadOption);
+
+
+            // // 使用刚指定的配置项和数据显示图表。
+            // myChart.setOption(option);
+
             window.addEventListener("resize", function () {
                 myChart.resize();
             });
@@ -148,6 +174,9 @@
             $("#unitCount").html((unitCount/12).toFixed(2));
 
             var myChart = echarts.init(document.querySelector(".line .chart"));
+
+
+
 
             // 2. 指定配置和数据
             var option = {
@@ -236,11 +265,33 @@
 
                 ]
             };
+
+            var loadOption;
+
+            if(data.length == 0){
+                loadOption = {
+                    title: {
+                        text: 'Sorry, No Result in this Area. Try Another Address!',
+                        x: 'center',
+                        y: 'center',
+                        textStyle: {
+                            color: '#65ABE7',
+                            fontWeight: 'normal',
+                            fontSize: 16
+                        }
+                    }
+                }
+
+                }else{
+                loadOption = option
+            }
+
+            console.log("testtest" + data.length)
             // 3. 把配置和数据给实例对象
-            myChart.setOption(option);
+            myChart.setOption(loadOption);
 
             // 重新把配置好的新数据给实例对象
-            myChart.setOption(option);
+            // myChart.setOption(option);
             window.addEventListener("resize", function () {
                 myChart.resize();
             });
@@ -381,11 +432,35 @@ function getUrlParam(name) {
 
                 ]
             };
-            // 3. 把配置和数据给实例对象
-            myChart.setOption(option);
 
-            // 重新把配置好的新数据给实例对象
-            myChart.setOption(option);
+
+            var loadOption;
+
+            if(data.length === 0){
+                loadOption = {
+                    title: {
+                        text: 'Sorry, No Result in this Area. Try Another Address!',
+                        x: 'center',
+                        y: 'center',
+                        textStyle: {
+                            color: '#65ABE7',
+                            fontWeight: 'normal',
+                            fontSize: 16
+                        }
+                    }
+                }
+
+            }else{
+                loadOption = option
+            }
+
+            console.log("testtest" + data.length)
+            // 3. 把配置和数据给实例对象
+            myChart.setOption(loadOption);
+
+            // // 3. 把配置和数据给实例对象
+            // myChart.setOption(option);
+
             window.addEventListener("resize", function () {
                 myChart.resize();
             });
