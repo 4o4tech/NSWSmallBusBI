@@ -123,7 +123,6 @@
                 loadOption = option
             }
 
-            console.log("testtest" + data.length)
             // 3. 把配置和数据给实例对象
             myChart.setOption(loadOption);
 
@@ -286,7 +285,6 @@
                 loadOption = option
             }
 
-            console.log("testtest" + data.length)
             // 3. 把配置和数据给实例对象
             myChart.setOption(loadOption);
 
@@ -454,10 +452,9 @@ function getUrlParam(name) {
                 loadOption = option
             }
 
-            console.log("testtest" + data.length)
             // 3. 把配置和数据给实例对象
             myChart.setOption(loadOption);
-
+aj
             // // 3. 把配置和数据给实例对象
             // myChart.setOption(option);
 
